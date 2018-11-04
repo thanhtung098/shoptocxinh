@@ -1,0 +1,10 @@
+@font-face {
+font-family: 'UTM-AVO';
+src: url('font/UTMAVO.TTF'); /* IE9 Compat Modes */
+src: url('font/UTMAVO.TTF')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+font-family: 'UTM-AVOBOLD';
+src: url('font/UTMAVOBOLD.TTF'); /* IE9 Compat Modes */
+src: url('font/UTMAVOBOLD.TTF')  format('truetype'), /* Safari, Android, iOS */
+}

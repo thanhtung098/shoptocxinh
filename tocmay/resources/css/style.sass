@@ -1,0 +1,224 @@
+@import "library"
+@import "normalize.css"
+@import "font.css"
+@import "font-icon.css"
+
+
+body
+  font-family: UTM-AVO
+a
+  text-decoration: none
+#wapper
+  
+.content
+  +shape($w:1170px)
+  margin: 0 auto
+.clear
+  clear: both
+#header
+  +shape($w:1140px,$h:80px)
+  padding: 5px 0
+  margin: 0 auto
+  .inner_hd
+    text-align: center
+    .left_hd
+      +shape($w:80px,$fl:left)
+    .mid_hd
+      +shape($w:940px)
+      +inl($dis:inline-block)
+      text-align: center
+      padding-top: 28px
+      nav
+        ul
+          li
+            +inl($dis:inline-block)
+            padding: 0 25px
+            font-family: 'UTM-AVOBOLD'
+            font-size: 16px
+            a
+              color: #707070
+    .right_hd
+      +shape($fl:right)
+      padding-top: 28px
+      ul
+        li
+          +inl($dis:inline-block)
+          padding: 0 12px
+          position: relative
+          .icon-Search-icon
+            color: #F6B26D
+          .icon-Card-icon-style-2
+            position: relative
+            span
+              +shape($w:16px,$h:16px,$bdr:50%,$bk:#FF3B3B,$clt: #fff)
+              +position(absolute,$r:-8px,$t:-10px)
+              +inl($dis:block)
+              font-size: 13px
+          form
+            +position(absolute,$l:-295px,$b:-50px)
+            +shape($w:330px,$ov:overflow,$bdr: 10px,$opa:0)
+            z-index: 30            
+            input
+              +shape($w:100%,$h:40px,$ov:hidden,$border:none,$outline:none,$bk:#f6f6f6)
+              padding: 0 12px
+            button
+              +position(absolute,$r:0,$t:0)
+              +shape($h: 100%,$w:65px,$border:none,$outline:none,$bk:#F6B26D,$clt:#ffffff)
+          &:hover
+            form
+              +position(absolute,$l:-295px,$b:-50px)
+              +shape($w:330px,$ov:hidden,$bdr: 10px,$opa:1)
+              z-index: 30  
+          &:last-child
+            padding-right: 0
+#banner
+  margin: 0 auto
+  position: relative
+  .item_bn
+    .video_bn
+      +position(absolute,$l:0,$t:0,$r:0,$b:0)
+      content: ''
+      width: 1170px
+      height: 100%
+      margin: 0 auto
+      .ct_video
+        width: 650px
+        #video_banner
+          width: 100%
+          height: 450px
+  &:after
+    +position(absolute,$l:0,$t:0)
+    content: ''
+    width: 100%
+    height: 100%
+    background: url('../../resources/images/sky.png')
+    background-size: 100% 100%
+
+.tt_section
+  position: relative
+  font-size: 36px
+  font-family: 'UTM-AVOBOLD'
+  color: #F6B26D
+  &:after
+    +position(absolute,$l:0,$r:0,$b:-30px)
+    content: ''
+    width: 60px
+    height: 5px
+    background: #F6B26D
+#introduce
+  padding: 0 15px
+  margin-top: 130px
+  .it_left
+    +shape($w:50%,$fl:left)
+    h3
+      +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
+    .txt_script
+      margin-top: 55px
+      color: #707070
+      line-height: 1.5
+  .it_right
+    +shape($w:50%,$fl:left)
+    #img_intro
+      padding: 0 50px
+      .it_img
+        text-align: center
+
+#main_pd
+  margin-top: 150px
+  .it_main
+    +shape($w:33.33%,$fl:left)
+    padding: 0 15px
+    .ct_itm
+      .img_it
+        margin-bottom: 15px
+        img
+          width: 100%
+      .txt_it
+        text-align: center
+        margin-bottom: 20px
+        h3
+          font-size: 36px
+          font-family: UTM-AVOBOLD
+          margin-bottom: 7px
+        p
+          font-size: 16px
+          color: #707070
+          line-height: 1.5
+          margin-bottom: 12px
+        a 
+          color: #F6B26D
+          +inl($dis: inline-block)
+          i
+            +inl($dis: inline-block)
+
+
+.block_title
+    text-align: center
+    h3
+      +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
+      letter-spacing: 5px
+    .tt_section
+      &:after
+        +position(absolute,$l:0,$r:0,$b:-30px)
+        +shape($w:65px,$h:5px,$bdr:#F6B26D)
+        content: ''
+        margin: 0 auto
+    .ds_section
+      +im_txt($mar: 60px 0 0 0,$fz:16px,$cl:#707070)
+    nav
+      margin: 30px 0 45px 0
+      ul
+        li
+          +shape($w:140px,$h:40px)
+          display: inline-block
+          padding: 0 10px
+          a
+            display: inline-block
+            padding-top: 11px
+            +shape($w:100%,$h:100%,$bk:#fff,$clt:#707070,$bdr:5px)
+            transition: all 300ms
+            &:hover
+              +shape($w:100%,$h:100%,$bk:#F6B26D,$clt:#fff,$bdr:5px)
+        .active
+          a
+            +shape($bk:#F6B26D,$clt:#fff)
+
+#product
+  margin-top: 150px
+  background: #F6F6F6
+  padding: 50px 0
+  clear: both
+  .ct_product
+    .it_pd
+      +shape($w:33.33%,$fl:left)
+      padding: 0 15px
+      margin-bottom: 30px
+      .ct_itpd
+        .img_it
+        .txt_it
+          background: #fff
+          padding: 25px 22px 28px 22px
+          h3
+            margin: 0 0 10px 0
+            +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+          h4
+            +font($fz:16px,$fm:UTM-AVO,$cl:#484848)
+          .price_pd
+            margin-top: 25px
+            span
+              +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
+            button
+              +shape($bk:#F6B26D,$clt:#ffffff,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:none,$fl:right)
+              +font($fz:16px)
+              cursor: pointer
+              transition: all 300ms
+              &:hover
+                +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
+  .see_all
+    clear: both
+    text-align: center
+    a
+      +font($fz:16px,$fm:UTM-AVO,$cl:#F6B26D)
+
+#article
+  padding: 50px 0
