@@ -153,7 +153,7 @@ $cl_txt: #707070
     display: block
   @if $dis=="none"
     display: none
-=font($fz:"",$fm:"",$cl:"")
+=font($fz:"",$fm:"",$cl:"",$lh:"")
   @if $fm=="UTM-AVOBOLD"
     font-family: 'UTM-AVOBOLD'
   @if $fm=="UTM-AVO"
@@ -162,3 +162,11 @@ $cl_txt: #707070
     font-size: $fz
   @if $cl !=""
     color: $cl
+  @if $lh !=""
+    line-height: $lh
+
+=shadow($sd:"")
+  @if $sd !=""
+    -webkit-box-shadow: $sd
+    -moz-box-shadow: $sd
+    box-shadow: $sd

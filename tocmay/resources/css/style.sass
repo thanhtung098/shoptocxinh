@@ -222,3 +222,117 @@ a
 
 #article
   padding: 50px 0
+  .ct_article
+    margin-top: 75px
+    .it_art
+      padding: 0 15px
+      +shape($w: 33.33%,$fl:left)
+      .img_art
+        +shape($ov:hidden)
+        img
+          transition: all 300ms
+      .txt_art
+        padding: 25px 30px
+        transition: all 300ms
+        +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
+        h3
+          +font($fz:12px,$cl:#B7B7B7)
+        h5
+          +font($fz:12px,$cl:#B7B7B7)
+          margin: 20px 0 25px 0
+          i
+            display: inline-block
+            +font($fz:20px,$cl:#B7B7B7)
+            margin-right: 10px
+            transform: translateY(3px)
+        h4
+          margin-top: 15px
+          transition: all 300ms
+          +font($fz:20px,$cl:#484848,$fm:UTM-AVOBOLD,$lh:1.5)
+        p
+          +font($fz:16px,$cl:#707070,$lh:1.5)
+        span
+          margin-top: 20px
+          display: inline-block
+          +shape($w:108px,$h:40px,$bk:#fff,$clt:#F6B26D,$bdr:20px,$border: solid 1px #F6B26D)
+          +font($fz:20px)
+          text-align: center
+          padding-top: 7px
+          transition: all 300ms
+          i
+            display: inline-block
+            transition: all 300ms
+            &:before
+              +font($fz:16px,$cl: #F6B26D)
+          &:hover
+            i
+              transform: translateX(5px)
+      &:hover
+        .img_art
+          img
+            transform: scale(1.2)
+        .txt_art
+          +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
+          h4
+            +font($fz:20px,$cl:#F6B26D,$fm:UTM-AVOBOLD,$lh:1.5)
+          span
+            +shape($w:108px,$h:40px,$bk:#F6B26D,$clt:#fff,$bdr:20px,$border: solid 1px #F6B26D)
+            i
+              &:before
+                +font($fz:16px,$cl: #fff)
+
+footer
+  background: #F6F6F6
+  padding: 45px 0
+  .ct_footer
+    padding: 0 15px
+    .ft_address
+      +shape($w:25%,$fl:left )
+      .it_ad
+        position: relative
+        padding-left: 55px
+        margin-bottom: 22px
+        +font($fz:16px,$cl: #707070,$lh:1.5)
+        i
+          +position($pos:absolute,$l:0,$t:5px) 
+          +font($fz:20px,$cl: #707070)
+        p
+          span
+            +font($fm:UTM-AVOBOLD)
+      .log_ft
+        margin-bottom: 32px
+    .ft_hours
+      padding: 50px 0 0 40px
+      +shape($w:25%,$fl:left )
+      +font($fz:16px,$cl: #707070,$lh:1.5)
+      h3
+        +font($fz:20px,$cl: #707070,$fm:UTM-AVOBOLD)
+        margin-bottom: 25px
+      p
+        padding-bottom: 20px
+        margin-bottom: 17px
+        border-bottom: solid 1px #707070
+        &:last-child
+          border: none
+    .ft_page
+      +shape($w:17%,$fl:left )
+      +font($fz:16px,$cl: #707070,$lh:1.5)
+      padding: 50px 0 0 55px
+      h3
+        +font($fz:20px,$cl: #707070,$fm:UTM-AVOBOLD)
+        margin-bottom: 25px
+      p
+        +font($cl: #707070)
+        margin-bottom: 8px
+    .ft_fanpage
+      +shape($w:33%,$fl:left )
+      padding: 50px 0 0 15px
+      h3
+        +font($fz:20px,$cl: #707070,$fm:UTM-AVOBOLD,$lh:1.5)
+        margin-bottom: 28px
+      .fb-page
+        +shape($w:100%!important,$h:160px!important)
+        span
+          +shape($w:100%!important,$h:160px!important)
+          iframe
+            +shape($w:100%!important,$h:160px!important)
