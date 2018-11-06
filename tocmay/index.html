@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shoptocxinh</title>
-  <link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick-theme.css">
+  	<link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
 	<div id="waper">
@@ -53,11 +55,14 @@
 				<div class="video_bn">
 					<div class="ct_video">
 						<h3>SHOP TÓC XINH</h3>
-						<div id="video_banner">
-							
-						</div>
+						<div id="video_banner"></div>
 						<h4>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</h4>
 					</div>
+				</div>
+			</div>
+			<div class="item_bn">
+				<div class="img_bn">
+					<img src="resources/images/banner.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -75,6 +80,9 @@
 			</div>
 			<div class="it_right">
 				<div id="img_intro">
+					<div class="it_img">
+						<img src="resources/images/intro_img.png" alt="">
+					</div>
 					<div class="it_img">
 						<img src="resources/images/intro_img.png" alt="">
 					</div>
@@ -157,11 +165,16 @@
 						<div class="img_it">
 							<img src="resources/images/p1.png" alt="">
 							<div class="hv_txt">
-								
+								<p>
+									<span><i class="icon-Card-icon-style-2"></i></span>
+									<span><a href="product-detail.html"><i class="icon-Plus"></i></a></span>
+									<span><i class="icon-Purchase-icon"></i><text>Mua ngay</text></span>
+								</p>
 							</div>
 						</div>
 						<div class="txt_it">
-							<h3>Tóc soăn dài trung niên</h3>
+							<a href="">
+							<h3>Tóc soăn dài trung niên</h3></a>
 							<h4>Tóc Giả <span>|</span> Tóc kẹp phím</h4>
 							<div class="price_pd">
 								<span>380.000 Đ</span>
@@ -360,6 +373,44 @@
 	</div>
 </body>
 <div id="fb-root"></div>
+<script src="resources/vendor/jquery.min.js"></script>
+<script src="resources/vendor/slick/slick.min.js"></script>
+<script src="resources/js/script.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+    <script type="text/javascript">
+        var player,iframe;
+    	function onYouTubeIframeAPIReady() {
+	        player = new YT.Player('video_banner', {
+	            videoId: 'O-NBzwxauZE',
+	            playerVars: {
+	            	'autoplay': 1,
+	            	'loop': 1,
+	                'color': 'white',
+	                'controls':1,
+	                'mute':1
+	            }
+	        });
+	    }
+	    $('.btn-pVideo').on('click', function () {
+	        player.playVideo();
+	    });
+		$('#banner').slick({
+	        infinite: true,
+	        autoplay: false,
+	        autoplaySpeed:2000,
+	        slidesToShow: 1,
+	        slidesToScroll: 1,
+	        arrows: true,
+	        dots: false,
+	        prevArrow: '<span class="icon-Arrow-left"></span>',
+        	nextArrow: '<span class="icon-Arrow-right"></span>',
+	    }).on('afterChange', function(event, slick, currentSlide, nextSlide){
+	        if(currentSlide == 0){
+	            player.playVideo();
+	            $('#bannerr').slick('slickPause');
+	        }
+	    });
+    </script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

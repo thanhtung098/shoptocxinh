@@ -28,7 +28,7 @@ $cl_txt: #707070
   @if $opa!=""
     opacity: $opa
   @if $bk!=""
-    background-color: $bk
+    background: $bk
   @if $clt!=""
     color: $clt
   @if $bdr!=""
@@ -58,7 +58,7 @@ $cl_txt: #707070
     font-size: $fz
   @if $cl!=""
     color: $cl
-=transition($prop...)
+=transition($prop)
   -webkit-transition: $prop
   -moz-transition: $prop
   -ms-transition: $prop
@@ -88,6 +88,10 @@ $cl_txt: #707070
   -moz-transition-delay: $prop
   -o-transition-delay: $prop
   transition-delay: $prop
+=transitionan($trs)
+    -webkit-transition: $trs
+    -o-transition: $trs
+    transition: $trs
 
 =adjust_mid($pos:"",$cord:"xy",$h:"",$w:"",$margin:"")
   @if $pos!="" and $h!="" and $w!=""
@@ -153,7 +157,7 @@ $cl_txt: #707070
     display: block
   @if $dis=="none"
     display: none
-=font($fz:"",$fm:"",$cl:"",$lh:"")
+=font($fz:"",$fm:"",$cl:"",$lh:"",$lt:"",$tc:"",$tsd:"")
   @if $fm=="UTM-AVOBOLD"
     font-family: 'UTM-AVOBOLD'
   @if $fm=="UTM-AVO"
@@ -164,7 +168,12 @@ $cl_txt: #707070
     color: $cl
   @if $lh !=""
     line-height: $lh
-
+  @if $lt !=""
+    letter-spacing: $lt
+  @if $tc !=""
+    text-align: $tc
+  @if $tsd !=""
+    text-shadow: $tsd
 =shadow($sd:"")
   @if $sd !=""
     -webkit-box-shadow: $sd

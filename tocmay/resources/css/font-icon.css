@@ -34,11 +34,9 @@
 }
 .icon-Arrow-left:before {
   content: "\e901";
-  color: #707070;
 }
 .icon-Arrow-right:before {
   content: "\e902";
-  color: #707070;
 }
 .icon-Card-icon-style-2:before {
   content: "\e903";
@@ -64,7 +62,6 @@
 }
 .icon-Plus:before {
   content: "\e90a";
-  color: #707070;
 }
 .icon-Purchase-icon:before {
   content: "\e90b";
