@@ -4,7 +4,7 @@ $deepblue:#0d1019
 $copper:#df9a08
 $cl_txt: #707070
 /*functional*/
-=shape($w:"",$h:"",$miw:"",$mih:"",$maw:"",$mah:"",$fl:"",$ov:"",$opa:"",$border:"",$outline:"",$bk:"",$clt:"",$bdr:"")
+=shape($w:"",$h:"",$miw:"",$mih:"",$maw:"",$mah:"",$fl:"",$ov:"",$opa:"",$border:"",$outline:"",$bk:"",$clt:"",$bdr:"",$dl:"")
   @if $w!=""
     width: $w
   @if $h!=""
@@ -33,6 +33,8 @@ $cl_txt: #707070
     color: $clt
   @if $bdr!=""
     border-radius: $bdr
+  @if $dl!=""
+    display: $dl
 
 =transform($prop...)
   -webkit-transform: $prop

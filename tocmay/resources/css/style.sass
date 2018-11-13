@@ -3,13 +3,13 @@
 @import "font.css"
 @import "font-icon.css"
 
-
 body
   font-family: UTM-AVO
 a
   text-decoration: none
-#wapper
-  
+#waper
+  min-width: 1170px
+  overflow: hidden
 .content
   +shape($w:1170px)
   margin: 0 auto
@@ -24,19 +24,47 @@ a
     .left_hd
       +shape($w:80px,$fl:left)
     .mid_hd
-      +shape($w:940px)
+      min-width: 980px
       +inl($dis:inline-block)
       text-align: center
       padding-top: 28px
       nav
-        ul
+        >ul
           li
             +inl($dis:inline-block)
+            position: relative
             padding: 0 25px
-            font-family: 'UTM-AVOBOLD'
-            font-size: 16px
+            +font($fz:16px,$fm:UTM-AVOBOLD)
             a
               color: #707070
+              display: block
+            >ul
+              +shape($w:110%,$bk:#fff,$opa:0)
+              +position(absolute,$l:20px,$t:35px)
+              +transitionan($trs: all 300ms ease-in-out)
+
+              z-index: 20
+              +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
+              >li
+                +font($tc:left)
+                padding: 15px 10px 
+                display: block
+                border-bottom: solid 1px #F6B26D
+                ul
+                  +shape($w:110%,$bk:#fff)
+                  +position(absolute,$l:101%,$t:0px)
+                  z-index: 20
+                  +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
+                &:hover
+                  +shape($bk:#F6B26D)
+                  >a
+                    +font($cl: #fff)
+                &:last-child
+                    border: none
+            &:hover
+              >ul
+                +shape($w:110%,$bk:#fff,$opa:1)
+
     .right_hd
       +shape($fl:right)
       padding-top: 28px
@@ -45,6 +73,7 @@ a
           +inl($dis:inline-block)
           padding: 0 12px
           position: relative
+          cursor: pointer
           .icon-Search-icon
             color: #F6B26D
           .icon-Card-icon-style-2
@@ -54,27 +83,111 @@ a
               +position(absolute,$r:-8px,$t:-10px)
               +inl($dis:block)
               font-size: 13px
-          form
-            +position(absolute,$l:-295px,$b:-50px)
-            +shape($w:330px,$ov:overflow,$bdr: 10px,$opa:0)
-            z-index: 30            
-            input
-              +shape($w:100%,$h:40px,$ov:hidden,$border:none,$outline:none,$bk:#f6f6f6)
-              padding: 0 12px
-            button
-              +position(absolute,$r:0,$t:0)
-              +shape($h: 100%,$w:65px,$border:none,$outline:none,$bk:#F6B26D,$clt:#ffffff)
-          &:hover
+          .search
+            padding-top: 25px 
+            +position(absolute,$l:-295px,$b:-58px)
+            +shape($w:330px,$opa:0)
+            +transitionan($trs: all 300ms ease-in-out)
+            cursor: pointer
+            z-index: -1
             form
-              +position(absolute,$l:-295px,$b:-50px)
-              +shape($w:330px,$ov:hidden,$bdr: 10px,$opa:1)
-              z-index: 30  
+              +shape($w:100%,$ov:hidden,$bdr: 10px)
+              position: relative
+              input
+                +shape($w:100%,$h:40px,$ov:hidden,$border:none,$outline:none,$bk:#f6f6f6)
+                padding: 0 12px
+              button
+                +position(absolute,$r:0,$t:0)
+                +shape($h: 100%,$w:65px,$border:none,$outline:none,$bk:#F6B26D,$clt:#ffffff)
           &:last-child
             padding-right: 0
+            .shoping_cart
+              padding-top: 30px
+              +position(absolute,$r:-20px,$t:30px)
+              +shape($w:420px,$opa: 0)
+              +transitionan($trs: all 300ms ease-in-out)
+              z-index: -1
+              text-align: left
+              >h3
+                +shape($bk:#484848)
+                +font($fz:16px,$cl:#fff,$fm:UTM-AVOBOLD)
+                padding: 10px 20px
+                span
+                  display: inline-block
+                  +shape($w:49%)
+                  &:last-child
+                    text-align: right
+              .l_prdcart
+                padding: 0 20px 20px 20px
+                +shape($bk:#fff)
+                .pd_crt
+                  .it_cart
+                    clear: both
+                    padding: 20px 0
+                    border-bottom: solid 1px #EFEFEF
+                    .img_itc
+                      +shape($w:22%,$dl: inline-block)
+                    .txt_itc
+                      padding-left: 10px
+                      +shape($w:76%,$dl: inline-block)
+                      h3
+                        +font($fz:18px,$cl:#707070)
+                        margin-bottom: 12px
+                      h4
+                        +font($fz:16px,$cl:#484848)
+                        margin-bottom: 12px
+                      p
+                        +font($fz:24px,$cl:#F6B26D,$fm:UTM-AVOBOLD)
+                    &:last-child
+                      border-bottom: none
+                .total_cart
+                  padding: 15px  
+                  +shape($bk: #F6F6F6,$bdr: 7px)
+                  +font($fz:16px,$fm:UTM-AVOBOLD,$cl:#484848)
+                  .txt_tt
+                    +shape($w:40%,$dl: inline-block,$bk: #F6F6F6)
+                  .price_tt
+                    +shape($w:58%,$dl: inline-block)
+                    +font($tc: right,$cl:#F6B26D)
+                .bt_cart
+                  margin-top: 20px
+                  +font($tc: center,$fm:UTM-AVOBOLD)
+                  .btn_cart
+                    padding: 15px
+                    +transitionan($trs: all 300ms ease-in-out)
+                    +font($cl:#F6B26D)
+                    +shape($w:49%,$dl: inline-block,$border: solid 1px #F6B26D,$bdr: 5px,$bk: #fff)
+                    i
+                      margin-right: 12px
+                    &:hover
+                      +shape($bk: #F6B26D)
+                      +font($cl:#fff)
+              &:after
+                +shape($w:0,$h:0)
+                +position(absolute,$r:20px,$t: 20px)
+                content: ''
+                border-left: 15px solid transparent
+                border-right: 15px solid transparent
+                border-bottom: 12px solid #484848
+          &:hover
+            .search
+              +shape($opa:1)
+              z-index: 30 
+            .shoping_cart
+              +shape($opa:1)
+              z-index: 30       
+
 #banner
   margin: 0 auto
   .slick-list
     position: relative
+    &:after
+      +position(absolute,$l:0,$t:0)
+      content: ''
+      z-index: 1
+      +shape($w:100%,$h:100%)
+      background: url('../../resources/images/sky.png')
+      background-size: 100% 100%
   .icon-Arrow-left
     +adjust_mid($pos:absolute,$cord:y)
     +position($pos:absolute,$l: 5vw)
@@ -93,6 +206,7 @@ a
       +font($cl:#F6B26D)
   .item_bn
     position: relative
+    z-index: 100
     .video_bn
       +position(absolute,$l:0,$t:0,$r:0,$b:0)
       content: ''
@@ -111,13 +225,6 @@ a
         #video_banner
           width: 100%
           height: 370px
-  &:after
-    +position(absolute,$l:0,$t:0)
-    content: ''
-    z-index: 1
-    +shape($w:100%,$h:100%)
-    background: url('../../resources/images/sky.png')
-    background-size: 100% 100%
 
 .tt_section
   position: relative
@@ -288,6 +395,7 @@ a
         .txt_it
           background: #fff
           padding: 25px 22px 28px 22px
+          +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
           h3
             margin: 0 0 10px 0
             +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
@@ -305,6 +413,8 @@ a
               &:hover
                 +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
         &:hover
+          .txt_it
+            +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
           .img_it
             img
               transform: scale(1.2)
@@ -407,7 +517,7 @@ footer
         +font($fz:20px,$cl: #707070,$fm:UTM-AVOBOLD)
         margin-bottom: 25px
       p
-        padding-bottom: 20px
+        padding-bottom: 15px
         margin-bottom: 17px
         border-bottom: solid 1px #707070
         &:last-child
