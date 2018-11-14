@@ -489,7 +489,45 @@ a
               &:before
                 +font($fz:16px,$cl: #fff)
 
+#cate_pduct
+  margin-top: 80px
+  .it_cate
+    margin-bottom: 50px
+    float: left
+    .img_cate
+      +shape($w:75%,$fl:left)
+      padding: 0 15px
+    .txt_cate
+      +shape($w:25%,$fl:left)
+      padding: 0 15px
+      h3
+        +font($fz: 36px,$fm: UTM-AVOBOLD)
+        margin-bottom: 20px
+      ul
+        li
+          margin-bottom: 15px
+          a
+            +font($fz: 16px,$cl:#2E2E2E)
+      h4
+        margin-top: 20px
+        +font($fz: 16px,$fm: UTM-AVO,$cl:#F6B26D)
+        i
+          +font($fz: 14px)
+    &:nth-child(2)
+      +shape($w:50%,$fl:left)
+      .img_cate
+        +shape($w:51%,$fl:left)
+      .txt_cate
+        +shape($w:49%,$fl:left)
+    &:nth-child(3)
+      +shape($w:50%,$fl:left)
+      .img_cate
+        +shape($w:67%,$fl:left)
+      .txt_cate
+        +shape($w:33%,$fl:left)
+
 footer
+  margin-top: 30px
   background: #F6F6F6
   padding: 45px 0
   .ct_footer
