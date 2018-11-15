@@ -10,4 +10,5 @@ $(document).ready(function(){
 	    prevArrow: '<span class="icon-Arrow-left"></span>',
         nextArrow: '<span class="icon-Arrow-right"></span>',
 	});
+	
 });
