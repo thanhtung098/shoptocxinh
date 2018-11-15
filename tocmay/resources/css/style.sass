@@ -7,8 +7,8 @@ body
   font-family: UTM-AVO
 a
   text-decoration: none
-#waper
-  min-width: 1170px
+.wrapper
+  min-width: 1260px
   overflow: hidden
 .content
   +shape($w:1170px)
@@ -225,306 +225,305 @@ a
         #video_banner
           width: 100%
           height: 370px
+#index
 
-.tt_section
-  position: relative
-  font-size: 36px
-  font-family: 'UTM-AVOBOLD'
-  color: #F6B26D
-  &:after
-    +position(absolute,$l:0,$r:0,$b:-30px)
-    content: ''
-    width: 60px
-    height: 5px
-    background: #F6B26D
-#introduce
-  padding: 0 15px
-  margin-top: 130px
-  .it_left
-    +shape($w:50%,$fl:left)
-    h3
-      +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
-    .txt_script
-      margin-top: 55px
-      color: #707070
-      line-height: 1.5
-  .it_right
-    +shape($w:50%,$fl:left)
+  .tt_section
+    position: relative
+    font-size: 36px
+    font-family: 'UTM-AVOBOLD'
+    color: #F6B26D
+    &:after
+      +position(absolute,$l:0,$r:0,$b:-30px)
+      content: ''
+      width: 60px
+      height: 5px
+      background: #F6B26D
+  #introduce
     padding: 0 15px
-    #img_intro
-      padding: 0 40px
-      .it_img
-        text-align: center
-        outline: none
-        img
-          border-radius: 10px
-      .icon-Arrow-left
-        +adjust_mid($pos:absolute,$cord:y)
-        +position($pos:absolute,$l:0px)
-        +font($fz:45px,$cl:#707070)
-        cursor: pointer
-        &:hover
-          +font($cl:#F6B26D)
-      .icon-Arrow-right
-        +adjust_mid($pos:absolute,$cord:y)
-        +position($pos:absolute,$r:0px)
-        +font($fz:45px,$cl:#707070)
-        cursor: pointer
-        &:hover
-          +font($cl:#F6B26D)
-#main_pd
-  margin-top: 150px
-  .it_main
-    +shape($w:33.33%,$fl:left)
-    padding: 0 15px
-    .ct_itm
-      +transitionan($trs: all 300ms ease-in-out)
-      .img_it
-        margin-bottom: 15px
-        overflow: hidden
-        img
-          width: 100%
-          +transitionan($trs: all 1600ms ease-in-out)
-      .txt_it
-        text-align: center
-        margin-bottom: 20px
-        h3
-          font-size: 36px
-          font-family: UTM-AVOBOLD
-          margin-bottom: 7px
-        p
-          font-size: 16px
-          color: #707070
-          line-height: 1.5
-          margin-bottom: 12px
-        a 
-          color: #F6B26D
-          +inl($dis: inline-block)
-          i
-            +inl($dis: inline-block)
-      &:hover
-        transform: translateY(-10px)
-        .img_it
+    margin-top: 130px
+    .it_left
+      +shape($w:50%,$fl:left)
+      h3
+        +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
+      .txt_script
+        margin-top: 55px
+        color: #707070
+        line-height: 1.5
+    .it_right
+      +shape($w:50%,$fl:left)
+      padding: 0 15px
+      #img_intro
+        padding: 0 40px
+        .it_img
+          text-align: center
+          outline: none
           img
-            transform: scale(1.3)
-.block_title
-    text-align: center
-    h3
-      +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
-      letter-spacing: 5px
-    .tt_section
-      &:after
-        +position(absolute,$l:0,$r:0,$b:-30px)
-        +shape($w:65px,$h:5px,$bdr:#F6B26D)
-        content: ''
-        margin: 0 auto
-    .ds_section
-      +im_txt($mar: 60px 0 0 0,$fz:16px,$cl:#707070)
-    nav
-      margin: 30px 0 45px 0
-      ul
-        li
-          +shape($w:140px,$h:40px)
-          display: inline-block
-          padding: 0 10px
-          a
-            display: inline-block
-            padding-top: 11px
-            +shape($w:100%,$h:100%,$bk:#fff,$clt:#707070,$bdr:5px)
-            transition: all 300ms
-            &:hover
-              +shape($w:100%,$h:100%,$bk:#F6B26D,$clt:#fff,$bdr:5px)
-        .active
-          a
-            +shape($bk:#F6B26D,$clt:#fff)
-
-#product
-  margin-top: 150px
-  background: #F6F6F6
-  padding: 50px 0
-  clear: both
-  .ct_product
-    .it_pd
+            border-radius: 10px
+        .icon-Arrow-left
+          +adjust_mid($pos:absolute,$cord:y)
+          +position($pos:absolute,$l:0px)
+          +font($fz:45px,$cl:#707070)
+          cursor: pointer
+          &:hover
+            +font($cl:#F6B26D)
+        .icon-Arrow-right
+          +adjust_mid($pos:absolute,$cord:y)
+          +position($pos:absolute,$r:0px)
+          +font($fz:45px,$cl:#707070)
+          cursor: pointer
+          &:hover
+            +font($cl:#F6B26D)
+  #main_pd
+    margin-top: 150px
+    .it_main
       +shape($w:33.33%,$fl:left)
       padding: 0 15px
-      margin-bottom: 30px
-      .ct_itpd
+      .ct_itm
+        +transitionan($trs: all 300ms ease-in-out)
         .img_it
-          +position(relative)
+          margin-bottom: 15px
+          overflow: hidden
+          img
+            width: 100%
+            +transitionan($trs: all 1600ms ease-in-out)
+        .txt_it
+          text-align: center
+          margin-bottom: 20px
+          h3
+            font-size: 36px
+            font-family: UTM-AVOBOLD
+            margin-bottom: 7px
+          p
+            font-size: 16px
+            color: #707070
+            line-height: 1.5
+            margin-bottom: 12px
+          a 
+            color: #F6B26D
+            +inl($dis: inline-block)
+            i
+              +inl($dis: inline-block)
+        &:hover
+          transform: translateY(-10px)
+          .img_it
+            img
+              transform: scale(1.3)
+  .block_title
+      text-align: center
+      h3
+        +im_txt($mar: 0 0 17px 0,$fz:18px,$cl:#707070)
+        letter-spacing: 5px
+      .tt_section
+        &:after
+          +position(absolute,$l:0,$r:0,$b:-30px)
+          +shape($w:65px,$h:5px,$bdr:#F6B26D)
+          content: ''
+          margin: 0 auto
+      .ds_section
+        +im_txt($mar: 60px 0 0 0,$fz:16px,$cl:#707070)
+      nav
+        margin: 30px 0 45px 0
+        ul
+          li
+            +shape($w:140px,$h:40px)
+            display: inline-block
+            padding: 0 10px
+            a
+              display: inline-block
+              padding-top: 11px
+              +shape($w:100%,$h:100%,$bk:#fff,$clt:#707070,$bdr:5px)
+              transition: all 300ms
+              &:hover
+                +shape($w:100%,$h:100%,$bk:#F6B26D,$clt:#fff,$bdr:5px)
+          .active
+            a
+              +shape($bk:#F6B26D,$clt:#fff)
+  #product
+    margin-top: 150px
+    background: #F6F6F6
+    padding: 50px 0
+    clear: both
+    .ct_product
+      .it_pd
+        +shape($w:33.33%,$fl:left)
+        padding: 0 15px
+        margin-bottom: 30px
+        .ct_itpd
+          .img_it
+            +position(relative)
+            +shape($ov:hidden)
+            img
+              +transitionan($trs: all 500ms ease-in-out)
+            .hv_txt
+              transition: all 300ms
+              +position(absolute,$l:0,$t:0)
+              +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:0)
+              p
+                +position(absolute,$l:0,$b:0)
+                +shape($w:100%)
+                text-align: center
+                transition: all 500ms
+                span
+                  padding: 0 10px
+                  cursor: pointer
+                  position: relative
+                  text
+                    +position($pos:absolute,$l:-18px,$t:-67px)
+                    display: inline-block
+                    padding-top: 9px
+                    +shape($w:112px,$h:36px,$clt:#707070,$bk:#ffffff,$bdr:7px,$opa:0)
+                    +font($fz:14px)
+                    &:after
+                      content: ''
+                      +position($pos:absolute,$b:-10px,$l:0,$r:0)
+                      +shape($w:0,$h:0)
+                      margin: 0 auto
+                      border-left: 9px solid transparent
+                      border-right: 9px solid transparent
+                      border-top: 13px solid #ffffff
+                  i
+                    display: table-cell
+                    +shape($w:52px,$h:52px,$bk:#fff,$bdr:50%,$clt:#F6B26D)
+                    vertical-align: middle
+                    margin: 0 auto
+                    transition: all 500ms
+                  &:hover
+                    text
+                      +shape($opa:1)
+                    i
+                      +shape($bk:#F6B26D,$clt:#ffffff)
+          .txt_it
+            background: #fff
+            padding: 25px 22px 28px 22px
+            +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
+            h3
+              margin: 0 0 10px 0
+              +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+            h4
+              +font($fz:16px,$fm:UTM-AVO,$cl:#484848)
+            .price_pd
+              margin-top: 25px
+              span
+                +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
+              button
+                +shape($bk:#F6B26D,$clt:#ffffff,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:none,$fl:right)
+                +font($fz:16px)
+                cursor: pointer
+                transition: all 300ms
+                &:hover
+                  +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
+          &:hover
+            .txt_it
+              +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
+            .img_it
+              img
+                transform: scale(1.2)
+              .hv_txt
+                p
+                  transform: translateY(-20px)
+                +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:1)
+    .see_all
+      clear: both
+      text-align: center
+      a
+        +font($fz:16px,$fm:UTM-AVO,$cl:#F6B26D)
+  #article
+    padding: 50px 0
+    .ct_article
+      margin-top: 75px
+      .it_art
+        padding: 0 15px
+        +shape($w: 33.33%,$fl:left)
+        .img_art
           +shape($ov:hidden)
           img
             +transitionan($trs: all 500ms ease-in-out)
-          .hv_txt
-            transition: all 300ms
-            +position(absolute,$l:0,$t:0)
-            +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:0)
-            p
-              +position(absolute,$l:0,$b:0)
-              +shape($w:100%)
-              text-align: center
-              transition: all 500ms
-              span
-                padding: 0 10px
-                cursor: pointer
-                position: relative
-                text
-                  +position($pos:absolute,$l:-18px,$t:-67px)
-                  display: inline-block
-                  padding-top: 9px
-                  +shape($w:112px,$h:36px,$clt:#707070,$bk:#ffffff,$bdr:7px,$opa:0)
-                  +font($fz:14px)
-                  &:after
-                    content: ''
-                    +position($pos:absolute,$b:-10px,$l:0,$r:0)
-                    +shape($w:0,$h:0)
-                    margin: 0 auto
-                    border-left: 9px solid transparent
-                    border-right: 9px solid transparent
-                    border-top: 13px solid #ffffff
-                i
-                  display: table-cell
-                  +shape($w:52px,$h:52px,$bk:#fff,$bdr:50%,$clt:#F6B26D)
-                  vertical-align: middle
-                  margin: 0 auto
-                  transition: all 500ms
-                &:hover
-                  text
-                    +shape($opa:1)
-                  i
-                    +shape($bk:#F6B26D,$clt:#ffffff)
-        .txt_it
-          background: #fff
-          padding: 25px 22px 28px 22px
+        .txt_art
+          padding: 25px 30px
+          transition: all 300ms
           +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
           h3
-            margin: 0 0 10px 0
-            +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+            +font($fz:12px,$cl:#B7B7B7)
+          h5
+            +font($fz:12px,$cl:#B7B7B7)
+            margin: 20px 0 25px 0
+            i
+              display: inline-block
+              +font($fz:20px,$cl:#B7B7B7)
+              margin-right: 10px
+              transform: translateY(3px)
           h4
-            +font($fz:16px,$fm:UTM-AVO,$cl:#484848)
-          .price_pd
-            margin-top: 25px
-            span
-              +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
-            button
-              +shape($bk:#F6B26D,$clt:#ffffff,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:none,$fl:right)
-              +font($fz:16px)
-              cursor: pointer
+            margin-top: 15px
+            transition: all 300ms
+            +font($fz:20px,$cl:#484848,$fm:UTM-AVOBOLD,$lh:1.5)
+          p
+            +font($fz:16px,$cl:#707070,$lh:1.5)
+          span
+            margin-top: 20px
+            display: inline-block
+            +shape($w:108px,$h:40px,$bk:#fff,$clt:#F6B26D,$bdr:20px,$border: solid 1px #F6B26D)
+            +font($fz:20px)
+            text-align: center
+            padding-top: 7px
+            transition: all 300ms
+            i
+              display: inline-block
               transition: all 300ms
-              &:hover
-                +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
+              &:before
+                +font($fz:16px,$cl: #F6B26D)
+            &:hover
+              i
+                transform: translateX(5px)
         &:hover
-          .txt_it
-            +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
-          .img_it
+          .img_art
             img
               transform: scale(1.2)
-            .hv_txt
-              p
-                transform: translateY(-20px)
-              +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:1)
-  .see_all
-    clear: both
-    text-align: center
-    a
-      +font($fz:16px,$fm:UTM-AVO,$cl:#F6B26D)
-
-#article
-  padding: 50px 0
-  .ct_article
-    margin-top: 75px
-    .it_art
-      padding: 0 15px
-      +shape($w: 33.33%,$fl:left)
-      .img_art
-        +shape($ov:hidden)
-        img
-          +transitionan($trs: all 500ms ease-in-out)
-      .txt_art
-        padding: 25px 30px
-        transition: all 300ms
-        +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
-        h3
-          +font($fz:12px,$cl:#B7B7B7)
-        h5
-          +font($fz:12px,$cl:#B7B7B7)
-          margin: 20px 0 25px 0
-          i
-            display: inline-block
-            +font($fz:20px,$cl:#B7B7B7)
-            margin-right: 10px
-            transform: translateY(3px)
-        h4
-          margin-top: 15px
-          transition: all 300ms
-          +font($fz:20px,$cl:#484848,$fm:UTM-AVOBOLD,$lh:1.5)
-        p
-          +font($fz:16px,$cl:#707070,$lh:1.5)
-        span
-          margin-top: 20px
-          display: inline-block
-          +shape($w:108px,$h:40px,$bk:#fff,$clt:#F6B26D,$bdr:20px,$border: solid 1px #F6B26D)
-          +font($fz:20px)
-          text-align: center
-          padding-top: 7px
-          transition: all 300ms
-          i
-            display: inline-block
-            transition: all 300ms
-            &:before
-              +font($fz:16px,$cl: #F6B26D)
-          &:hover
-            i
-              transform: translateX(5px)
-      &:hover
-        .img_art
-          img
-            transform: scale(1.2)
-        .txt_art
-          +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
-          h4
-            +font($fz:20px,$cl:#F6B26D,$fm:UTM-AVOBOLD,$lh:1.5)
-          span
-            +shape($w:108px,$h:40px,$bk:#F6B26D,$clt:#fff,$bdr:20px,$border: solid 1px #F6B26D)
-            i
-              &:before
-                +font($fz:16px,$cl: #fff)
+          .txt_art
+            +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
+            h4
+              +font($fz:20px,$cl:#F6B26D,$fm:UTM-AVOBOLD,$lh:1.5)
+            span
+              +shape($w:108px,$h:40px,$bk:#F6B26D,$clt:#fff,$bdr:20px,$border: solid 1px #F6B26D)
+              i
+                &:before
+                  +font($fz:16px,$cl: #fff)
 
 #cate_pduct
-  margin-top: 80px
-  .it_cate
-    margin-bottom: 50px
-    float: left
-    .img_cate
-      +shape($w:75%,$fl:left)
-      padding: 0 15px
-    .txt_cate
-      +shape($w:25%,$fl:left)
-      padding: 0 15px
-      h3
-        +font($fz: 36px,$fm: UTM-AVOBOLD)
-        margin-bottom: 20px
-      ul
-        li
-          margin-bottom: 15px
-          a
-            +font($fz: 16px,$cl:#2E2E2E)
-      h4
-        margin-top: 20px
-        +font($fz: 16px,$fm: UTM-AVO,$cl:#F6B26D)
-        i
-          +font($fz: 14px)
-    &:nth-child(2)
-      +shape($w:50%,$fl:left)
+    margin-top: 80px
+    .it_cate
+      margin-bottom: 50px
+      float: left
       .img_cate
-        +shape($w:51%,$fl:left)
+        +shape($w:75%,$fl:left)
+        padding: 0 15px
       .txt_cate
-        +shape($w:49%,$fl:left)
-    &:nth-child(3)
-      +shape($w:50%,$fl:left)
-      .img_cate
-        +shape($w:67%,$fl:left)
-      .txt_cate
-        +shape($w:33%,$fl:left)
+        +shape($w:25%,$fl:left)
+        padding: 0 15px
+        h3
+          +font($fz: 36px,$fm: UTM-AVOBOLD)
+          margin-bottom: 20px
+        ul
+          li
+            margin-bottom: 15px
+            a
+              +font($fz: 16px,$cl:#2E2E2E)
+        h4
+          margin-top: 20px
+          +font($fz: 16px,$fm: UTM-AVO,$cl:#F6B26D)
+          i
+            +font($fz: 14px)
+      &:nth-child(2)
+        +shape($w:50%,$fl:left)
+        .img_cate
+          +shape($w:51%,$fl:left)
+        .txt_cate
+          +shape($w:49%,$fl:left)
+      &:nth-child(3)
+        +shape($w:50%,$fl:left)
+        .img_cate
+          +shape($w:67%,$fl:left)
+        .txt_cate
+          +shape($w:33%,$fl:left)  
 
 footer
   margin-top: 30px
@@ -582,3 +581,6 @@ footer
           +shape($w:100%!important,$h:160px!important)
           iframe
             +shape($w:100%!important,$h:160px!important)
+
+#under
+  .item_pd

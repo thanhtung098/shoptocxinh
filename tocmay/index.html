@@ -130,7 +130,7 @@
 				<div class="video_bn">
 					<div class="ct_video">
 						<h3>SHOP TÓC XINH</h3>
-						<div id="video_banner"></div>
+						<div id="video_banner" data-video-id="O-NBzwxauZE"></div>
 						<h4>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</h4>
 					</div>
 				</div>
@@ -487,45 +487,5 @@
 <script src="resources/vendor/slick/slick.min.js"></script>
 <script src="resources/js/script.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
-    <script type="text/javascript">
-        var player,iframe;
-    	function onYouTubeIframeAPIReady() {
-	        player = new YT.Player('video_banner', {
-	            videoId: 'O-NBzwxauZE',
-	            playerVars: {
-	            	'autoplay': 1,
-	            	'loop': 0,
-	                'color': 'white',
-	                'controls':1,
-	                'mute':1
-	            }
-	        });
-	    }
-	    $('.btn-pVideo').on('click', function () {
-	        player.playVideo();
-	    });
-		$('#banner').slick({
-	        infinite: true,
-	        autoplay: false,
-	        autoplaySpeed:2000,
-	        slidesToShow: 1,
-	        slidesToScroll: 1,
-	        arrows: true,
-	        dots: false,
-	        prevArrow: '<span class="icon-Arrow-left"></span>',
-        	nextArrow: '<span class="icon-Arrow-right"></span>',
-	    }).on('afterChange', function(event, slick, currentSlide, nextSlide){
-	        if(currentSlide == 0){
-	            player.playVideo();
-	            $('#bannerr').slick('slickPause');
-	        }
-	    });
-    </script>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=704558949717927&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="resources/js/common.js"></script>
 </html>
