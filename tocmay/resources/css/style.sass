@@ -531,7 +531,7 @@ header
         .txt_cate
           +shape($w:33%,$fl:left)  
 #content_page
-  margin-bottom: 30px
+  margin-bottom: 50px
 footer  
   background: #F6F6F6
   padding: 45px 0
@@ -646,6 +646,60 @@ footer
         color: $cl_txt
     //end .breadcrumb
   
+  .blog-small-title
+    display: block
+    font-size: 12px
+    color: $color_gray_normal
+
+  .blog-title
+    display: block
+    font-size: 18px
+    color: $cl_txt
+    margin-top: 15px
+
+  .blog-post-time
+    display: block
+    font-size: 12px
+    color: $color_gray_normal
+    margin-top: 20px
+    &:before
+      position: relative
+      margin-right: 10px
+      font-size: 16px   
+      top: 2px
+
+  .blog-article
+    color: $cl_txt
+    margin-top: 20px
+    max-height: 200px
+
+  .post-btn
+    display: inline-block
+    text-align: center
+    text-decoration: none
+    font-size: 14px
+    padding: 10px 20px
+    border: 1px solid $color_orange_light
+    color: $color_orange_light
+    margin-top: 30px
+    border-radius: 50px
+    &:hover
+      background: $color_orange_light
+      color: #fff
+      &:after
+        border-color: #fff
+    &:after
+      content: ''
+      display: inline-block
+      position: relative
+      +adjust_mid(relative,"y")
+      width: 12px
+      height: 12px        
+      border-top: 1px solid $color_orange_light
+      border-right: 1px solid $color_orange_light
+      +transform(rotate(45deg))
+      margin-left: 5px
+
   .main-blog_block
     overflow: hidden
     .blog-image
@@ -655,29 +709,67 @@ footer
     .blog-article-box
       float: left
       width: 400px 
-    
-    .blog-small-title
-      display: block
-      font-size: 12px
-      color: $color_gray_normal
 
     .blog-title
-      display: block
       font-size: 24px
-      color: $cl_txt
-      margin-top: 20px
-
-    .blog-post-time
-      display: block
-      font-size: 12px
-      color: $color_gray_normal
-      margin-top: 20px
-      &:before
-        position: relative
-        margin-right: 10px
-        font-size: 16px   
-        top: 2px     
+      margin-top: 20px     
 
     .blog-article
-      color: $cl_txt
-      margin-top: 25px
+      margin-top: 25px      
+    
+    .post-btn
+      display: inline-block
+      text-align: center
+      text-decoration: none
+      font-size: 14px
+      padding: 10px 20px
+      border: 1px solid $color_orange_light
+      color: $color_orange_light
+      margin-top: 30px
+      border-radius: 50px
+      &:hover
+        background: $color_orange_light
+        color: #fff
+        &:after
+          border-color: #fff
+      &:after
+        content: ''
+        display: inline-block
+        position: relative
+        +adjust_mid(relative,"y")
+        width: 12px
+        height: 12px        
+        border-top: 1px solid $color_orange_light
+        border-right: 1px solid $color_orange_light
+        +transform(rotate(45deg))
+        margin-left: 5px
+
+  .sub-blog_wrapper
+    margin-top: 70px
+    padding: 0 0 5px
+    overflow: hidden
+    .sub-blog_post
+      +shape(32%,450px)
+      float: left
+      margin-right: 2%
+      margin-top: 30px      
+      -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      &:nth-child(3n+3)
+        margin-right: 0
+      &:nth-child(-n+3)
+        margin-top: 0
+      .blog-image
+        position: relative
+        +shape(100%,174px) 
+        img
+          position: absolute
+          max-width: 100%
+          max-height: 100%        
+          +adjust_mid(absolute)
+
+      .blog-article-box
+        margin-top: 20px
+        padding: 0 20px
+        
