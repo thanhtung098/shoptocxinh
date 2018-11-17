@@ -584,3 +584,21 @@ footer
 
 #under
   .item_pd
+  .breadcrumb
+    padding: 0 15px
+    ul
+      li
+        display: inline-block
+  .title_pg
+    +shape($w:766px,$h:186px)
+    margin: 0 auto
+    background: url('../images/smoke.png')
+    background-size: cover
+    background-position: center center
+    position: relative
+    +font($fz: 20px,$tc:center, $cl: #fff ,$fm: UTM-AVOBOLD,$lt:4px)
+    span
+      +adjust_mid($pos:absolute,$cord:y)
+      left: 0
+      right: 0
+      margin: 0 auto
