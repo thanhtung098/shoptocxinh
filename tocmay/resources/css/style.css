@@ -1050,4 +1050,93 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   height: 160px !important;
 }
 
+#under p {
+  line-height: 1.25em;
+}
+#under .hd_content {
+  padding: 20px 0;
+}
+#under .main_content {
+  width: 1140px;
+  margin: 0 auto;
+}
+#under .breadcrumb {
+  list-style-type: none;
+  list-style: none;
+  width: 1140px;
+  margin: 0 auto;
+}
+#under .breadcrumb li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  list-style: none;
+  vertical-align: middle;
+  color: #707070;
+}
+#under .breadcrumb li:after {
+  content: "/";
+  display: inline-block;
+}
+#under .breadcrumb li:first-child a {
+  margin-left: 0;
+}
+#under .breadcrumb li:last-child {
+  margin-left: 15px;
+}
+#under .breadcrumb li:last-child:after {
+  display: none;
+}
+#under .breadcrumb li:last-child a {
+  margin-right: 0;
+}
+#under .breadcrumb a {
+  display: inline-block;
+  text-decoration: none;
+  color: #bbb;
+  padding: 10px 0;
+  margin: 0 15px;
+}
+#under .breadcrumb a:hover {
+  color: #707070;
+}
+#under .main-blog_block {
+  overflow: hidden;
+}
+#under .main-blog_block .blog-image {
+  float: right;
+  max-width: 700px;
+}
+#under .main-blog_block .blog-article {
+  float: left;
+  width: 400px;
+}
+#under .main-blog_block .blog-small-title {
+  display: block;
+  font-size: 12px;
+  color: #bbb;
+}
+#under .main-blog_block .blog-title {
+  display: block;
+  font-size: 24px;
+  color: #707070;
+  margin-top: 20px;
+}
+#under .main-blog_block .blog-post-time {
+  display: block;
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 20px;
+}
+#under .main-blog_block .blog-post-time:before {
+  position: relative;
+  margin-right: 10px;
+  font-size: 16px;
+  top: 2px;
+}
+#under .main-blog_block p {
+  color: #707070;
+  margin-top: 25px;
+}
+
 /*# sourceMappingURL=style.css.map */
