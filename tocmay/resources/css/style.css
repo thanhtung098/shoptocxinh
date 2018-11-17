@@ -1053,6 +1053,26 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under p {
   line-height: 1.25em;
 }
+#under .under-ttl {
+  position: relative;
+  font-size: 24px;
+  color: #fff;
+  width: 730px;
+  height: 170px;
+  margin: 0 auto 30px;
+  background: url("../images/under-ttl.png") center/contain no-repeat;
+}
+#under .under-ttl span {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 #under .hd_content {
   padding: 20px 0;
 }
@@ -1107,7 +1127,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   float: right;
   max-width: 700px;
 }
-#under .main-blog_block .blog-article {
+#under .main-blog_block .blog-article-box {
   float: left;
   width: 400px;
 }
@@ -1134,7 +1154,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   font-size: 16px;
   top: 2px;
 }
-#under .main-blog_block p {
+#under .main-blog_block .blog-article {
   color: #707070;
   margin-top: 25px;
 }
