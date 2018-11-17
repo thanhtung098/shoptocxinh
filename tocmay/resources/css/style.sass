@@ -15,23 +15,29 @@ a
   margin: 0 auto
 .clear
   clear: both
-#header
-  +shape($w:1140px,$h:80px)
-  padding: 5px 0
-  margin: 0 auto
-  .inner_hd
-    text-align: center
+header
+  position: relative
+  height: 80px
+  padding: 5px 0  
+  border-bottom: 2px solid $color-gray-light
+  z-index: 2
+  .inner_hd    
+    width: 1140px
+    margin: 0 auto
+    text-align: center    
+    +clearfix
+    &:after    
     .left_hd
       +shape($w:80px,$fl:left)
     .mid_hd
-      min-width: 980px
-      +inl($dis:inline-block)
+      max-width: 950px
+      display: inline-block
       text-align: center
       padding-top: 28px
       nav
-        >ul
+        >ul          
           li
-            +inl($dis:inline-block)
+            display: inline-block
             position: relative
             padding: 0 25px
             +font($fz:16px,$fm:UTM-AVOBOLD)
@@ -41,8 +47,7 @@ a
             >ul
               +shape($w:110%,$bk:#fff,$opa:0)
               +position(absolute,$l:20px,$t:35px)
-              +transitionan($trs: all 300ms ease-in-out)
-
+              +transition(all 300ms ease-in-out)
               z-index: 20
               +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
               >li
@@ -69,8 +74,9 @@ a
       +shape($fl:right)
       padding-top: 28px
       ul
+        padding-right: 10px
         li
-          +inl($dis:inline-block)
+          display: inline-block
           padding: 0 12px
           position: relative
           cursor: pointer
@@ -81,13 +87,13 @@ a
             span
               +shape($w:16px,$h:16px,$bdr:50%,$bk:#FF3B3B,$clt: #fff)
               +position(absolute,$r:-8px,$t:-10px)
-              +inl($dis:block)
+              display: block
               font-size: 13px
           .search
             padding-top: 25px 
             +position(absolute,$l:-295px,$b:-58px)
             +shape($w:330px,$opa:0)
-            +transitionan($trs: all 300ms ease-in-out)
+            +transition(all 300ms ease-in-out)
             cursor: pointer
             z-index: -1
             form
@@ -105,7 +111,7 @@ a
               padding-top: 30px
               +position(absolute,$r:-20px,$t:30px)
               +shape($w:420px,$opa: 0)
-              +transitionan($trs: all 300ms ease-in-out)
+              +transition(all 300ms ease-in-out)
               z-index: -1
               text-align: left
               >h3
@@ -154,7 +160,7 @@ a
                   +font($tc: center,$fm:UTM-AVOBOLD)
                   .btn_cart
                     padding: 15px
-                    +transitionan($trs: all 300ms ease-in-out)
+                    +transition(all 300ms ease-in-out)
                     +font($cl:#F6B26D)
                     +shape($w:49%,$dl: inline-block,$border: solid 1px #F6B26D,$bdr: 5px,$bk: #fff)
                     i
@@ -279,13 +285,13 @@ a
       +shape($w:33.33%,$fl:left)
       padding: 0 15px
       .ct_itm
-        +transitionan($trs: all 300ms ease-in-out)
+        +transition(all 300ms ease-in-out)
         .img_it
           margin-bottom: 15px
           overflow: hidden
           img
             width: 100%
-            +transitionan($trs: all 1600ms ease-in-out)
+            +transition(all 1600ms ease-in-out)
         .txt_it
           text-align: center
           margin-bottom: 20px
@@ -300,9 +306,9 @@ a
             margin-bottom: 12px
           a 
             color: #F6B26D
-            +inl($dis: inline-block)
+            display: inline-block
             i
-              +inl($dis: inline-block)
+              display: inline-block
         &:hover
           transform: translateY(-10px)
           .img_it
@@ -353,7 +359,7 @@ a
             +position(relative)
             +shape($ov:hidden)
             img
-              +transitionan($trs: all 500ms ease-in-out)
+              +transition(all 500ms ease-in-out)
             .hv_txt
               transition: all 300ms
               +position(absolute,$l:0,$t:0)
@@ -437,7 +443,7 @@ a
         .img_art
           +shape($ov:hidden)
           img
-            +transitionan($trs: all 500ms ease-in-out)
+            +transition(all 500ms ease-in-out)
         .txt_art
           padding: 25px 30px
           transition: all 300ms
@@ -524,9 +530,9 @@ a
           +shape($w:67%,$fl:left)
         .txt_cate
           +shape($w:33%,$fl:left)  
-
-footer
-  margin-top: 30px
+#content_page
+  margin-bottom: 30px
+footer  
   background: #F6F6F6
   padding: 45px 0
   .ct_footer
@@ -583,4 +589,95 @@ footer
             +shape($w:100%!important,$h:160px!important)
 
 #under
+  p
+    line-height: 1.25em
+  .under-ttl
+    position: relative
+    font-size: 24px
+    color: #fff
+    +shape(730px,170px)
+    margin: 0 auto 30px  
+    background: url('../images/under-ttl.png') center/contain no-repeat
+    span
+      display: inline-block
+      +adjust_mid(relative)      
+
+
   .item_pd
+  .hd_content
+    padding: 20px 0
+  .main_content
+    width: 1140px
+    margin: 0 auto
+  .breadcrumb
+    +unlist
+    width: 1140px
+    margin: 0 auto
+
+    li
+      position: relative
+      display: inline-block
+      +unlist
+      vertical-align: middle 
+      color: $cl_txt      
+      &:after
+        content: '/'
+        display: inline-block        
+
+      &:first-child
+        a
+          margin-left: 0
+
+      &:last-child
+        margin-left: 15px
+        &:after
+          display: none
+        a
+          margin-right: 0    
+
+    a
+      display: inline-block
+      text-decoration: none
+      color: $color_gray_normal
+      padding: 10px 0
+      margin: 0 15px
+
+      &:hover
+        color: $cl_txt
+    //end .breadcrumb
+  
+  .main-blog_block
+    overflow: hidden
+    .blog-image
+      float: right
+      max-width: 700px
+
+    .blog-article-box
+      float: left
+      width: 400px 
+    
+    .blog-small-title
+      display: block
+      font-size: 12px
+      color: $color_gray_normal
+
+    .blog-title
+      display: block
+      font-size: 24px
+      color: $cl_txt
+      margin-top: 20px
+
+    .blog-post-time
+      display: block
+      font-size: 12px
+      color: $color_gray_normal
+      margin-top: 20px
+      &:before
+        position: relative
+        margin-right: 10px
+        font-size: 16px   
+        top: 2px     
+
+    .blog-article
+      color: $cl_txt
+      margin-top: 25px

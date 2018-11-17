@@ -1,7 +1,6 @@
 /*variable*/
-
-$deepblue:#0d1019
-$copper:#df9a08
+$color_gray_light: #F6F6F6
+$color_gray_normal: #bbb
 $cl_txt: #707070
 /*functional*/
 =shape($w:"",$h:"",$miw:"",$mih:"",$maw:"",$mah:"",$fl:"",$ov:"",$opa:"",$border:"",$outline:"",$bk:"",$clt:"",$bdr:"",$dl:"")
@@ -53,6 +52,7 @@ $cl_txt: #707070
     top: $t
   @if $b!= ""
     bottom: $b
+
 =im_txt($mar:"",$fz:"",$cl:"")
   @if $mar!=""
     margin: $mar
@@ -60,6 +60,7 @@ $cl_txt: #707070
     font-size: $fz
   @if $cl!=""
     color: $cl
+
 =transition($prop)
   -webkit-transition: $prop
   -moz-transition: $prop
@@ -90,10 +91,6 @@ $cl_txt: #707070
   -moz-transition-delay: $prop
   -o-transition-delay: $prop
   transition-delay: $prop
-=transitionan($trs)
-    -webkit-transition: $trs
-    -o-transition: $trs
-    transition: $trs
 
 =adjust_mid($pos:"",$cord:"xy",$h:"",$w:"",$margin:"")
   @if $pos!="" and $h!="" and $w!=""
@@ -152,13 +149,6 @@ $cl_txt: #707070
   @if $just-items!=""
     justify-items: $just-items
 
-=inl($dis:"")
-  @if $dis=="inline-block"
-    display: inline-block
-  @if $dis=="block"
-    display: block
-  @if $dis=="none"
-    display: none
 =font($fz:"",$fm:"",$cl:"",$lh:"",$lt:"",$tc:"",$tsd:"")
   @if $fm=="UTM-AVOBOLD"
     font-family: 'UTM-AVOBOLD'
@@ -176,8 +166,19 @@ $cl_txt: #707070
     text-align: $tc
   @if $tsd !=""
     text-shadow: $tsd
+
 =shadow($sd:"")
   @if $sd !=""
     -webkit-box-shadow: $sd
     -moz-box-shadow: $sd
     box-shadow: $sd
+
+=clearfix()
+  &:after
+    content: ''
+    display: block
+    clear: both
+
+=unlist()
+  list-style-type: none
+  list-style: none 
