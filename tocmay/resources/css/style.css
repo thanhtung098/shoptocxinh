@@ -950,7 +950,7 @@ header .inner_hd .right_hd ul li:hover .shoping_cart {
 }
 
 #content_page {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 footer {
@@ -1128,8 +1128,15 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .blog-title {
   display: block;
   font-size: 18px;
-  color: #707070;
   margin-top: 15px;
+}
+#under .blog-title a {
+  text-decoration: none;
+  color: #707070;
+  line-height: 24px;
+}
+#under .prevent-event-pc {
+  cursor: default;
 }
 #under .blog-post-time {
   display: block;
@@ -1147,6 +1154,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   color: #707070;
   margin-top: 20px;
   max-height: 200px;
+  overflow: hidden;
 }
 #under .post-btn {
   display: inline-block;
@@ -1188,91 +1196,48 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   transform: rotate(45deg);
   margin-left: 5px;
 }
-#under .main-blog_block {
+#under .blog_wrapper {
+  padding: 3px;
   overflow: hidden;
 }
-#under .main-blog_block .blog-image {
+#under .main-blog_post {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#under .main-blog_post .blog-image {
   float: right;
   max-width: 700px;
 }
-#under .main-blog_block .blog-article-box {
+#under .main-blog_post .blog-article-box {
   float: left;
   width: 400px;
 }
-#under .main-blog_block .blog-title {
+#under .main-blog_post .blog-title {
   font-size: 24px;
   margin-top: 20px;
 }
-#under .main-blog_block .blog-article {
+#under .main-blog_post .blog-article {
   margin-top: 25px;
 }
-#under .main-blog_block .post-btn {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: 1px solid #e4d2bd;
-  color: #e4d2bd;
-  margin-top: 30px;
-  border-radius: 50px;
-}
-#under .main-blog_block .post-btn:hover {
-  background: #e4d2bd;
-  color: #fff;
-}
-#under .main-blog_block .post-btn:hover:after {
-  border-color: #fff;
-}
-#under .main-blog_block .post-btn:after {
-  content: "";
-  display: inline-block;
-  position: relative;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-top: 1px solid #e4d2bd;
-  border-right: 1px solid #e4d2bd;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-left: 5px;
-}
-#under .sub-blog_wrapper {
-  margin-top: 70px;
-  padding: 0 0 5px;
-  overflow: hidden;
-}
-#under .sub-blog_wrapper .sub-blog_post {
-  width: 32%;
+#under .sub-blog_post {
+  width: 358px;
   height: 450px;
   float: left;
-  margin-right: 2%;
+  margin-right: 30px;
   margin-top: 30px;
   -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16);
   -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16);
 }
-#under .sub-blog_wrapper .sub-blog_post:nth-child(3n+3) {
+#under .sub-blog_post:nth-child(3n+4) {
   margin-right: 0;
 }
-#under .sub-blog_wrapper .sub-blog_post:nth-child(-n+3) {
-  margin-top: 0;
-}
-#under .sub-blog_wrapper .sub-blog_post .blog-image {
+#under .sub-blog_post .blog-image {
   position: relative;
   width: 100%;
   height: 174px;
 }
-#under .sub-blog_wrapper .sub-blog_post .blog-image img {
+#under .sub-blog_post .blog-image img {
   position: absolute;
   max-width: 100%;
   max-height: 100%;
@@ -1285,9 +1250,25 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-#under .sub-blog_wrapper .sub-blog_post .blog-article-box {
+#under .sub-blog_post .blog-article-box {
   margin-top: 20px;
   padding: 0 20px;
+}
+#under .sub-blog_post .blog-article {
+  max-height: 60px;
+}
+#under .under_loadmore {
+  text-align: center;
+  margin-top: 30px;
+}
+#under .under_loadmore a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #e4d2bd;
+  font-weight: 400;
+}
+#under .under_loadmore a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

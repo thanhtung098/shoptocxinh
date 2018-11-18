@@ -62,10 +62,22 @@ const common = (function(){
 		}(document, 'script', 'facebook-jssdk'));
 	}; //end_generateFacebookFanpage
 
+  const _preventEvent = function(){
+    const elHasPrevent = document.getElementsByClassName('prevent-event-pc');
+    if(elHasPrevent.length == 0){return;}
+
+    $(elHasPrevent).on("click",function($elHasPreventItem){
+      if(window.outerWidth > 640){
+        $elHasPreventItem.preventDefault();
+      }      
+    })
+  }; //end_preventEvent
+
 	return {
 		init(){
 			_generateSlider();
 			_generateFacebookFanpage();
+      _preventEvent();
 		}
 	}
 })();

@@ -1,0 +1,220 @@
+@import "library"
+@import "normalize.css"
+@import "font.css"
+@import "font-icon.css"
+
+.pc
+  display: block 
+
+.sp
+  display: none 
+
+@media screen and (max-width: 640px)
+  .pc
+    display: none
+
+  .sp
+    display: block
+
+  .wrapper
+    min-width: 100%
+    overflow: hidden
+
+  #content_page
+    +shape($w:100%)
+    padding: 0 10px    
+
+  #under
+    .hd_content
+      padding-bottom: 0
+    .under-ttl
+      width: 90%
+      margin-bottom: 20px
+      height: 120px
+
+    .main_content
+      width: 100%
+
+    .blog_wrapper
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap    
+
+    .main-blog_post  
+      width: 48% 
+      margin-bottom: 0      
+      -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      padding-bottom: 10px
+      .blog-image
+        position: relative
+        float: none
+        max-width: none                
+        +shape(100%,160px) 
+        overflow: hidden
+        img       
+          +shape($w:100%, $maw: none, $mah: none)             
+          +position(absolute,$t: 0,$l: 50%)
+          +transform(translate(-50%,0))
+
+      .blog-article-box
+        float: none
+        width: 100%
+        margin-top: 20px
+        padding: 0 10px
+
+      .blog-title
+        font-size: 18px
+        margin-top: 15px     
+
+      .blog-article
+        margin-top: 20px  
+        max-height: none
+        height: 80px
+    // end main-blog_post
+
+    .sub-blog_post      
+      +shape(48%,auto)
+      float: none
+      margin-right: 0
+      margin-top: 30px            
+      padding-bottom: 10px
+      &:nth-child(3n+4)
+        margin-right: 0     
+      &:nth-child(-n+2) 
+        margin-top: 0
+      .blog-image
+        position: relative
+        +shape(100%,160px) 
+        overflow: hidden
+        img
+          position: static
+          +shape($h: 100%, $maw: none, $mah: none)          
+          +position(absolute,$t: 0)
+          +transform(translate(-50%,0))          
+
+      .blog-article-box        
+        padding: 0 10px
+
+      .blog-article
+        max-height: none
+        height: 80px        
+    // sub-blog_post
+
+    .post-btn-outer
+      text-align: center
+
+    .post-btn
+      margin-top: 20px
+
+@media screen and (max-width: 580px)
+
+  #under
+    .main-blog_post      
+      .blog-image
+        height: 150px
+        img
+          +shape($w: auto, $h: 100%)
+    // end main-blog_post
+
+    .sub-blog_post
+      .blog-image
+        height: 150px
+    //end sub-blog_post
+
+    .post-btn
+      padding: 7px 20px
+  
+@media screen and (max-width: 520px)
+  #under
+    .under-ttl
+      height: 110px
+      font-size: 22px
+
+@media screen and (max-width: 500px)
+
+
+@media screen and (max-width: 480px)
+
+  #under
+    .main-blog_post      
+      .blog-image
+        height: 120px
+        img
+          +shape($w: 100%,$h: auto)
+    // end main-blog_post
+
+    .sub-blog_post
+      .blog-image
+        height: 120px
+    //end sub-blog_post
+
+@media screen and (max-width: 425px)
+
+  #content_page
+    padding: 0 5px
+  #under
+    .under-ttl
+      height: 90px
+      font-size: 20px
+
+    .main-blog_post  
+      width: 49%     
+      .blog-title 
+        margin-top: 10px
+        font-size: 14px
+        a
+          line-height: 17px
+      .blog-article
+        display: none
+      .post-btn-outer
+        display: none
+    // end main-blog_post
+
+    .sub-blog_post
+      width: 49%   
+      margin-top: 20px  
+      .blog-title 
+        margin-top: 10px
+        font-size: 14px 
+        a
+          line-height: 17px
+      .blog-article
+        display: none        
+      .post-btn-outer
+        display: none
+
+    .blog-post-time
+      margin-top: 10px
+    //end sub-blog_post
+
+@media screen and (max-width: 375px)
+  
+  #under
+    .main-blog_post      
+      .blog-image
+        height: 110px
+    // end main-blog_post
+
+    .sub-blog_post
+      .blog-image
+        height: 110px
+    //end sub-blog_post
+
+    .blog-post-time
+      &:before
+        font-size: 14px
+
+@media screen and (max-width: 320px)
+
+  #under
+    .main-blog_post      
+      .blog-image
+        height: 90px
+    // end main-blog_post
+
+    .sub-blog_post
+      .blog-image
+        height: 90px
+    //end sub-blog_post
