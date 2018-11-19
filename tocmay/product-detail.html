@@ -122,61 +122,46 @@
 				</div>
 			</div>
 		</header>
-		<div id="content_page">
-			<div id="cate_pduct" class="content">
-				<div class="it_cate">
-					<div class="img_cate">
-						<img src="resources/images/cate1.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Tóc giả cho trẻ em</a></li>
-							<li><a href="">• Tóc bộ dài</a></li>
-							<li><a href="">• Tóc bộ ngắn</a></li>
-							<li><a href="">• Tóc bộ ngắn người trung niên</a></li>
-							<li><a href="">• Tóc nửa đầu</a></li>
-							<li><a href="">• Cosplay</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc bộ <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
-				<div class="it_cate ">
-					<div class="img_cate">
-						<img src="resources/images/cate2.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Tóc mái</a></li>
-							<li><a href="">• Tóc giả</a></li>
-							<li><a href="">• Tóc mái cho nam giới</a></li>
-							<li><a href="">• Tóc thật nguyên đầu</a></li>
-							<li><a href="">• Tóc hói thật</a></li>
-							<li><a href="">• Bột phủ tóc</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc thật <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
-				<div class="it_cate">
-					<div class="img_cate">
-						<img src="resources/images/cate3.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Line màu</a></li>
-							<li><a href="">• Tóc Búi</a></li>
-							<li><a href="">• Tóc cột</a></li>
-							<li><a href="">• Tóc kẹp phím</a></li>
-							<li><a href="">• Tóc mái</a></li>
-							<li><a href="">• Cosplay</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc giả <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
+		<div id="content_page" >
+			<div class="breadcrumb content">
+				<ul>
+					<li>
+						<a href="">Trang chủ /</a>
+					</li>
+					<li>
+						<a href="">Sản phẩm /</a>
+					</li>
+					<li>
+						<a href="">Tóc bộ </a>
+					</li>
+				</ul>
 			</div>
-			<div class="clear"></div>
+			<div class="pd_detail content">
+				<div class="img_detail">
+					<div class="img_zoom_container">
+					  <img id="myimage" src="resources/images/p1.png" width="300" height="240" alt="Girl">
+					  <div id="myresult" class="img_zoom_result"></div>
+					</div>
+					<div class="thum_imgpd slide_general">
+						<div class="it_img">
+							<img src="resources/images/p1.png" alt="">
+						</div>
+						<div class="it_img">
+							<img src="resources/images/p2.png" alt="">
+						</div>
+						<div class="it_img">
+							<img src="resources/images/p3.png" alt="">
+						</div>
+						<div class="it_img">
+							<img src="resources/images/p3.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="imfor_detail">
+					
+				</div>
+				<div class="clear"></div>
+			</div>
 		</div>
 		<footer>
 			<div class="ct_footer content">
@@ -227,41 +212,10 @@
 <script src="resources/vendor/slick/slick.min.js"></script>
 <script src="resources/js/script.js"></script>
 <script type="text/javascript" src="resources/js/common.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
-    <script type="text/javascript">
-        var player,iframe;
-    	function onYouTubeIframeAPIReady() {
-	        player = new YT.Player('video_banner', {
-	            videoId: 'O-NBzwxauZE',
-	            playerVars: {
-	            	'autoplay': 1,
-	            	'loop': 0,
-	                'color': 'white',
-	                'controls':1,
-	                'mute':1
-	            }
-	        });
-	    }
-	    $('.btn-pVideo').on('click', function () {
-	        player.playVideo();
-	    });
-		$('#banner').slick({
-	        infinite: true,
-	        autoplay: false,
-	        autoplaySpeed:2000,
-	        slidesToShow: 1,
-	        slidesToScroll: 1,
-	        arrows: true,
-	        dots: false,
-	        prevArrow: '<span class="icon-Arrow-left"></span>',
-        	nextArrow: '<span class="icon-Arrow-right"></span>',
-	    }).on('afterChange', function(event, slick, currentSlide, nextSlide){
-	        if(currentSlide == 0){
-	            player.playVideo();
-	            $('#bannerr').slick('slickPause');
-	        }
-	    });
-    </script>
+<script type="text/javascript" src="resources/js/zoom.js"></script>
+<script type="text/javascript">
+	imageZoom("myimage", "myresult");
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

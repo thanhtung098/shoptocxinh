@@ -15,23 +15,129 @@ a
   margin: 0 auto
 .clear
   clear: both
-#header
-  +shape($w:1140px,$h:80px)
-  padding: 5px 0
-  margin: 0 auto
-  .inner_hd
-    text-align: center
+
+.ct_product
+  .it_pd
+    +shape($w:33.33%,$fl:left)
+    padding: 0 15px
+    margin-bottom: 30px
+    .ct_itpd
+      .img_it
+        +position(relative)
+        +shape($ov:hidden)
+        img
+          +transition(all 500ms ease-in-out)
+        .hv_txt
+          transition: all 300ms
+          +position(absolute,$l:0,$t:0)
+          +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:0)
+          p
+            +position(absolute,$l:0,$b:0)
+            +shape($w:100%)
+            text-align: center
+            transition: all 500ms
+            span
+              padding: 0 10px
+              cursor: pointer
+              position: relative
+              text
+                +position($pos:absolute,$l:-18px,$t:-67px)
+                display: inline-block
+                padding-top: 9px
+                +shape($w:112px,$h:36px,$clt:#707070,$bk:#ffffff,$bdr:7px,$opa:0)
+                +font($fz:14px)
+                &:after
+                  content: ''
+                  +position($pos:absolute,$b:-10px,$l:0,$r:0)
+                  +shape($w:0,$h:0)
+                  margin: 0 auto
+                  border-left: 9px solid transparent
+                  border-right: 9px solid transparent
+                  border-top: 13px solid #ffffff
+              i
+                display: table-cell
+                +shape($w:52px,$h:52px,$bk:#fff,$bdr:50%,$clt:#F6B26D)
+                vertical-align: middle
+                margin: 0 auto
+                transition: all 500ms
+              &:hover
+                text
+                  +shape($opa:1)
+                i
+                  +shape($bk:#F6B26D,$clt:#ffffff)
+      .txt_it
+        background: #fff
+        padding: 25px 22px 28px 22px
+        +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
+        h3
+          margin: 0 0 10px 0
+          +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+        h4
+          +font($fz:16px,$fm:UTM-AVO,$cl:#484848)
+        .price_pd
+          margin-top: 25px
+          span
+            +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
+          button
+            +shape($bk:#F6B26D,$clt:#ffffff,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:none,$fl:right)
+            +font($fz:16px)
+            cursor: pointer
+            transition: all 300ms
+            &:hover
+              +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
+      &:hover
+        .txt_it
+          +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
+        .img_it
+          img
+            transform: scale(1.2)
+          .hv_txt
+            p
+              transform: translateY(-20px)
+            +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:1)
+.see_all
+  clear: both
+  text-align: center
+  a
+    +font($fz:16px,$fm:UTM-AVO,$cl:#F6B26D)
+.slide_general
+  .icon-Arrow-left
+    +adjust_mid($pos:absolute,$cord:y)
+    +position($pos:absolute,$l:0px)
+    +font($fz:45px,$cl:#707070)
+    cursor: pointer
+    &:hover
+      +font($cl:#F6B26D)
+  .icon-Arrow-right
+    +adjust_mid($pos:absolute,$cord:y)
+    +position($pos:absolute,$r:0px)
+    +font($fz:45px,$cl:#707070)
+    cursor: pointer
+    &:hover
+      +font($cl:#F6B26D)
+header
+  position: relative
+  height: 80px
+  padding: 5px 0  
+  border-bottom: 2px solid #F6F6F6
+  z-index: 2
+  .inner_hd    
+    width: 1140px
+    margin: 0 auto
+    text-align: center    
+    +clearfix
+    &:after    
     .left_hd
       +shape($w:80px,$fl:left)
     .mid_hd
-      min-width: 980px
-      +inl($dis:inline-block)
+      max-width: 950px
+      display: inline-block
       text-align: center
       padding-top: 28px
       nav
-        >ul
+        >ul          
           li
-            +inl($dis:inline-block)
+            display: inline-block
             position: relative
             padding: 0 25px
             +font($fz:16px,$fm:UTM-AVOBOLD)
@@ -41,8 +147,7 @@ a
             >ul
               +shape($w:110%,$bk:#fff,$opa:0)
               +position(absolute,$l:20px,$t:35px)
-              +transitionan($trs: all 300ms ease-in-out)
-
+              +transition(all 300ms ease-in-out)
               z-index: 20
               +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
               >li
@@ -69,8 +174,9 @@ a
       +shape($fl:right)
       padding-top: 28px
       ul
+        padding-right: 10px
         li
-          +inl($dis:inline-block)
+          display: inline-block
           padding: 0 12px
           position: relative
           cursor: pointer
@@ -81,13 +187,13 @@ a
             span
               +shape($w:16px,$h:16px,$bdr:50%,$bk:#FF3B3B,$clt: #fff)
               +position(absolute,$r:-8px,$t:-10px)
-              +inl($dis:block)
+              display: block
               font-size: 13px
           .search
             padding-top: 25px 
             +position(absolute,$l:-295px,$b:-58px)
             +shape($w:330px,$opa:0)
-            +transitionan($trs: all 300ms ease-in-out)
+            +transition(all 300ms ease-in-out)
             cursor: pointer
             z-index: -1
             form
@@ -102,12 +208,13 @@ a
           &:last-child
             padding-right: 0
             .shoping_cart
-              padding-top: 30px
-              +position(absolute,$r:-20px,$t:30px)
+              padding-top: 44px
+              +position(absolute,$r:-20px,$t:14px)
               +shape($w:420px,$opa: 0)
-              +transitionan($trs: all 300ms ease-in-out)
+              +transition(all 300ms ease-in-out)
               z-index: -1
               text-align: left
+              display: none
               >h3
                 +shape($bk:#484848)
                 +font($fz:16px,$cl:#fff,$fm:UTM-AVOBOLD)
@@ -154,7 +261,7 @@ a
                   +font($tc: center,$fm:UTM-AVOBOLD)
                   .btn_cart
                     padding: 15px
-                    +transitionan($trs: all 300ms ease-in-out)
+                    +transition(all 300ms ease-in-out)
                     +font($cl:#F6B26D)
                     +shape($w:49%,$dl: inline-block,$border: solid 1px #F6B26D,$bdr: 5px,$bk: #fff)
                     i
@@ -164,7 +271,7 @@ a
                       +font($cl:#fff)
               &:after
                 +shape($w:0,$h:0)
-                +position(absolute,$r:20px,$t: 20px)
+                +position(absolute,$r:20px,$t: 34px)
                 content: ''
                 border-left: 15px solid transparent
                 border-right: 15px solid transparent
@@ -175,7 +282,8 @@ a
               z-index: 30 
             .shoping_cart
               +shape($opa:1)
-              z-index: 30       
+              z-index: 30  
+              display: block  
 
 #banner
   margin: 0 auto
@@ -226,7 +334,6 @@ a
           width: 100%
           height: 370px
 #index
-
   .tt_section
     position: relative
     font-size: 36px
@@ -259,33 +366,20 @@ a
           outline: none
           img
             border-radius: 10px
-        .icon-Arrow-left
-          +adjust_mid($pos:absolute,$cord:y)
-          +position($pos:absolute,$l:0px)
-          +font($fz:45px,$cl:#707070)
-          cursor: pointer
-          &:hover
-            +font($cl:#F6B26D)
-        .icon-Arrow-right
-          +adjust_mid($pos:absolute,$cord:y)
-          +position($pos:absolute,$r:0px)
-          +font($fz:45px,$cl:#707070)
-          cursor: pointer
-          &:hover
-            +font($cl:#F6B26D)
+        
   #main_pd
     margin-top: 150px
     .it_main
       +shape($w:33.33%,$fl:left)
       padding: 0 15px
       .ct_itm
-        +transitionan($trs: all 300ms ease-in-out)
+        +transition(all 300ms ease-in-out)
         .img_it
           margin-bottom: 15px
           overflow: hidden
           img
             width: 100%
-            +transitionan($trs: all 1600ms ease-in-out)
+            +transition(all 1600ms ease-in-out)
         .txt_it
           text-align: center
           margin-bottom: 20px
@@ -300,9 +394,9 @@ a
             margin-bottom: 12px
           a 
             color: #F6B26D
-            +inl($dis: inline-block)
+            display: inline-block
             i
-              +inl($dis: inline-block)
+              display: inline-block
         &:hover
           transform: translateY(-10px)
           .img_it
@@ -344,89 +438,6 @@ a
     padding: 50px 0
     clear: both
     .ct_product
-      .it_pd
-        +shape($w:33.33%,$fl:left)
-        padding: 0 15px
-        margin-bottom: 30px
-        .ct_itpd
-          .img_it
-            +position(relative)
-            +shape($ov:hidden)
-            img
-              +transitionan($trs: all 500ms ease-in-out)
-            .hv_txt
-              transition: all 300ms
-              +position(absolute,$l:0,$t:0)
-              +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:0)
-              p
-                +position(absolute,$l:0,$b:0)
-                +shape($w:100%)
-                text-align: center
-                transition: all 500ms
-                span
-                  padding: 0 10px
-                  cursor: pointer
-                  position: relative
-                  text
-                    +position($pos:absolute,$l:-18px,$t:-67px)
-                    display: inline-block
-                    padding-top: 9px
-                    +shape($w:112px,$h:36px,$clt:#707070,$bk:#ffffff,$bdr:7px,$opa:0)
-                    +font($fz:14px)
-                    &:after
-                      content: ''
-                      +position($pos:absolute,$b:-10px,$l:0,$r:0)
-                      +shape($w:0,$h:0)
-                      margin: 0 auto
-                      border-left: 9px solid transparent
-                      border-right: 9px solid transparent
-                      border-top: 13px solid #ffffff
-                  i
-                    display: table-cell
-                    +shape($w:52px,$h:52px,$bk:#fff,$bdr:50%,$clt:#F6B26D)
-                    vertical-align: middle
-                    margin: 0 auto
-                    transition: all 500ms
-                  &:hover
-                    text
-                      +shape($opa:1)
-                    i
-                      +shape($bk:#F6B26D,$clt:#ffffff)
-          .txt_it
-            background: #fff
-            padding: 25px 22px 28px 22px
-            +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
-            h3
-              margin: 0 0 10px 0
-              +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
-            h4
-              +font($fz:16px,$fm:UTM-AVO,$cl:#484848)
-            .price_pd
-              margin-top: 25px
-              span
-                +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
-              button
-                +shape($bk:#F6B26D,$clt:#ffffff,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:none,$fl:right)
-                +font($fz:16px)
-                cursor: pointer
-                transition: all 300ms
-                &:hover
-                  +shape($bk:#ffffff,$clt:#F6B26D,$outline:none,$bdr:5px,$w:120px,$h:35px,$border:#F6B26D solid 1px,$fl:right)
-          &:hover
-            .txt_it
-              +shadow($sd:0px 1px 9px 2px rgba(246,178,109,0.3))
-            .img_it
-              img
-                transform: scale(1.2)
-              .hv_txt
-                p
-                  transform: translateY(-20px)
-                +shape($w:100%,$h:100%,$bk:url('../images/course.png'),$opa:1)
-    .see_all
-      clear: both
-      text-align: center
-      a
-        +font($fz:16px,$fm:UTM-AVO,$cl:#F6B26D)
   #article
     padding: 50px 0
     .ct_article
@@ -437,7 +448,7 @@ a
         .img_art
           +shape($ov:hidden)
           img
-            +transitionan($trs: all 500ms ease-in-out)
+            +transition(all 500ms ease-in-out)
         .txt_art
           padding: 25px 30px
           transition: all 300ms
@@ -524,9 +535,9 @@ a
           +shape($w:67%,$fl:left)
         .txt_cate
           +shape($w:33%,$fl:left)  
-
-footer
-  margin-top: 30px
+#content_page
+  margin-bottom: 30px
+footer  
   background: #F6F6F6
   padding: 45px 0
   .ct_footer
@@ -583,12 +594,36 @@ footer
             +shape($w:100%!important,$h:160px!important)
 
 #under
-  .item_pd
+
+  .it_pd
+    +shape($w:25%)
+    .ct_itpd
+      .img_it
+        .hv_txt
+          p
+            span
+              text
+                +shape($w:100px)
+                left: -14px
+      .txt_it
+        padding-top: 15px
+        text-align: center
+        h3
+          +font($fz:19px)
+        .price_pd
+          margin-top: 10px
+          span
+            +font($fz:19px)
+          button
+            display: none
   .breadcrumb
+    margin-top: 45px
     padding: 0 15px
     ul
       li
         display: inline-block
+        a
+          +font($cl:#B5B5B5) 
   .title_pg
     +shape($w:766px,$h:186px)
     margin: 0 auto
@@ -602,3 +637,68 @@ footer
       left: 0
       right: 0
       margin: 0 auto
+  .tab_pd
+    padding: 0 15px
+    ul
+      li
+        +shape($w:16.666%,$fl:left,$bk:#F6F6F6)
+        a
+          +font($fz: 14px,$tc:center,$cl:#2E2E2E)
+          display: block
+          padding: 25px 0
+        &:hover
+          +shape($bk:#F6B26D)
+          a
+            +font($cl:#fff)
+      .active
+        +shape($bk:#F6B26D)
+        a
+          +font($cl:#fff)
+  .block_prd
+    .tt_block
+        padding: 65px 15px 35px 15px
+        text-align: center
+        h2
+          +font($fz:32px,$fm:UTM-AVOBOLD)
+          position: relative
+          &:after
+            content: ''
+            margin: 0 auto
+            +position($pos:absolute,$l:0,$r:0,$t: -30px)
+            +shape($w:60px,$h:7px,$bk:#F6B26D)
+  .pd_detail
+    margin-top: 45px
+    .img_detail
+      +shape($w:50%,$fl:left)
+      padding: 0 50px
+      .img_zoom_container
+        position: relative
+        
+        >img
+          width: 100%
+        .img_zoom_lens
+          position: absolute
+          border: 1px solid #d4d4d4
+          width: 70px
+          height: 70px
+        .img_zoom_result 
+          z-index: -1
+          +position($pos:absolute,$r: -180px,$t:30px)
+          +shape($w:250px,$h:250px,$border: 3px solid #fff,$bdr: 50%,$opa:0)
+        &:hover
+          .img_zoom_result 
+            z-index: 30
+            +shape($opa: 1)
+      .thum_imgpd
+        margin-top: 22px
+        margin-left: -11px
+        margin-right: -11px
+        .icon-Arrow-left
+          +position($pos: absolute,$l:-20px)
+        .icon-Arrow-right
+          +position($pos: absolute,$r:-20px)
+        .it_img
+          padding: 0 11px
+          outline: none
+    .imfor_detail
+      +shape($w:50%,$fl:left)
