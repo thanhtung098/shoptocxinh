@@ -220,8 +220,16 @@
   #under .main-blog_post .blog-image {
     height: 110px;
   }
+  #under .main-blog_post .blog-image img {
+    width: auto;
+    height: 100%;
+  }
   #under .sub-blog_post .blog-image {
     height: 110px;
+  }
+  #under .sub-blog_post .blog-image img {
+    width: auto;
+    height: 100%;
   }
   #under .blog-post-time:before {
     font-size: 14px;

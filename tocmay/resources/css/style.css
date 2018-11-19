@@ -1216,6 +1216,9 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   font-size: 24px;
   margin-top: 20px;
 }
+#under .main-blog_post .blog-title a {
+  line-height: 29px;
+}
 #under .main-blog_post .blog-article {
   margin-top: 25px;
 }
