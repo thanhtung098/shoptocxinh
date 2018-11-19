@@ -119,7 +119,7 @@ header
   position: relative
   height: 80px
   padding: 5px 0  
-  border-bottom: 2px solid #F6F6F6
+  border-bottom: 2px solid $color-gray-light
   z-index: 2
   .inner_hd    
     width: 1140px
@@ -702,3 +702,182 @@ footer
           outline: none
     .imfor_detail
       +shape($w:50%,$fl:left)
+  p
+    line-height: 1.25em
+  .under-ttl
+    position: relative
+    font-size: 24px
+    color: #fff
+    +shape(730px,170px)
+    margin: 0 auto 30px  
+    background: url('../images/under-ttl.png') center/contain no-repeat
+    span
+      display: inline-block
+      +adjust_mid(relative)      
+
+
+  .item_pd
+  .hd_content
+    padding: 20px 0
+  .main_content
+    width: 1140px
+    margin: 0 auto
+  .breadcrumb
+    +unlist
+    width: 1140px
+    margin: 0 auto
+
+    li
+      position: relative
+      display: inline-block
+      +unlist
+      vertical-align: middle 
+      color: $cl_txt      
+      &:after
+        content: '/'
+        display: inline-block        
+
+      &:first-child
+        a
+          margin-left: 0
+
+      &:last-child
+        margin-left: 15px
+        &:after
+          display: none
+        a
+          margin-right: 0    
+
+    a
+      display: inline-block
+      text-decoration: none
+      color: $color_gray_normal
+      padding: 10px 0
+      margin: 0 15px
+
+      &:hover
+        color: $cl_txt
+    //end .breadcrumb
+  
+  .blog-small-title
+    display: block
+    font-size: 12px
+    color: $color_gray_normal
+
+  .blog-title
+    display: block
+    font-size: 18px    
+    margin-top: 15px
+    a
+      text-decoration: none
+      color: $cl_txt
+      line-height: 24px
+
+  .prevent-event-pc
+      cursor: default
+
+  .blog-post-time
+    display: block
+    font-size: 12px
+    color: $color_gray_normal
+    margin-top: 20px
+    &:before
+      position: relative
+      margin-right: 10px
+      font-size: 16px   
+      top: 2px
+
+  .blog-article
+    color: $cl_txt
+    margin-top: 20px
+    max-height: 200px
+    overflow: hidden
+
+  .post-btn
+    display: inline-block
+    text-align: center
+    text-decoration: none
+    font-size: 14px
+    padding: 10px 20px
+    border: 1px solid $color_orange_light
+    color: $color_orange_light
+    margin-top: 30px
+    border-radius: 50px
+    &:hover
+      background: $color_orange_light
+      color: #fff
+      &:after
+        border-color: #fff
+    &:after
+      content: ''
+      display: inline-block
+      position: relative
+      +adjust_mid(relative,"y")
+      width: 12px
+      height: 12px        
+      border-top: 1px solid $color_orange_light
+      border-right: 1px solid $color_orange_light
+      +transform(rotate(45deg))
+      margin-left: 5px
+
+  .blog_wrapper    
+    padding: 3px
+    overflow: hidden
+
+  .main-blog_post
+    overflow: hidden
+    margin-bottom: 20px
+    .blog-image
+      float: right
+      max-width: 700px
+
+    .blog-article-box
+      float: left
+      width: 400px 
+
+    .blog-title
+      font-size: 24px
+      margin-top: 20px     
+
+    .blog-article
+      margin-top: 25px          
+  
+
+  .sub-blog_post
+    +shape(358px,450px)
+    float: left
+    margin-right: 30px
+    margin-top: 30px      
+    -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+    -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+    box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+    &:nth-child(3n+4)
+      margin-right: 0      
+    .blog-image
+      position: relative
+      +shape(100%,174px) 
+      img
+        position: absolute
+        max-width: 100%
+        max-height: 100%        
+        +adjust_mid(absolute)
+
+    .blog-article-box
+      margin-top: 20px
+      padding: 0 20px
+
+    .blog-article
+      max-height: 60px        
+
+
+  .under_loadmore
+    text-align: center
+    margin-top: 30px
+    a
+      text-decoration: none
+      font-size: 18px
+      color: $color_orange_light
+      font-weight: 400
+      &:hover
+        text-decoration: underline 
+
