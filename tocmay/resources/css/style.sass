@@ -148,7 +148,7 @@ header
               +shape($w:110%,$bk:#fff,$opa:0)
               +position(absolute,$l:20px,$t:35px)
               +transition(all 300ms ease-in-out)
-              z-index: 20
+              z-index: -1
               +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
               >li
                 +font($tc:left)
@@ -168,6 +168,7 @@ header
                     border: none
             &:hover
               >ul
+                z-index: 20
                 +shape($w:110%,$bk:#fff,$opa:1)
 
     .right_hd
@@ -616,14 +617,6 @@ footer
             +font($fz:19px)
           button
             display: none
-  .breadcrumb
-    margin-top: 45px
-    padding: 0 15px
-    ul
-      li
-        display: inline-block
-        a
-          +font($cl:#B5B5B5) 
   .title_pg
     +shape($w:766px,$h:186px)
     margin: 0 auto
@@ -673,14 +666,13 @@ footer
       padding: 0 50px
       .img_zoom_container
         position: relative
-        
         >img
           width: 100%
         .img_zoom_lens
           position: absolute
-          border: 1px solid #d4d4d4
-          width: 70px
-          height: 70px
+          padding-top: 22px
+          +font($fz: 24px,$cl: #fff,$tc: center)
+          +shape($w:70px,$h:70px,$bdr: 50%,$bk:rgba(246,178,109,0.6))
         .img_zoom_result 
           z-index: -1
           +position($pos:absolute,$r: -180px,$t:30px)
@@ -702,6 +694,45 @@ footer
           outline: none
     .imfor_detail
       +shape($w:50%,$fl:left)
+      padding-left: 40px
+      h3
+        +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+      .code_pd
+        margin: 20px 0 10px 0
+        +font($fz:16px,$cl:#484848)
+      .price_pd
+        +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
+      .descript
+        margin-top: 15px
+        padding-top: 15px
+        border-top: solid 1px #E8E8E8
+        p
+          margin-bottom: 10px
+          +font($fz:16px,$cl:#484848,$lh:1.7)
+      .choose_color
+        .it_cl
+          display: inline-block
+          input[type="checkbox"] 
+            display: none
+          input[type="checkbox"] + label span 
+            display: inline-block
+            padding: 7px 15px 0 15px
+            margin: 0 10px 0 0
+            cursor: pointer
+            +shape($w:auto,$h: 35px,$border: 1px solid #2E2E2E,$bk: #fff,$bdr: 5px)
+          input[type="checkbox"]:checked + label span 
+            border: 1px solid #fac4a9
+            color: #f5851f
+          &:first-child
+            padding-left: 0px
+      .change_total
+        margin-top: 20px
+        input
+          margin-left: 40px
+          +font($tc: center,$fz: 20px)
+          +shape($w: 65px,$h: 38px,$border: solid 1px #2E2E2E,$outline: none,$bdr: 5px)
+      .buy_cart
+        margin-top: 22px
   p
     line-height: 1.25em
   .under-ttl

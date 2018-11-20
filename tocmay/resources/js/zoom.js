@@ -5,7 +5,7 @@
     result = document.getElementById(resultID);
     /*create lens:*/
     lens = document.createElement("DIV");
-    lens.setAttribute("class", "img_zoom_lens");
+    lens.setAttribute("class", "img_zoom_lens icon-Plus");
     /*insert lens:*/
     img.parentElement.insertBefore(lens, img);
     /*calculate the ratio between result DIV and lens:*/
