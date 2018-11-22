@@ -43,9 +43,7 @@
     .main-blog_post  
       width: 48% 
       margin-bottom: 0      
-      -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-      -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-      box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      +postShadow
       padding-bottom: 10px
       .blog-image
         position: relative
@@ -107,6 +105,38 @@
 
     .post-btn
       margin-top: 20px
+    
+    .blog-detail
+      &__content
+        padding: 0 7px
+        margin-bottom: 30px
+
+      &__title
+        margin-top: 10px
+
+      &__main-image
+        margin-bottom: 20px
+
+      &__sub-images
+        margin-bottom: 20px        
+        img
+          width: 48%
+
+      &__list
+        padding: 0
+
+      &__list-item
+        margin: 12px
+
+        &__title
+          margin-top: 10px
+
+        &__btn-outer
+          text-align: center
+
+      &__slider
+        margin-top: 15px
+
 
 @media screen and (max-width: 580px)
 
@@ -132,6 +162,26 @@
       height: 110px
       font-size: 22px
 
+    .blog-detail
+      &__title
+        margin-top: 10px
+        font-size: 20px
+
+      &__main-image
+        margin-bottom: 10px
+
+      &__sub-images
+        margin-bottom: 10px        
+        img
+          width: 49%
+
+      &__article
+        margin-bottom: 10px
+
+      &__list-item
+        &__btn
+          padding: 5px 20px
+        
 @media screen and (max-width: 500px)
 
 
@@ -149,6 +199,24 @@
       .blog-image
         height: 120px
     //end sub-blog_post
+
+    .blog-detail
+
+      &__list-item
+        margin: 10px
+          
+        &__btn
+          padding: 5px 20px
+
+        &__title
+          font-size: 18px
+          line-height: 22px
+
+        &__article
+          display: none
+
+      &__slider
+        margin-top: 15px
 
 @media screen and (max-width: 425px)
 
@@ -189,6 +257,19 @@
       margin-top: 10px
     //end sub-blog_post
 
+    .blog-detail
+
+      &__list-item
+        margin: 5px
+
+        &__title
+          font-size: 16px
+          line-height: 20px
+
+        &__btn
+          font-size: 14px
+          padding: 3px 15px
+
 @media screen and (max-width: 375px)
   
   #under
@@ -210,6 +291,10 @@
       &:before
         font-size: 14px
 
+    .blog-detail
+      &__sub-images
+        margin-bottom: 5px                
+
 @media screen and (max-width: 320px)
 
   #under
@@ -222,3 +307,11 @@
       .blog-image
         height: 90px
     //end sub-blog_post
+
+    .blog-detail
+
+      &__list-item
+        margin: 5px
+
+        &__btn-outer
+          display: none 

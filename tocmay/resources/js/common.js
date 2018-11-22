@@ -73,11 +73,56 @@ const common = (function(){
     })
   }; //end_preventEvent
 
+  const _generateBlogDetailSlider = function() {
+
+    const elBlogDetailSlider = document.getElementById('blog-detail__list');
+    console.log("run");
+    if(!elBlogDetailSlider) {return;}
+
+    $(window).resize(function () {
+      $('.js-slider').not('.slick-initialized').slick('resize');
+    });
+
+    $(elBlogDetailSlider).slick({
+      infinite: true,
+      autoplay: false,
+      autoplaySpeed:2000,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: true,
+      dots: false,
+      centerPadding: '14.5px',
+      prevArrow: '<span class="icon-Arrow-left"></span>',
+      nextArrow: '<span class="icon-Arrow-right"></span>',      
+      responsive: [
+        {
+          breakpoint: 641,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,            
+            centerPadding: '12px',            
+            arrows : false,
+          }
+        },
+        {
+          breakpoint: 426,
+          settings: {            
+            centerPadding: '5px',                        
+            slidesToShow: 2,
+            slidesToScroll: 2,            
+            arrows : false,
+          }
+        },
+      ],
+    })
+  };
+
 	return {
 		init(){
 			_generateSlider();
 			_generateFacebookFanpage();
       _preventEvent();
+      _generateBlogDetailSlider();
 		}
 	}
 })();

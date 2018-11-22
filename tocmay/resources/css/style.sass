@@ -3,6 +3,10 @@
 @import "font.css"
 @import "font-icon.css"
 
+
+.center
+  text-align: center
+
 body
   font-family: UTM-AVO
 a
@@ -737,9 +741,7 @@ footer
     float: left
     margin-right: 30px
     margin-top: 30px      
-    -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-    -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-    box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+    +postShadow
     &:nth-child(3n+4)
       margin-right: 0      
     .blog-image
@@ -769,3 +771,101 @@ footer
       font-weight: 400
       &:hover
         text-decoration: underline 
+
+  .blog-detail
+    &__title
+      display: block
+      font-size: 22px      
+
+    &__post-time
+      font-size: 12px
+      color: $color_gray_normal
+      margin-top: 15px
+      &:before
+        position: relative
+        top: 1px
+        margin-right: 10px
+
+    &__content
+      margin: 20px 0 50px
+
+    &__article
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+
+    &__main-image
+      margin-bottom: 30px
+
+    &__sub-images
+      overflow: hidden
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 0        
+      img:first-child
+        float: left
+      img:last-child
+        float: right
+
+    &__slider
+      margin-top: 30px
+
+    &__list
+      position: relative
+      +unlist
+      padding: 0 20px
+      li
+        +unlist
+        outline: none
+
+      [class*="icon-Arrow"]        
+        font-size: 40px
+        +adjust_mid(absolute,"y")
+        cursor: pointer
+
+      .icon-Arrow-left
+        left: 0
+      .icon-Arrow-right
+        right: 0
+
+    &__list-item
+      width: 358px
+      display: inline-block
+      margin: 14.5px
+      +postShadow      
+
+      &__content
+        padding: 10px
+
+      &__small-title
+        display: block
+        color: $color_gray_normal
+        font-size: 12px
+
+      &__title
+        display: block
+        font-size: 18px
+        margin-top: 20px
+        line-height: 22px
+        text-decoration: none
+        color: $cl_txt
+        outline: none
+
+      &__article
+        margin-top: 10px
+
+      &__btn-outer
+        margin-top: 20px
+
+      &__btn
+        display: inline-block
+        text-decoration: none
+        color: $color_orange_light
+        text-align: center
+        padding: 7px 20px
+        border-radius: 50px
+        border: 1px solid $color_orange_light
+        outline: none
+        &:hover
+          background: $color_orange_light
+          color: #fff

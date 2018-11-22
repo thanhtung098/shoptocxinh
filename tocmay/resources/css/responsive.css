@@ -136,6 +136,37 @@
   #under .post-btn {
     margin-top: 20px;
   }
+  #under .blog-detail__content {
+    padding: 0 7px;
+    margin-bottom: 30px;
+  }
+  #under .blog-detail__title {
+    margin-top: 10px;
+  }
+  #under .blog-detail__main-image {
+    margin-bottom: 20px;
+  }
+  #under .blog-detail__sub-images {
+    margin-bottom: 20px;
+  }
+  #under .blog-detail__sub-images img {
+    width: 48%;
+  }
+  #under .blog-detail__list {
+    padding: 0;
+  }
+  #under .blog-detail__list-item {
+    margin: 12px;
+  }
+  #under .blog-detail__list-item__title {
+    margin-top: 10px;
+  }
+  #under .blog-detail__list-item__btn-outer {
+    text-align: center;
+  }
+  #under .blog-detail__slider {
+    margin-top: 15px;
+  }
 }
 @media screen and (max-width: 580px) {
   #under .main-blog_post .blog-image {
@@ -157,6 +188,25 @@
     height: 110px;
     font-size: 22px;
   }
+  #under .blog-detail__title {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  #under .blog-detail__main-image {
+    margin-bottom: 10px;
+  }
+  #under .blog-detail__sub-images {
+    margin-bottom: 10px;
+  }
+  #under .blog-detail__sub-images img {
+    width: 49%;
+  }
+  #under .blog-detail__article {
+    margin-bottom: 10px;
+  }
+  #under .blog-detail__list-item__btn {
+    padding: 5px 20px;
+  }
 }
 @media screen and (max-width: 480px) {
   #under .main-blog_post .blog-image {
@@ -168,6 +218,22 @@
   }
   #under .sub-blog_post .blog-image {
     height: 120px;
+  }
+  #under .blog-detail__list-item {
+    margin: 10px;
+  }
+  #under .blog-detail__list-item__btn {
+    padding: 5px 20px;
+  }
+  #under .blog-detail__list-item__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  #under .blog-detail__list-item__article {
+    display: none;
+  }
+  #under .blog-detail__slider {
+    margin-top: 15px;
   }
 }
 @media screen and (max-width: 425px) {
@@ -215,6 +281,17 @@
   #under .blog-post-time {
     margin-top: 10px;
   }
+  #under .blog-detail__list-item {
+    margin: 5px;
+  }
+  #under .blog-detail__list-item__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  #under .blog-detail__list-item__btn {
+    font-size: 14px;
+    padding: 3px 15px;
+  }
 }
 @media screen and (max-width: 375px) {
   #under .main-blog_post .blog-image {
@@ -234,6 +311,9 @@
   #under .blog-post-time:before {
     font-size: 14px;
   }
+  #under .blog-detail__sub-images {
+    margin-bottom: 5px;
+  }
 }
 @media screen and (max-width: 320px) {
   #under .main-blog_post .blog-image {
@@ -241,6 +321,12 @@
   }
   #under .sub-blog_post .blog-image {
     height: 90px;
+  }
+  #under .blog-detail__list-item {
+    margin: 5px;
+  }
+  #under .blog-detail__list-item__btn-outer {
+    display: none;
   }
 }
 
