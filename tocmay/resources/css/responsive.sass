@@ -8,30 +8,298 @@
 
 .sp
   display: none 
-
+.mobile-toggle
+  // display: none
 @media screen and (max-width: 640px)
   .pc
     display: none
 
   .sp
     display: block
+  .content
+    +shape($w: 100%)
+  header
+    +shape($miw: 100%,$bk: #fff)
+    +position($pos:fixed,$t: 0,$l: 0)
+    z-index: 102
+    +shadow($sd: -1px -1px 5px)
+    .inner_hd
+      +shape($w: 100%)
+      .left_hd
+        float: unset
+        margin: 0 auto
+        z-index: 20
+        +position($pos:absolute,$t: 0,$l: 0,$r: 0,$b: 0)
+      .mid_hd
+        +shape($w: 450px,$h: 100vh,$bk: #fff,$ov: scroll)
+        +position($pos:absolute,$t: 81px,$l: -100%)
+        +font($tc: left)
+        +shadow($sd: -1px -1px 2px)
+        padding: 0 10px
+        transition: 500ms ease-in-out
+        .search_Mb
+          display: block
+          padding-top: 20px
+          margin-bottom: 25px
+          form
+            +shape($w: 80%)
+            margin: 0 auto
+            position: relative
+            input
+              padding: 10px 
+              +shape($w: 100%,$border: none,$outline: none)
+              border-bottom: 1px solid #707070
+            button
+              +font($fz: 20px,$cl: #F6B26D)
+              +shape($bk: none ,$border: none,$outline: none)
+              +position($pos: absolute, $t: 5px,$r:0)
+        nav
+          >ul
+            >li
+              display: block
+              padding: 15px 10px
+              border-bottom: solid 1px #707070
+              position: relative
+              a
+                display: inline-block
+              span
+                display: block
+                padding: 10px
+                +position($pos: absolute, $t: 5px, $r: 0 )
+                content: ''
+                transform: rotateX(0deg)
+              .arrow_mn
+                transform: rotate(90deg)
+              >ul
+                width: 100%
+                position: unset
+                opacity: 1
+                margin-top: 15px
+                box-shadow: none
+                display: none
+                >li
+                  .arrow_mn
+                    transform: rotate(90deg)
+                  &:hover
+                    background: none
+                    a
+                      color: #707070
+                    ul
+                      display: none
+                  >ul
+                    +shape($w: 100%!important,$opa:1)
+                    display: none
+                    position: unset
+                    box-shadow: none
+                    margin-top: 12px
+                    li
+                      border-bottom: dashed 1px #707070
+                  .menu_show
+                    display: block!important
+              &:hover
+                >ul
+                  display: none
+                  width: 100%
+              .menu_show
+                display: block!important
+      .content_menu_show
+        +position($pos:absolute,$t: 81px,$l: 0)
+      .right_hd
+        float: unset
+        +position($pos:absolute,$t: 0,$r: 0)
+        padding-top: 36px
+        ul
+          li
+            &:last-child
+              padding-right: 6px
+              .shoping_cart
+            .icon-Search-icon 
+              display: none
+            .search
+              display: none
 
+    .mobile-toggle
+      display: block
+  #banner
+    +shape($w: 100%,$ov: hidden)
+    .item_bn
+      .video_bn
+        +shape($w: 100%,$h: 100%)
+        .ct_video
+          +shape($w: 100%)
+    .slick-list 
+      &:after
+        display: none
+      &:before
+        display: none
+    &:after
+      display: none
+    &:before
+      display: none
+  .ct_product 
+    .it_pd
+      +shape($w: 50%)
+      padding: 0 10px
+      margin-bottom: 20px
+      .ct_itpd
+        .txt_it 
+          padding-top: 15px
+          .price_pd
+            margin-top: 15px
+            button
+              display: block
+              float: unset
+              margin: 0 auto
+              margin-top: 15px
   .wrapper
+    +shape($w: 100%)
     min-width: 100%
     overflow: hidden
-
+    padding-top: 81px
+  .mobile-toggle
+    display: block
+  #action_mn
+    display: none
+  #action_moblie
+    display: block
+    +position($pos: fixed,$b: 5px,$l:0,$r:0)
+    +font($tc: center)
+    a
+      padding: 7px
+      display: inline-block
+      +shape($w: 60px,$h: 60px,$border: solid 1px #F6B26D,$bk: #fff,$bdr: 50%)
+      +font($fz: 22px,$lh: 40px, $cl: #F6B26D)
+    .call
+      +font($fz: 24px)
+  footer
+    .ct_footer
+      padding: 20px 15px 100px 15px
+      position: relative
+      .ft_address
+        width: 50%
+        .it_ad 
+          padding-left: 40px
+      .ft_hours
+        +shape($w: 100%)
+        padding: 0
+        +position($pos: absolute,$b: 0)
+        h3
+          margin-bottom: 15px
+        p
+          +shape($w: 32%,$border: none)
+          display: inline-block
+      .ft_fanpage
+        width: 50%
+      .ft_page
+        display: none
+  #index
+    .block_title
+      nav
+        ul
+          li
+            margin-bottom: 12px
+    .tt_section
+      +font($fz: 24px)
+    #main_pd
+      margin-top: 75px
+    #introduce
+      margin-top: 50px
+      .it_left
+        +shape($w:100%)
+      .it_right
+        +shape($w:100%)
+        margin-top: 15px
+    #product
+      margin-top: 75px
+      margin-right: -10px
+      margin-left: -10px
+      padding: 25px 5px 25px 5px
+    #article
+      padding: 25px 0 10px 0
+      .ct_article
+        .it_art
+          padding: 0 7px 15px 7px
+          .txt_art
+            padding: 15px
+            h4
+              margin-top: 7px
+            h5
+              margin: 10px 0 15px 0
+            span
+              margin-top: 20px
   #content_page
     +shape($w:100%)
     padding: 0 10px    
-
+  #cate_pduct 
+    .it_cate 
+      margin-bottom: 20px
+      .img_cate
+        display: none 
+      .txt_cate
+        +shape($w: 100%)
+      &:nth-child(2)
+        +shape($w: 100%)
+        .txt_cate
+          +shape($w: 100%)
+      &:nth-child(3)
+        +shape($w: 100%)
+        .txt_cate
+          +shape($w: 100%)
   #under
+    .title_pg
+      +shape($w:100%,$h: 100px)
+    .tab_pd 
+      .list_tab
+        .slick-list
+          li
+            a
+              padding: 14px 0
+              +font($fz: 12px)
+    .block_prd 
+      .tt_block
+        padding: 55px 15px 35px 15px
+        h2
+          +font($fz: 24px)
+    .it_pd
+      +shape($w: 50%)
+      padding: 0 10px
+      margin-bottom: 20px
+      .ct_itpd
+        .img_it 
+          .hv_txt
+            display: none
+        .txt_it
+          padding: 15px 12px 18px 12px
+          h3
+            +font($fz: 20px,$lh:1.3)
+          .price_pd
+            margin-top: 10px
+            span
+              display: block
+            button
+              float: unset
+              margin: 0 auto
+              margin-top: 17px
     .hd_content
       padding-bottom: 0
     .under-ttl
       width: 90%
       margin-bottom: 20px
       height: 120px
-
+    .pd_detail
+      .img_detail
+        +shape($w: 100%)
+        padding: 0 15%
+      .imfor_detail
+        margin-top: 20px
+        padding-left: 0
+        +shape($w: 100%)
+      .method_use
+        padding: 0
+        .tab_point
+          li
+            margin-right: 5px
+            +font($fz: 14px)
     .main_content
       width: 100%
 
@@ -131,12 +399,46 @@
     .under-ttl
       height: 110px
       font-size: 22px
+    .pd_detail
+      .imfor_detail
+        margin-top: 20px
+        .buy_cart
+          button
+            padding: 7px 12px
+        .change_total
+          input
+            height: 32px
 
 @media screen and (max-width: 500px)
 
 
 @media screen and (max-width: 480px)
-
+  header
+    .inner_hd
+      .mid_hd
+        +shape($w: 100%)
+  footer
+    .ct_footer
+      padding-bottom: 20px
+      position: relative
+      .ft_address
+        width: 100%
+        .it_ad 
+          padding-left: 40px
+      .ft_hours
+        +shape($w: 100%)
+        padding: 0
+        +position($pos: unset)
+        h3
+          margin-bottom: 15px
+        p
+          +shape($w: 33%,$border: none)
+          float: left
+      .ft_fanpage
+        padding: 0 
+        width: 100%
+      .ft_page
+        display: none
   #under
     .main-blog_post      
       .blog-image
@@ -151,10 +453,47 @@
     //end sub-blog_post
 
 @media screen and (max-width: 425px)
-
+  header
+    .inner_hd
+      .right_hd
+        ul
+          li:last-child
+            .shoping_cart
+              +shape($w: 100vw)
+              right: -10px
+              .l_prdcart
+                .bt_cart
+                  .ct_tt
+                    +font($fz : 14px)
+                    .btn_cart
+                      padding: 12px 2px
   #content_page
     padding: 0 5px
+  .ct_product
+    .it_pd
+      padding: 0 5px
+      margin-bottom: 12px
+      .ct_itpd
+        .txt_it
+          padding: 10px 5px 18px 5px
+          h3
+            +font($fz: 18px)
+          .price_pd
+            span
+              +font($fz: 17px)
   #under
+    .ct_product
+      .it_pd
+        padding: 0 5px
+        margin-bottom: 12px
+        .ct_itpd
+          .txt_it
+            padding: 10px 5px 18px 5px
+            h3
+              +font($fz: 18px)
+            .price_pd
+              span
+                +font($fz: 17px)
     .under-ttl
       height: 90px
       font-size: 20px
@@ -192,6 +531,10 @@
 @media screen and (max-width: 375px)
   
   #under
+    .block_prd 
+      .tt_block
+        h2
+          +font($fz: 20px)
     .main-blog_post      
       .blog-image
         height: 110px
@@ -209,6 +552,14 @@
 @media screen and (max-width: 320px)
 
   #under
+    .it_pd
+      .ct_itpd
+        .txt_it
+          h3
+            +font($fz: 14px)
+          .price_pd
+            span
+              +font($fz: 13px)
     .main-blog_post      
       .blog-image
         height: 90px
