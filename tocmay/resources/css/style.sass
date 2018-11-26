@@ -8,7 +8,7 @@
   text-align: center
 
 body
-  font-family: UTM-AVO
+  font-family: UTM-AVO!important
 a
   text-decoration: none
 .wrapper
@@ -125,6 +125,32 @@ header
   padding: 5px 0  
   border-bottom: 2px solid $color-gray-light
   z-index: 2
+  .mobile-toggle
+    +position($pos: absolute,$l: 15px,$b: 8px)
+    +shape($w: 40px,$h: 40px)
+    cursor: pointer
+    z-index: 99
+    display: none
+    .button_toggle
+      position: relative
+      .line
+        +position($pos: absolute, $t: 0, $l: 0)
+        +shape($w: 40px,$h: 4px,$bdr: 4px,$bk: #F6B26D)
+        transition: all 0.25s ease-in-out
+        &:nth-child(2)
+          top: 8px
+        &:nth-child(3)
+          top: 16px
+      .line-close-1
+        -webkit-transform: rotate(45deg) translate(8px, 7px)
+        -ms-transform: rotate(45deg) translate(8px, 7px)
+        transform: rotate(45deg) translate(8px, 7px)
+      .line-close-3
+        -webkit-transform: rotate(-45deg) translate(4px, -3px) 
+        -ms-transform: rotate(-45deg) translate(4px, -3px)
+        transform: rotate(-45deg) translate(4px, -3px)
+      .line_hidden
+        opacity: 0
   .inner_hd    
     width: 1140px
     margin: 0 auto
@@ -137,6 +163,8 @@ header
       display: inline-block
       text-align: center
       padding-top: 28px
+      .search_Mb
+        display: none
       nav
         >ul          
           li
@@ -147,11 +175,15 @@ header
             a
               color: #707070
               display: block
+            span
+              display: none
+              transition: all 500ms
             >ul
               +shape($w:110%,$bk:#fff,$opa:0)
-              +position(absolute,$l:20px,$t:35px)
+              +position(absolute,$l:20px,$t:20px)
               +transition(all 300ms ease-in-out)
-              z-index: 20
+              z-index: -1
+              display: none
               +shadow($sd:0px 1px 10px -1px rgba(0,0,0,0.16))
               >li
                 +font($tc:left)
@@ -171,7 +203,10 @@ header
                     border: none
             &:hover
               >ul
+                z-index: 20
+                display: block
                 +shape($w:110%,$bk:#fff,$opa:1)
+
 
     .right_hd
       +shape($fl:right)
@@ -228,50 +263,72 @@ header
                   &:last-child
                     text-align: right
               .l_prdcart
-                padding: 0 20px 20px 20px
+                position: relative
                 +shape($bk:#fff)
+                padding-bottom: 5px
                 .pd_crt
-                  .it_cart
-                    clear: both
-                    padding: 20px 0
-                    border-bottom: solid 1px #EFEFEF
-                    .img_itc
-                      +shape($w:22%,$dl: inline-block)
-                    .txt_itc
-                      padding-left: 10px
-                      +shape($w:76%,$dl: inline-block)
-                      h3
-                        +font($fz:18px,$cl:#707070)
-                        margin-bottom: 12px
-                      h4
-                        +font($fz:16px,$cl:#484848)
-                        margin-bottom: 12px
-                      p
-                        +font($fz:24px,$cl:#F6B26D,$fm:UTM-AVOBOLD)
-                    &:last-child
+                  +shape($h: 280px)
+                  padding-top: 20px
+                  .ct_lcrt
+                    position: relative
+                    padding: 0 32px 0 20px
+                    +shape($mah: 240px,$ov: scroll)
+                    .it_cart
+                      clear: both
+                      padding: 20px 0
+                      border-bottom: solid 1px #EFEFEF
+                      .img_itc
+                        +shape($w:22%,$dl: inline-block)
+                      .txt_itc
+                        padding-left: 10px
+                        +shape($w:76%,$dl: inline-block)
+                        h3
+                          +font($fz:18px,$cl:#707070,$fm:UTM-AVO)
+                          margin-bottom: 12px
+                        h4
+                          +font($fz:16px,$cl:#484848,$fm:UTM-AVO)
+                          margin-bottom: 12px
+                        p
+                          +font($fz:24px,$cl:#F6B26D,$fm:UTM-AVOBOLD)
+                    &:nth-last-of-type(1)
                       border-bottom: none
+                      &:nth-child(1)
+                        padding-top: 0
+                    .ps-scrollbar-y-rail
+                      display: block!important
+                      right: 20px!important
+                      +shape($w:7px!important,$bk:rgba(46,46,46,0.1),$opa: 1!important)
+                      .ps-scrollbar-y
+                        +shape($w:7px!important,$bk:#F6B26D)
+                      
                 .total_cart
-                  padding: 15px  
-                  +shape($bk: #F6F6F6,$bdr: 7px)
-                  +font($fz:16px,$fm:UTM-AVOBOLD,$cl:#484848)
-                  .txt_tt
-                    +shape($w:40%,$dl: inline-block,$bk: #F6F6F6)
-                  .price_tt
-                    +shape($w:58%,$dl: inline-block)
-                    +font($tc: right,$cl:#F6B26D)
+                  padding: 0 20px
+                  .ct_tt
+                    padding: 15px 0
+                    +shape($bk: #F6F6F6,$bdr: 7px)
+                    +font($fz:16px,$fm:UTM-AVOBOLD,$cl:#484848)
+                    .txt_tt
+                      padding: 0 20px
+                      +shape($w:40%,$dl: inline-block,$bk: #F6F6F6)
+                    .price_tt
+                      padding: 0 20px
+                      +shape($w:58%,$dl: inline-block)
+                      +font($tc: right,$cl:#F6B26D)
                 .bt_cart
-                  margin-top: 20px
-                  +font($tc: center,$fm:UTM-AVOBOLD)
-                  .btn_cart
-                    padding: 15px
-                    +transition(all 300ms ease-in-out)
-                    +font($cl:#F6B26D)
-                    +shape($w:49%,$dl: inline-block,$border: solid 1px #F6B26D,$bdr: 5px,$bk: #fff)
-                    i
-                      margin-right: 12px
-                    &:hover
-                      +shape($bk: #F6B26D)
-                      +font($cl:#fff)
+                  padding: 0 20px
+                  .ct_tt
+                    margin-top: 20px
+                    +font($tc: center,$fm:UTM-AVOBOLD)
+                    .btn_cart
+                      padding: 15px
+                      +transition(all 300ms ease-in-out)
+                      +font($cl:#F6B26D)
+                      +shape($w:49%,$dl: inline-block,$border: solid 1px #F6B26D,$bdr: 5px,$bk: #fff)
+                      i
+                        margin-right: 12px
+                      &:hover
+                        +shape($bk: #F6B26D)
+                        +font($cl:#fff)
               &:after
                 +shape($w:0,$h:0)
                 +position(absolute,$r:20px,$t: 34px)
@@ -279,6 +336,17 @@ header
                 border-left: 15px solid transparent
                 border-right: 15px solid transparent
                 border-bottom: 12px solid #484848
+          &:nth-child(2)
+            margin-left: 15px
+            position: relative
+            >ul
+              display: none
+              padding-top: 10px
+              +position($pos: absolute,$t: 20px,$l: 0)
+              li
+                +shape($w: 40px,$h: 22px)
+                padding: 0
+                margin-left: 7px
           &:hover
             .search
               +shape($opa:1)
@@ -287,18 +355,38 @@ header
               +shape($opa:1)
               z-index: 30  
               display: block  
-
+            .lang
+              display: block
+.slick-dots
+  li
+    button
+      &:before
+        +font($fz: 10px)
+  .slick-active
+    button
+      &:before
+        +font($cl: #F6B26D,$fz: 10px)
 #banner
   margin: 0 auto
+  position: relative
   .slick-list
     position: relative
     &:after
       +position(absolute,$l:0,$t:0)
       content: ''
       z-index: 1
-      +shape($w:100%,$h:100%)
-      background: url('../../resources/images/sky.png')
-      background-size: 100% 100%
+      +shape($w:100%,$h:158px)
+      background: url('../../resources/images/sky2.png')
+      background-size: cover
+      background-position: center center
+    &:before
+      +position(absolute,$l:0,$b:0)
+      content: ''
+      z-index: 1
+      +shape($w:100%,$h:136px)
+      background: url('../../resources/images/sky1.png')
+      background-size: cover
+      background-position: center center
   .icon-Arrow-left
     +adjust_mid($pos:absolute,$cord:y)
     +position($pos:absolute,$l: 5vw)
@@ -315,6 +403,22 @@ header
     z-index: 100
     &:hover
       +font($cl:#F6B26D)
+  &:after
+    +position(absolute,$r:0,$t:0)
+    content: ''
+    z-index: 1
+    +shape($w:140px,$h:100%)
+    background: url('../../resources/images/sky_03.png')
+    background-size: cover
+    background-position: center center
+  &:before
+    +position(absolute,$l:0,$t:0)
+    content: ''
+    z-index: 1
+    +shape($w:140px,$h:100%)
+    background: url('../../resources/images/sky_01.png')
+    background-size: cover
+    background-position: center center
   .item_bn
     position: relative
     z-index: 100
@@ -323,7 +427,7 @@ header
       content: ''
       +shape($w:1140px,$h:100%)
       margin: 0 auto
-      z-index: 999
+      z-index: 9
       .ct_video
         width: 650px
         +adjust_mid($pos:absolute,$cord:y)
@@ -374,7 +478,7 @@ header
     margin-top: 150px
     .it_main
       +shape($w:33.33%,$fl:left)
-      padding: 0 15px
+      padding: 15px 
       .ct_itm
         +transition(all 300ms ease-in-out)
         .img_it
@@ -446,11 +550,12 @@ header
     .ct_article
       margin-top: 75px
       .it_art
-        padding: 0 15px
+        padding: 0 15px 15px 15px
         +shape($w: 33.33%,$fl:left)
         .img_art
           +shape($ov:hidden)
           img
+            +shape($w: 100%)
             +transition(all 500ms ease-in-out)
         .txt_art
           padding: 25px 30px
@@ -501,7 +606,64 @@ header
               i
                 &:before
                   +font($fz:16px,$cl: #fff)
-
+#action_mn
+  +position($pos:fixed,$r: 0,$t: 45%)
+  transform: translateY(-50%)
+  +font($tc: center)
+  cursor: pointer
+  z-index: 100
+  +shadow($sd: 0px 1px 9px 2px rgba(246,178,109,0.3))
+  >ul
+    padding: 0px
+    >li
+      padding: 19px 16px
+      position: relative
+      i
+        +font($fz:22px)
+        transition: 500ms ease-in-out
+      .icon-Mail-icon
+        +font($fz: 16px)
+      &:first-child
+        &:before
+          +position($pos: absolute,$b: 0, $l: 0, $r: 0)
+          content: ''
+          +shape($w: 70%,$h: 1px,$bk: #EFEFEF )
+          margin: 0 auto
+      &:nth-child(2)
+        &:before
+          +position($pos: absolute,$b: 0, $l: 0, $r: 0)
+          content: ''
+          +shape($w: 70%,$h: 1px,$bk: #EFEFEF )
+          margin: 0 auto
+      ul
+        +position($pos: absolute,$t: 0,$l: -237px)
+        +shape($w: 236px,$bk: #fff)
+        +shadow($sd: 0px 1px 9px 2px rgba(246,178,109,0.3))
+        padding: 12px 10px
+        display: none
+        >li
+          +font($fz: 16px,$tc: left)
+          margin-bottom: 12px
+          p
+            span
+              +font($fm: UTM-AVOBOLD )
+      .icon_social
+        +shape($bk: none)
+        +shadow($sd: unset)
+        padding: 0
+        li
+          float: right
+          +shape($bk: #fff)
+          padding: 16px
+          +shadow($sd: 0px 1px 9px 2px rgba(246,178,109,0.3))
+      &:hover
+        i
+          -webkit-transform: scale(1.3)
+          transform: scale(1.3)
+        ul
+          display: block    
+#action_moblie
+    display: none
 #cate_pduct
     margin-top: 80px
     .it_cate
@@ -541,6 +703,7 @@ header
 #content_page
   margin-bottom: 30px
 footer  
+  margin-top: 100px
   background: #F6F6F6
   padding: 45px 0
   .ct_footer
@@ -553,7 +716,7 @@ footer
         margin-bottom: 22px
         +font($fz:16px,$cl: #707070,$lh:1.5)
         i
-          +position($pos:absolute,$l:0,$t:5px) 
+          +position($pos:absolute,$l:0,$t:3px) 
           +font($fz:20px,$cl: #707070)
         p
           span
@@ -619,14 +782,6 @@ footer
             +font($fz:19px)
           button
             display: none
-  .breadcrumb
-    margin-top: 45px
-    padding: 0 15px
-    ul
-      li
-        display: inline-block
-        a
-          +font($cl:#B5B5B5) 
   .title_pg
     +shape($w:766px,$h:186px)
     margin: 0 auto
@@ -642,21 +797,22 @@ footer
       margin: 0 auto
   .tab_pd
     padding: 0 15px
-    ul
-      li
-        +shape($w:16.666%,$fl:left,$bk:#F6F6F6)
-        a
-          +font($fz: 14px,$tc:center,$cl:#2E2E2E)
-          display: block
-          padding: 25px 0
-        &:hover
+    >.list_tab
+      .slick-list 
+        li
+          +shape($w:16.666%,$fl:left,$bk:#F6F6F6)
+          a
+            +font($fz: 14px,$tc:center,$cl:#2E2E2E)
+            display: block
+            padding: 25px 0
+          &:hover
+            +shape($bk:#F6B26D)
+            a
+              +font($cl:#fff)
+        .active
           +shape($bk:#F6B26D)
           a
             +font($cl:#fff)
-      .active
-        +shape($bk:#F6B26D)
-        a
-          +font($cl:#fff)
   .block_prd
     .tt_block
         padding: 65px 15px 35px 15px
@@ -676,14 +832,13 @@ footer
       padding: 0 50px
       .img_zoom_container
         position: relative
-        
         >img
           width: 100%
         .img_zoom_lens
           position: absolute
-          border: 1px solid #d4d4d4
-          width: 70px
-          height: 70px
+          padding-top: 22px
+          +font($fz: 24px,$cl: #fff,$tc: center)
+          +shape($w:70px,$h:70px,$bdr: 50%,$bk:rgba(246,178,109,0.6))
         .img_zoom_result 
           z-index: -1
           +position($pos:absolute,$r: -180px,$t:30px)
@@ -693,7 +848,7 @@ footer
             z-index: 30
             +shape($opa: 1)
       .thum_imgpd
-        margin-top: 22px
+        margin-top: 16px
         margin-left: -11px
         margin-right: -11px
         .icon-Arrow-left
@@ -701,10 +856,102 @@ footer
         .icon-Arrow-right
           +position($pos: absolute,$r:-20px)
         .it_img
-          padding: 0 11px
+          padding: 0 6px
           outline: none
+          img
+            +shape($border: solid 5px #fff)
+            transition: all 500ms
+          &:hover
+            img
+              +shape($border: solid 5px #F6B26D)
+        .slick-current
+          img
+            +shape($border: solid 5px #F6B26D)
     .imfor_detail
       +shape($w:50%,$fl:left)
+      padding-left: 40px
+      h3
+        +font($fz:24px,$fm:UTM-AVOBOLD,$cl:#484848)
+      .code_pd
+        margin: 20px 0 10px 0
+        +font($fz:16px,$cl:#484848)
+      .price_pd
+        +font($fz:30px,$fm:UTM-AVOBOLD,$cl:#F6B26D)
+      .descript
+        margin-top: 15px
+        padding-top: 15px
+        border-top: solid 1px #E8E8E8
+        p
+          margin-bottom: 10px
+          +font($fz:16px,$cl:#484848,$lh:1.7)
+      .choose_color
+        padding-left: 45px
+        position: relative
+        .txt_cl
+          +position($pos: absolute,$l: 0,$t: 5px)
+        .it_cl
+          display: inline-block
+          margin-bottom: 10px
+          input[type="radio"] 
+            display: none
+          input[type="radio"] + label span 
+            display: inline-block
+            padding: 7px 15px 0 15px
+            margin: 0 10px 0 0
+            cursor: pointer
+            +shape($w:auto,$h: 35px,$border: 1px solid #2E2E2E,$bk: #fff,$bdr: 5px)
+          input[type="radio"]:checked + label span 
+            border: 1px solid #fac4a9
+            color: #f5851f
+          &:first-child
+            padding-left: 0px
+      .change_total
+        margin-top: 20px
+        input
+          margin-left: 40px
+          +font($tc: center,$fz: 20px)
+          +shape($w: 65px,$h: 38px,$border: solid 1px #2E2E2E,$outline: none,$bdr: 5px)
+      .buy_cart
+        margin-top: 22px
+        button
+          padding: 10px 20px 
+          margin-right: 8px
+          cursor: pointer
+          +shape($border:solid 1px #2E2E2E,$bk:#fff,$clt:#484848,$bdr: 5px,$outline: none)
+          +font($fz:20px,$fm:UTM-AVOBOLD)
+          &:hover
+            +shape($bk:#2E2E2E,$clt:#fff)
+    .method_use
+      padding: 0 15px
+      margin-top: 40px
+      .tab_point
+        border-bottom: solid 1px #E8E8E8
+        li
+          display: inline-block
+          margin-right: 15px
+          padding-bottom: 10px
+          cursor: pointer
+          +font($fm:UTM-AVOBOLD)
+        .active
+          border-bottom: solid 2px #F6B26D
+      .tab_im
+        margin-top: 20px
+        .it_tab
+          display: none
+          p
+            +font($fz: 16px,$cl:#484848,$lh:1.4)
+            margin-bottom: 15px
+        .active
+          display: block
+      .node
+        margin-top: 45px
+        font-style: italic
+        +font($fz:16px,$cl:#F6B26D,$lh:1.5)
+        position: relative
+        &:after
+          content: ''
+          +position($pos:absolute,$l:0,$t: -17px)
+          +shape($w:60px,$h:3px,$bk:#F6B26D)
   p
     line-height: 1.25em
   .under-ttl
@@ -717,7 +964,7 @@ footer
     span
       display: inline-block
       +adjust_mid(relative)      
-  
+
   .hd_content
     padding: 20px 0
 
@@ -738,6 +985,7 @@ footer
     +unlist
     width: 1140px
     margin: 0 auto
+    margin-top: 45px
 
     li
       position: relative

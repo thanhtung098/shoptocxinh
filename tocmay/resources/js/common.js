@@ -12,7 +12,10 @@ function onYouTubeIframeAPIReady() {
         	'loop': 0,
             'color': 'white',
             'controls':1,
-            'mute':1
+            'mute':1,
+            'rel': 0,
+            'showinfo': 0,
+            'ecver': 0
         }
     });
 }
