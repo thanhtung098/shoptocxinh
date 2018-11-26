@@ -117,12 +117,61 @@ const common = (function(){
     })
   };
 
+  const _generateReviewSlider = function() {
+    const elReviewSlider = document.getElementById('review-slider__list');
+
+    if(!elReviewSlider) { return; }
+
+    $(elReviewSlider).slick({
+      infinite: true,
+      autoplay: false,      
+      slidesToShow: 5,
+      centerMode: true,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      centerPadding: '50px',      
+      prevArrow: '<span class="icon-Arrow-left review-slider__arrow-left"></span>',
+      nextArrow: '<span class="icon-Arrow-right review-slider__arrow-right"></span>',      
+      responsive: [
+        {
+          breakpoint: 1920,
+          settings: {            
+            centerPadding: '30px',             
+          }
+        },
+        {
+          breakpoint: 641,
+          settings: {        
+            slidesToShow: 3,
+            centerPadding: '30px',             
+          }
+        },
+        {
+          breakpoint: 521,
+          settings: {       
+            slidesToShow: 3,             
+            centerPadding: '20px',             
+          }
+        },
+        {
+          breakpoint: 426,
+          settings: {                    
+            slidesToShow: 3,
+            centerPadding: '10px',             
+          }
+        },
+      ],
+    })
+  };
+
 	return {
 		init(){
 			_generateSlider();
 			_generateFacebookFanpage();
       _preventEvent();
       _generateBlogDetailSlider();
+      _generateReviewSlider();
 		}
 	}
 })();

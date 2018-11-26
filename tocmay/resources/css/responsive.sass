@@ -27,6 +27,10 @@
   #under
     .hd_content
       padding-bottom: 0
+
+      &.-review-page
+        width: 100%
+
     .under-ttl
       width: 90%
       margin-bottom: 20px
@@ -136,7 +140,42 @@
 
       &__slider
         margin-top: 15px
+    //end blog detail
+    
+    .review-content
+      padding: 10px 5% 0 0
 
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(339px,369px)
+
+      &__list-outer   
+        width: 100%
+      
+      &__list-item
+        margin: 0 30px
+
+      &__img
+        padding: 5px
+
+      &:hover
+        .review-slider__arrow-left,.review-slider__arrow-right      
+          display: none !important        
+
+    .review-feedback
+      margin-top: 90px
+
+      &__customer-name
+        font-size: 20px
+        line-height: 26px
+
+    .-quote-content
+      padding: 5px 30px
+
+      &:before, &:after
+        +shape(20px, 16px)
+    //end review page
 
 @media screen and (max-width: 580px)
 
@@ -181,9 +220,46 @@
       &__list-item
         &__btn
           padding: 5px 20px
+    //end blog detail
+
+    .review-content      
+      &__title
+        font-size: 22px
+        line-height: 26px
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(339px,369px)      
+      
+      &__list-item
+        margin: 0 20px      
+    //end review page
         
 @media screen and (max-width: 500px)
+  #under
+    
+    .review-content      
+      &__title
+        font-size: 20px
+        line-height: 24px
 
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(279px,309px)
+
+    .review-feedback
+      margin-top: 80px
+
+      &__customer-name
+        font-size: 18px
+        line-height: 22px
+
+    .-quote-content
+      padding: 0 30px
+      margin-top: 10px
+    //end review page
 
 @media screen and (max-width: 480px)
 
@@ -217,6 +293,13 @@
 
       &__slider
         margin-top: 15px
+    //end blog detail
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(249px,279px)
+    //end review page
 
 @media screen and (max-width: 425px)
 
@@ -269,6 +352,25 @@
         &__btn
           font-size: 14px
           padding: 3px 15px
+    //end blog detail
+
+    .review-content
+      display: none
+
+    .review-slider
+      margin-top: 70px
+      &__list-outer   
+        &:before
+          +shape(259px,289px)
+
+      &__list-item
+        margin: 0 10px
+
+    .review-feedback      
+      &__customer-name
+        font-size: 16px
+        line-height: 20px
+    //end review page
 
 @media screen and (max-width: 375px)
   
@@ -293,7 +395,19 @@
 
     .blog-detail
       &__sub-images
-        margin-bottom: 5px                
+        margin-bottom: 5px
+    //end blog detail  
+
+    .review-slider
+      margin-top: 80px
+
+      &__list-outer
+        &:before
+          +shape(239px,269px)
+
+      &__img              
+        padding: 3px
+    //end review page
 
 @media screen and (max-width: 320px)
 
@@ -315,3 +429,4 @@
 
         &__btn-outer
           display: none 
+    //end blog detail

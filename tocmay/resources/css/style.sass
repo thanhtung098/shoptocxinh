@@ -129,8 +129,7 @@ header
     width: 1140px
     margin: 0 auto
     text-align: center    
-    +clearfix
-    &:after    
+    +clearfix 
     .left_hd
       +shape($w:80px,$fl:left)
     .mid_hd
@@ -441,7 +440,7 @@ header
     background: #F6F6F6
     padding: 50px 0
     clear: both
-    .ct_product
+    
   #article
     padding: 50px 0
     .ct_article
@@ -718,14 +717,23 @@ footer
     span
       display: inline-block
       +adjust_mid(relative)      
-
-
-  .item_pd
+  
   .hd_content
     padding: 20px 0
+
+    &.-review-page
+      width: 1140px
+      margin: 0 auto
+      overflow: hidden
+        
+      .breadcrumb
+        width: auto
+        float: left
+
   .main_content
     width: 1140px
     margin: 0 auto
+    
   .breadcrumb
     +unlist
     width: 1140px
@@ -762,7 +770,8 @@ footer
       &:hover
         color: $cl_txt
     //end .breadcrumb
-  
+  //end breadcrumb
+
   .blog-small-title
     display: block
     font-size: 12px
@@ -847,7 +856,7 @@ footer
 
     .blog-article
       margin-top: 25px          
-  
+  //end main-blog-post
 
   .sub-blog_post
     +shape(358px,450px)
@@ -872,7 +881,7 @@ footer
 
     .blog-article
       max-height: 60px        
-
+  //end sub-blog-post
 
   .under_loadmore
     text-align: center
@@ -982,3 +991,182 @@ footer
         &:hover
           background: $color_orange_light
           color: #fff
+  //end blog-detail
+
+  .review-content
+    float: right
+    text-align: right
+    padding: 10px 20% 0 0
+
+    &__title
+      font-size: 24px
+      color: $color_orange_normal
+      display: block
+      margin-bottom: 5px
+
+    &__article
+      color: $cl_txt
+  //end review-content
+
+  .review-slider
+    width: 100%    
+    position: relative    
+    margin: 20px auto 0
+
+    @media screen and (min-width: 1920px)    
+      margin-top: 100px
+
+
+    &__list-outer   
+      width: 115%
+      +adjust_mid(relative,"x")      
+      z-index: 0
+      &:before
+        content: ''
+        display: block
+        +position(absolute,$l: 50%, $t: 55%)
+        +transform(translate(-50%,-50%))
+        z-index: -1
+        +shape(539px,569px)
+        background: url("../images/review-custom-bg.png") center/contain no-repeat
+        opacity: 0.7
+
+        @media screen and (min-width: 1920px)    
+          +shape(939px,969px)
+
+    &__list      
+      +unlist         
+      
+      .slick-list
+        overflow: unset        
+        padding: 0 !important       
+
+    &__list-item
+      position: relative
+      +unlist
+      display: inline-block
+      margin: 0 30px
+      vertical-align: middle      
+      border-radius: 50%
+      outline: none
+      z-index: 0          
+      +transition(.5s ease)     
+
+      @media screen and (min-width: 1920px)    
+        margin: 0 50px
+
+      &.slick-center
+        +transform(scale(1.3))
+        
+        .review-slider__img          
+          &:before
+            opacity: 1  
+
+          img
+            opacity: 1
+
+    &__img                  
+      +shape(100%,auto)
+      z-index: 0
+      +transition(0.5s ease)
+      padding: 10px
+
+      &:before
+        content: ''      
+        display: block
+        +shape(100%,100%)
+        border-radius: 50%
+        background: url("../images/review-choose-bg.png") center/cover no-repeat
+        +adjust_mid(absolute)
+        opacity: 0
+        z-index: -1
+        +transition(0.7s ease)
+
+      img
+        +shape(100%)        
+        +transition(.5s ease)
+        opacity: .5
+    
+    &:hover
+      .review-slider__arrow-left,.review-slider__arrow-right      
+        display: block !important
+        opacity: 0.8
+
+    &__arrow-left, &__arrow-right    
+      +adjust_mid(absolute)
+      display: none !important
+      z-index: 10
+      +shape(55px,55px)      
+      background: #fff
+      border-radius: 50%      
+      cursor: pointer
+      opacity: 0      
+
+      &:before
+        font-size: 40px
+        +adjust_mid(absolute)
+
+    &__arrow-left
+      left: 30%
+
+      &:before
+        left: 46%
+
+    &__arrow-right
+      left: 70%
+
+      &:before
+        left: 55%
+  //end review-slider
+
+  .review-feedback
+    max-width: 400px
+    margin: 110px auto 0    
+    z-index: 1
+    position: relative
+    background: rgba(#fff, 0.7)
+    &__customer-info      
+      text-align: center      
+
+    &__customer-name      
+      display: block
+      font-size: 24px
+      color: $cl_txt
+      margin-bottom: 10px
+      line-height: 28px
+
+    &__customer-yearsold
+      display: block
+      font-size: 14px
+      line-height: 19px
+      color: $cl_txt
+
+    &__content
+      font-size: 14px
+      color: $cl_txt
+      text-align: center
+      line-height: 19px
+  //end review-feedback
+
+  .-quote-content
+    position: relative
+    padding: 10px 30px
+
+    &:before,&:after
+      content: ''
+      display: block
+      position: absolute
+      width: 28px
+      height: 24px
+      background: center/contain no-repeat
+    
+    &:before
+      background-image: url("../images/quote-article-top-left.png")
+      top: 0
+      left: 0
+
+    &:after
+      background-image: url("../images/quote-article-bot-right.png")
+      bottom: 0
+      right: 0      
+  //end -quote-content
