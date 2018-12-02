@@ -19,7 +19,7 @@
   .content
     +shape($w: 100%)
   header
-    +shape($miw: 100%,$bk: #fff)
+    +shape($miw: 100%,$bk: #fff,$h: 80px)
     +position($pos:fixed,$t: 0,$l: 0)
     z-index: 102
     +shadow($sd: -1px -1px 5px)
@@ -34,7 +34,6 @@
         +shape($w: 450px,$h: 100vh,$bk: #fff,$ov: scroll)
         +position($pos:absolute,$t: 81px,$l: -100%)
         +font($tc: left)
-        +shadow($sd: -1px -1px 2px)
         padding: 0 10px
         transition: 500ms ease-in-out
         .search_Mb
@@ -48,6 +47,8 @@
             input
               padding: 10px 
               +shape($w: 100%,$border: none,$outline: none)
+              +font($fz: 16px,$cl:#707070)
+              font-style: italic
               border-bottom: 1px solid #707070
             button
               +font($fz: 20px,$cl: #F6B26D)
@@ -162,16 +163,19 @@
     display: none
   #action_moblie
     display: block
-    +position($pos: fixed,$b: 5px,$l:0,$r:0)
+    +position($pos: fixed,$b: 0,$l:0,$r:0)
     +font($tc: center)
     a
       padding: 7px
-      display: inline-block
-      +shape($w: 60px,$h: 60px,$border: solid 1px #F6B26D,$bk: #fff,$bdr: 50%)
-      +font($fz: 22px,$lh: 40px, $cl: #F6B26D)
+      display: block
+      +shape($w: 50%,$h: 60px,$border: solid 1px #fff,$bk: #F6B26D,$fl: left)
+      +font($fz: 22px,$lh: 40px, $cl: #fff)
+      border-top-right-radius: 7px
+      border-top-left-radius: 7px
     .call
       +font($fz: 24px)
   footer
+    padding-bottom: 70px
     .ct_footer
       padding: 20px 15px 100px 15px
       position: relative
@@ -302,7 +306,6 @@
             +font($fz: 14px)
     .main_content
       width: 100%
-
     .blog_wrapper
       display: flex
       justify-content: space-between
@@ -375,9 +378,35 @@
 
     .post-btn
       margin-top: 20px
+    .contact
 
+      .left_contact
+        +shape($w: 100%)
+        .item
+          h4
+            margin-bottom: 12px
+          p
+            margin-bottom: 12px
+      .right_contact
+        +shape($w: 100%)
+        .form
+          margin-right: 0
+          h4
+            padding-left: 0
+          form
+            margin-right: -10px
+            margin-left: -10px
+            .it_form
+              padding: 0 10px
+              +shape($w: 100%)
+              input
+    .content_map
+      padding-top: 20px
+      .map
+        +shape($w:100%,$h: 350px)
+      .location_brach
+        padding: 10px
 @media screen and (max-width: 580px)
-
   #under
     .main-blog_post      
       .blog-image
