@@ -371,6 +371,7 @@ header
         +font($cl: #F6B26D,$fz: 10px)
 .header_scroll
   padding: 7px 0!important
+  z-index: 99
   +shape($bk: #fff)
   border-bottom: 2px solid $color-gray-light
   .inner_hd
@@ -379,6 +380,8 @@ header
         img
           +shape( $w:65px)
     .mid_hd
+      padding-top: 22px
+    .right_hd
       padding-top: 22px
 #banner
   margin: 0 auto
@@ -736,6 +739,9 @@ footer
         p
           span
             +font($fm:UTM-AVOBOLD)
+      .ft_adr
+        p
+          margin-bottom: 8px
       .log_ft
         margin-bottom: 32px
     .ft_hours
@@ -1274,3 +1280,13 @@ footer
         i
           margin-right: 12px
 
+.logomap
+  +shape($w: 30%,$fl: left)
+.ct_map
+  +shape($w: 70%,$fl: left)
+  p
+    +font($fz:14px,$cl:#484848)
+  h4
+    +font($fz: 14px,$fm:'UTM-AVOBOLD',$cl:#F6B26D )
+  .bold
+    +font($fz: 14px,$fm:'UTM-AVOBOLD',$cl:#484848) 
