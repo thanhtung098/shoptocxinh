@@ -962,9 +962,10 @@ footer
     margin: 0 auto 30px  
     background: url('../images/under-ttl.png') center/contain no-repeat
     span
+      font-family: UTM-AVO
       display: inline-block
       +adjust_mid(relative)      
-
+  
   .hd_content
     padding: 20px 0
 
@@ -1318,7 +1319,6 @@ footer
       z-index: 0
       +transition(0.5s ease)
       padding: 10px
-
       &:before
         content: ''      
         display: block
@@ -1417,4 +1417,323 @@ footer
       background-image: url("../images/quote-article-bot-right.png")
       bottom: 0
       right: 0      
-  //end -quote-content
+  //end -quote-content  
+
+  .cart-detail
+    tr,td,th
+      box-sizing: border-box
+    &__title
+      font-size: 22px
+      color: $color_orange_normal
+      margin-bottom: 30px
+      font-weight: 700
+      &.-m-top
+        margin-top: 10px
+
+    &__tbl
+      width: 100%
+
+    &__title-wrap
+      border: none      
+      vertical-align: middle
+
+    &__title-item
+      border: none
+      background: $color_gray_light
+      padding: 10px
+      font-size: 18px
+      font-weight: 500  
+      color: $color_gray_normal
+
+      &.-large-col
+        width: 28%
+        text-align: left
+      
+      &.-normal-col
+        width: 12%
+
+      &.-small-col
+        width: 15%  
+    
+    &__info-wrap
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+
+    &__info-wrap
+      border-bottom: 1px solid $color_gray_normal_light
+      td
+        padding: 20px 0    
+
+      &:last-child
+        border-bottom: none
+        td
+          padding: 20px 0 10px           
+
+    &__image-col      
+      vertical-align: middle
+      .cart-detail__remove-cart-item
+        display: none
+        display: none
+        position: static
+        text-align: center
+
+      .cart-detail__remove-cart-btn
+        padding: 10px 0 0 0        
+
+      img
+        +shape(100%, auto)
+    
+    &__image-outer
+      display: inline-block
+      +shape(100%, $mah: 150px)
+      overflow: hidden
+
+    &__info-group
+      table
+        width: 100%
+
+    &__info-col
+      position: relative      
+      padding: 10px 0 50px 20px !important
+      width: 28%
+
+    &__product-part-ttl
+      display: none
+      font-size: 12px
+      font-weight: 700
+      margin: 10px 0 5px
+      color: $color_orange_normal
+      &:first-child
+        margin-top: 0
+
+    &__product-name
+      font-size: 16px      
+      color: $cl_txt
+
+    &__product-catelink
+      margin-top: 10px
+      a
+        display: inline-block
+        position: relative
+        text-decoration: none
+        color: $color_gray_normal
+        padding: 5px 10px
+        
+        &:before
+          content: ''
+          display: block
+          +shape(1px,100%)
+          +position(absolute, $r: -2px, $t: 0)
+          background: $color_gray_normal
+          
+        &:first-child
+          padding-left: 0
+
+        &:last-child
+          padding-right: 0
+
+          &:before
+            display: none
+
+        &:hover
+          color: $cl_txt
+
+    &__product-code
+      color: $color_gray_normal
+      margin-top: 10px
+
+    &__remove-cart-item
+      width: 100%
+      +position(absolute,$l:0,$b:0)
+      padding: 5px 0
+
+    &__remove-cart-btn
+      color: $cl_txt      
+      background: none
+      border: none
+      outline: none
+      cursor: pointer
+      padding-left: 20px
+
+      span
+        display: inline-block
+        vertical-align: middle
+
+      .-close-icon
+        +shape(15px,15px)
+        position: relative
+        margin-right: 5px
+
+        &:before,&:after
+          content: ''
+          display: block
+          +shape(100%, 2px)
+          background: $color_orange_normal
+          +position(absolute,$t: 50%, $l: 50%)
+        
+        &:before
+          +transform(translate(-50%,-50%) rotate(45deg))        
+
+        &:after
+          +transform(translate(-50%,-50%) rotate(-45deg))
+
+    &__colour-col
+      width: 15%
+      color: $cl_txt
+      text-align: center
+      vertical-align: middle
+
+    &__quanity-col
+      width: 15%
+      vertical-align: middle    
+
+    &__quantity-input-controls, &__quantity-select-controls 
+        display: none
+        width: 100%
+        text-align: center
+        &.is-show
+          display: inline-block
+        
+        .-increase-btn,.-decrease-btn
+          position: relative
+          padding: 5px
+          background: none
+          border: none
+          text-align: center
+          vertical-align: middle
+          outline: none
+          cursor: pointer
+          &:before
+            content: ''
+            display: inline-block
+            +shape(10px, 10px)
+
+        .-increase-btn
+          margin-right: 5px
+          &:before          
+            border-top: 1px solid $cl_txt
+            border-right: 1px solid $cl_txt
+            +transform(rotate(45deg))
+        
+        .-decrease-btn
+          margin-left: 5px
+          &:before          
+            border-top: 1px solid $cl_txt
+            border-left: 1px solid $cl_txt
+            +transform(rotate(-45deg))            
+
+        .-quantity-input
+          width: 50px
+          border-radius: 5px
+          border: 1px solid $cl_txt
+          padding: 5px
+          outline: none
+          text-align: center
+
+    &__quantity-select-controls
+      display: none
+      &.is-show
+        display: inline-block    
+
+        .-quantity-select
+          min-width: 50%
+
+    &__price-col
+      width: 15%
+      color: $cl_txt
+      text-align: center
+      vertical-align: middle
+
+    &__final-price-col
+      width: 15%
+      color: $cl_txt
+      text-align: center
+      vertical-align: middle
+  
+    &__footer-wrap
+      overflow: hidden
+      margin-top: 20px
+      padding-top: 20px
+      white-space: nowrap      
+      border-top: 1px solid $color_gray_normal 
+
+    &__footer-left,
+    &__footer-center,
+    &__footer-right
+      float: left
+      white-space: normal                 
+
+    &__footer-left
+      width: 72%
+      padding-right: 10px
+      
+    &__footer-update-btn
+      background: $color_orange_normal
+      color: #fff
+      text-align: center
+      padding: 7px 10px
+      min-width: 120px
+      border: none
+      border-radius: 7px      
+      cursor: pointer
+      &:hover
+        opacity: 0.8
+
+    &__footer-center
+      width: 11%
+      text-align: right
+      padding: 0 10px
+      
+    &__footer-total-price
+      display: inline-block
+      color: $cl_txt
+
+    &__footer-right
+      width: 17%
+      padding-left: 10px
+      text-align: center
+
+    &__footer-total-price-number
+      color: $color_orange_normal
+
+    &__customer-infor-top
+      display: flex
+      justify-content: space-between
+
+    &__customer-infor-small-field
+      width: 32%
+      padding: 10px 
+      border: none
+      border-left: 2px solid $color_orange_normal       
+      color: $color_gray_normal
+      background: $color_gray_light      
+      border-box: box-sizing
+      outline-width: 2px
+      &:focus
+        outline-color: $color_orange_normal        
+    
+    &__customer-infor-address
+      border: none
+      padding: 10px
+      width: 100%
+      color: $color_gray_normal
+      background: $color-gray-light
+      border-left: 2px solid $color_orange_normal
+      margin-top: 20px            
+      outline-width: 2px
+      &:focus
+        outline-color: $color_orange_normal        
+
+  .custom-line
+    position: relative
+    +shape(80%, 2px)
+    background: $color_gray_normal_light    
+    margin: 50px auto
+    &:before
+      content: ''
+      display: block
+      +shape(50px, 5px)
+      background: $color_orange_normal
+      +adjust_mid(absolute)
+  //end cart-detail

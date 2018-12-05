@@ -589,6 +589,80 @@
     width: 20px;
     height: 16px;
   }
+  #under .cart-detail__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  #under .cart-detail__image-outer {
+    max-height: 230px;
+  }
+  #under .cart-detail__product-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #under .cart-detail__image-col {
+    width: 35%;
+    vertical-align: top;
+  }
+  #under .cart-detail__image-col .cart-detail__remove-cart-item {
+    display: block;
+  }
+  #under .cart-detail__product-part-ttl {
+    display: block;
+  }
+  #under .cart-detail__title-wrap {
+    display: none;
+  }
+  #under .cart-detail__title-item {
+    font-size: 16px;
+  }
+  #under .cart-detail__product-catelink {
+    margin-top: 7px;
+  }
+  #under .cart-detail__product-catelink a {
+    padding: 2px 10px;
+  }
+  #under .cart-detail__product-code {
+    margin-top: 7px;
+  }
+  #under .cart-detail__info-col, #under .cart-detail__colour-col, #under .cart-detail__quanity-col {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 30px !important;
+  }
+  #under .cart-detail__price-col, #under .cart-detail__final-price-col {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    padding-left: 30px !important;
+  }
+  #under .cart-detail__info-col {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #under .cart-detail__quantity-input-controls, #under .cart-detail__quantity-select-controls {
+    text-align: left;
+  }
+  #under .cart-detail__remove-cart-item {
+    display: none;
+  }
+  #under .cart-detail__footer-wrap {
+    display: flex;
+    margin-top: 15px;
+    padding-top: 15px;
+    align-items: baseline;
+  }
+  #under .cart-detail__footer-left {
+    width: 40%;
+  }
+  #under .cart-detail__footer-center {
+    width: 25%;
+  }
+  #under .cart-detail__footer-right {
+    width: 35%;
+  }
 }
 @media screen and (max-width: 580px) {
   #under .main-blog_post .blog-image {
@@ -737,6 +811,45 @@
     width: 249px;
     height: 279px;
   }
+  #under .cart-detail__title {
+    font-size: 18px;
+    text-align: center;
+  }
+  #under .cart-detail__product-name {
+    font-size: 14px;
+  }
+  #under .cart-detail__product-catelink a {
+    font-size: 14px;
+  }
+  #under .cart-detail__product-code {
+    font-size: 14px;
+  }
+  #under .cart-detail__info-col, #under .cart-detail__colour-col, #under .cart-detail__quanity-col {
+    padding-left: 15px !important;
+  }
+  #under .cart-detail__price-col, #under .cart-detail__final-price-col {
+    padding-left: 15px !important;
+    font-size: 14px;
+  }
+  #under .cart-detail__footer-total-price {
+    font-size: 14px;
+  }
+  #under .cart-detail__footer-total-price-number {
+    font-size: 14px;
+  }
+  #under .cart-detail__customer-infor-top {
+    display: block;
+  }
+  #under .cart-detail__customer-infor-small-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  #under .cart-detail__customer-infor-small-field:last-child {
+    margin-bottom: 0;
+  }
+  #under .custom-line {
+    margin: 30px auto;
+  }
 }
 @media screen and (max-width: 425px) {
   header .inner_hd .right_hd ul li:last-child .shoping_cart {
@@ -849,6 +962,30 @@
     font-size: 16px;
     line-height: 20px;
   }
+  #under .cart-detail__image-col {
+    width: 40%;
+  }
+  #under .cart-detail__price-col, #under .cart-detail__final-price-col {
+    display: block;
+    width: 100%;
+    padding-left: 15px !important;
+  }
+  #under .cart-detail__info-wrap td {
+    padding: 20px 0;
+  }
+  #under .cart-detail__footer-center, #under .cart-detail__footer-right {
+    width: 50%;
+  }
+  #under .cart-detail__footer-center {
+    text-align: center;
+  }
+  #under .cart-detail__footer-right {
+    padding: 10px 0;
+    background: #F6F6F6;
+  }
+  #under .cart-detail__footer-left {
+    display: none;
+  }
 }
 @media screen and (max-width: 375px) {
   #under .block_prd .tt_block h2 {
@@ -903,6 +1040,9 @@
   }
   #under .blog-detail__list-item__btn-outer {
     display: none;
+  }
+  #under .cart-detail__remove-cart-btn .-close-icon {
+    margin-right: 2px;
   }
 }
 

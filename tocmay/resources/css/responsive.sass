@@ -245,6 +245,7 @@
         +shape($w: 100%)
         .txt_cate
           +shape($w: 100%)
+
   #under
     .title_pg
       +shape($w:100%,$h: 100px)
@@ -445,6 +446,83 @@
         +shape(20px, 16px)
     //end review page
 
+    .cart-detail
+      &__title
+        font-size: 20px
+        margin-bottom: 20px
+      
+      &__image-outer        
+        max-height: 230px
+        
+      &__product-name
+        max-width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+
+      &__image-col
+        width: 35%
+        vertical-align: top
+        .cart-detail__remove-cart-item
+          display: block
+
+      &__product-part-ttl
+        display: block
+      
+      &__title-wrap
+        display: none
+
+      &__title-item
+        font-size: 16px      
+
+      &__product-catelink
+        margin-top: 7px
+        a
+          padding: 2px 10px
+
+      &__product-code
+        margin-top: 7px
+
+      &__info-col,      
+      &__colour-col, 
+      &__quanity-col,      
+        display: block
+        width: 100%
+        text-align: left
+        padding-left: 30px !important
+      
+      &__price-col,
+      &__final-price-col
+        display: inline-block
+        width: 50%
+        text-align: left
+        padding-left: 30px !important
+
+      &__info-col
+        padding-top: 0 !important
+        padding-bottom: 0 !important
+
+      &__quantity-input-controls,
+      &__quantity-select-controls        
+        text-align: left        
+
+      &__remove-cart-item
+        display: none   
+
+      &__footer-wrap
+        display: flex
+        margin-top: 15px
+        padding-top: 15px
+        align-items: baseline
+
+      &__footer-left
+        width: 40%
+
+      &__footer-center
+        width: 25%
+
+      &__footer-right
+        width: 35%
+
 @media screen and (max-width: 580px)
 
   #under
@@ -603,6 +681,51 @@
           +shape(249px,279px)
     //end review page
 
+    .cart-detail
+      &__title
+        font-size: 18px
+        text-align: center
+        
+      &__product-name
+        font-size: 14px
+
+      &__product-catelink
+        a
+          font-size: 14px
+
+      &__product-code
+        font-size: 14px
+      
+      &__info-col,      
+      &__colour-col, 
+      &__quanity-col,   
+        padding-left: 15px !important
+      
+      &__price-col,
+      &__final-price-col
+        padding-left: 15px !important   
+        font-size: 14px
+
+      &__footer-total-price
+        font-size: 14px
+
+      &__footer-total-price-number
+        font-size: 14px
+      
+      &__customer-infor-top
+        display: block
+
+      &__customer-infor-small-field
+        width: 100%
+        margin-bottom: 15px
+        &:last-child
+          margin-bottom: 0       
+    
+      &__customer-infor-address
+
+    .custom-line
+      margin: 30px auto
+
 @media screen and (max-width: 425px)
   header
     .inner_hd
@@ -711,6 +834,33 @@
         line-height: 20px
     //end review page
 
+    .cart-detail      
+      &__image-col
+        width: 40%
+
+      &__price-col,
+      &__final-price-col
+        display: block
+        width: 100%
+        padding-left: 15px !important
+
+      &__info-wrap td
+        padding: 20px 0
+
+      &__footer-center,      
+      &__footer-right
+        width: 50%
+      
+      &__footer-center
+        text-align: center
+
+      &__footer-right
+        padding: 10px 0
+        background: $color-gray-light
+      
+      &__footer-left
+        display: none
+
 @media screen and (max-width: 375px)
   
   #under
@@ -781,3 +931,8 @@
         &__btn-outer
           display: none 
     //end blog detail
+
+    .cart-detail
+      &__remove-cart-btn 
+        .-close-icon          
+          margin-right: 2px
