@@ -25,6 +25,7 @@
   }
 
   header {
+    height: 80px;
     min-width: 100%;
     background: #fff;
     position: fixed;
@@ -57,9 +58,6 @@
     left: -100%;
     top: 81px;
     text-align: left;
-    -webkit-box-shadow: -1px -1px 2px;
-    -moz-box-shadow: -1px -1px 2px;
-    box-shadow: -1px -1px 2px;
     padding: 0 10px;
     transition: 500ms ease-in-out;
   }
@@ -78,6 +76,9 @@
     width: 100%;
     border: none;
     outline: none;
+    font-size: 16px;
+    color: #707070;
+    font-style: italic;
     border-bottom: 1px solid #707070;
   }
   header .inner_hd .mid_hd .search_Mb form button {
@@ -239,25 +240,32 @@
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 5px;
+    bottom: 0;
     text-align: center;
   }
   #action_moblie a {
     padding: 7px;
-    display: inline-block;
-    width: 60px;
+    display: block;
+    width: 50%;
     height: 60px;
-    border: solid 1px #F6B26D;
-    background: #fff;
-    border-radius: 50%;
+    float: left;
+    border: solid 1px #fff;
+    background: #F6B26D;
     font-size: 22px;
-    color: #F6B26D;
+    color: #fff;
     line-height: 40px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
   }
   #action_moblie .call {
     font-size: 24px;
   }
 
+  footer {
+    padding-top: 0;
+    padding-bottom: 70px;
+    margin-top: 50px;
+  }
   footer .ct_footer {
     padding: 20px 15px 100px 15px;
     position: relative;
@@ -281,6 +289,8 @@
     width: 32%;
     border: none;
     display: inline-block;
+    font-size: 14px;
+    text-align: center;
   }
   footer .ct_footer .ft_fanpage {
     width: 50%;
@@ -663,6 +673,54 @@
   #under .cart-detail__footer-right {
     width: 35%;
   }
+  #under .contact .left_contact {
+    width: 100%;
+  }
+  #under .contact .left_contact .item h4 {
+    margin-bottom: 12px;
+  }
+  #under .contact .left_contact .item p {
+    margin-bottom: 12px;
+  }
+  #under .contact .right_contact {
+    width: 100%;
+  }
+  #under .contact .right_contact .form {
+    margin-right: 0;
+  }
+  #under .contact .right_contact .form h4 {
+    padding-left: 0;
+  }
+  #under .contact .right_contact .form form {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+  #under .contact .right_contact .form form .it_form {
+    padding: 0 10px;
+    width: 100%;
+  }
+  #under .content_map {
+    padding-top: 20px;
+  }
+  #under .content_map .map {
+    width: 100%;
+    height: 350px;
+  }
+  #under .content_map .location_brach {
+    padding: 10px;
+  }
+  #under .form_order_complete {
+    width: 100%;
+    padding: 15px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+  #under .form_order_complete h3 {
+    margin-bottom: 20px;
+  }
+  #under .form_order_complete p {
+    margin-bottom: 20px;
+  }
 }
 @media screen and (max-width: 580px) {
   #under .main-blog_post .blog-image {
@@ -725,6 +783,14 @@
   }
 }
 @media screen and (max-width: 500px) {
+  header .inner_hd .right_hd ul li:last-child .shoping_cart .l_prdcart .pd_crt .ct_lcrt .it_cart .txt_itc p {
+    font-size: 16px;
+  }
+  header .inner_hd .right_hd ul li:last-child .shoping_cart .l_prdcart .pd_crt .ct_lcrt .it_cart .txt_itc h3 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
   #under .review-content__title {
     font-size: 20px;
     line-height: 24px;
@@ -758,7 +824,8 @@
     width: 100%;
   }
   footer .ct_footer .ft_address .it_ad {
-    padding-left: 40px;
+    padding-left: 0;
+    text-align: center;
   }
   footer .ct_footer .ft_hours {
     width: 100%;
@@ -773,9 +840,27 @@
     border: none;
     float: left;
   }
+  footer .ct_footer .ft_address .it_ad i {
+    display: none;
+  }
+  footer .ct_footer .ft_address .ft_adr p {
+    font-size: 14px;
+  }
+  footer .ct_footer .ft_hours h3 {
+    font-size: 16px;
+  }
+  footer .ct_footer .ft_hours p {
+    font-size: 12px;
+    text-align: center;
+  }
   footer .ct_footer .ft_fanpage {
+    text-align: center;
     padding: 0;
     width: 100%;
+  }
+  footer .ct_footer .ft_fanpage .fb-page {
+    width: 75% !important;
+    display: inline-block;
   }
   footer .ct_footer .ft_page {
     display: none;
@@ -790,6 +875,9 @@
   }
   #under .sub-blog_post .blog-image {
     height: 120px;
+  }
+  #under .hd_content {
+    padding-top: 0;
   }
   #under .blog-detail__list-item {
     margin: 10px;
@@ -861,6 +949,10 @@
   }
   header .inner_hd .right_hd ul li:last-child .shoping_cart .l_prdcart .bt_cart .ct_tt .btn_cart {
     padding: 12px 2px;
+  }
+
+  footer .ct_footer .ft_fanpage .fb-page {
+    width: 85% !important;
   }
 
   #content_page {
@@ -988,6 +1080,16 @@
   }
 }
 @media screen and (max-width: 375px) {
+  footer .ct_footer .ft_fanpage .fb-page {
+    width: 100% !important;
+  }
+  footer .ct_footer .ft_hours p {
+    width: 50%;
+  }
+  footer .ct_footer .ft_hours p:last-child {
+    width: 100%;
+  }
+
   #under .block_prd .tt_block h2 {
     font-size: 20px;
   }

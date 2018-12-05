@@ -12,7 +12,14 @@
 </head>
 <body>
   <div id="under" class="wrapper">
-    <!-- <header>
+    <header>
+      <div class="mobile-toggle">
+        <div class="button_toggle">
+          <span class="line"></span>
+          <span class="line line2"></span>
+          <span class="line"></span>
+        </div>
+      </div>
       <div class="inner_hd">
         <div class="left_hd">
           <h1 class="logo">
@@ -22,13 +29,19 @@
           </h1>
         </div>
         <div class="mid_hd">
+          <div class="search_Mb">
+            <form action="">
+              <input type="text" placeholder="Tìm kiếm Sản phẩm">
+              <button class="icon-Search-icon "></button>
+            </form>
+          </div>
           <nav>
             <ul>
               <li><a href="">TRANG CHỦ</a></li>
               <li><a href="">GIỚI THIỆU</a></li>
-              <li><a href="">SẢN PHẨM</a>
+              <li class="active"><a href="">SẢN PHẨM</a><span class="icon-Arrow-detail-icon "></span>
                 <ul>
-                  <li><a href="">Tóc bộ</a>
+                  <li><a href="">Tóc bộ</a><span class="icon-Arrow-detail-icon "></span>
                     <ul>
                       <li><a href="">Tóc cột</a></li>
                       <li><a href="">Tóc cột</a></li>
@@ -36,6 +49,7 @@
                     </ul>
                   </li>
                   <li><a href="">Tóc giả</a>
+                    <span class="icon-Arrow-detail-icon "></span>
                     <ul>
                       <li><a href="">Tóc cột</a></li>
                       <li><a href="">Tóc cột</a></li>
@@ -43,6 +57,7 @@
                     </ul>
                   </li>
                   <li><a href="">Tóc thật</a>
+                    <span class="icon-Arrow-detail-icon "></span>
                     <ul>
                       <li><a href="">Tóc cột</a></li>
                       <li><a href="">Tóc cột</a></li>
@@ -69,61 +84,74 @@
               </div>
             </li>
             <li>
+              <span><img src="resources/images/covn.png" alt=""></span>
+              <ul class="lang">
+                <li>
+                  <span><img src="resources/images/comy.png" alt=""></span>
+                </li>
+              </ul>
+            </li>
+            <li>
               <i class="icon-Card-icon-style-2"><span>3</span></i>
               <div class="shoping_cart">
                 <h3><span>Giỏ hàng</span> <span>3 sản phẩm</span></h3>
                 <div class="l_prdcart">
                   <div class="pd_crt">
-                    <div class="it_cart">
-                      <div class="img_itc">
-                        <img src="../resources/images/Group392.png" alt="">
+                    <div class="ct_lcrt">
+                      <div class="it_cart">
+                        <div class="img_itc">
+                          <img src="../resources/images/Group392.png" alt="">
+                        </div>
+                        <div class="txt_itc">
+                          <h3>Tóc soăn dài trung niên</h3>
+                          <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+                          <p>380.000 Đ</p>
+                        </div>
                       </div>
-                      <div class="txt_itc">
-                        <h3>Tóc soăn dài trung niên</h3>
-                        <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-                        <p>380.000 Đ</p>
+                      <div class="it_cart">
+                        <div class="img_itc">
+                          <img src="../resources/images/Group392.png" alt="">
+                        </div>
+                        <div class="txt_itc">
+                          <h3>Tóc soăn dài trung niên</h3>
+                          <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+                          <p>380.000 Đ</p>
+                        </div>
+                      </div>
+                      <div class="it_cart">
+                        <div class="img_itc">
+                          <img src="resources/images/Group392.png" alt="">
+                        </div>
+                        <div class="txt_itc">
+                          <h3>Tóc soăn dài trung niên</h3>
+                          <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+                          <p>380.000 Đ</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="it_cart">
-                      <div class="img_itc">
-                        <img src="../resources/images/Group392.png" alt="">
-                      </div>
-                      <div class="txt_itc">
-                        <h3>Tóc soăn dài trung niên</h3>
-                        <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-                        <p>380.000 Đ</p>
-                      </div>
-                    </div>
-                    <div class="it_cart">
-                      <div class="img_itc">
-                        <img src="../resources/images/Group392.png" alt="">
-                      </div>
-                      <div class="txt_itc">
-                        <h3>Tóc soăn dài trung niên</h3>
-                        <h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-                        <p>380.000 Đ</p>
-                      </div>
-                    </div>
+                    
                   </div>
                   <div class="total_cart clear">
-                    <span class="txt_tt">TỔNG TIỀN</span>
-                    <span class="price_tt">1.400.000 Đ</span>
+                    <div class="ct_tt">
+                      <span class="txt_tt">TỔNG TIỀN</span>
+                      <span class="price_tt">1.400.000 Đ</span>
+                    </div>
                   </div>
                   <div class="bt_cart">
-                    <a href=""><span class="btn_cart">  <i class="icon-Card-icon-style-2"></i>
-                    GIỎ HÀNG</span></a>
-                    <a href=""><span class="btn_cart">
-                    <i class="icon-Purchase-icon"></i>THANH TOÁN</span></a>
-                    
+                    <div class="ct_tt">
+                      <a href=""><span class="btn_cart">  <i class="icon-Card-icon-style-2"></i>
+                      GIỎ HÀNG</span></a>
+                      <a href=""><span class="btn_cart">
+                      <i class="icon-Purchase-icon"></i>THANH TOÁN</span></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </li>
-            
           </ul>
         </div>
       </div>
-    </header> -->
+    </header>
     <div id="content_page">
       <div class="hd_content">
         <ul class="breadcrumb">
@@ -131,7 +159,7 @@
             <a href="">Trang chủ</a>
           </li>
           <li>
-            Bài viết
+            Chi tiết giỏ hàng
           </li>
         </ul>
       </div>
@@ -427,7 +455,7 @@
         </div>
       </div>
     </div>
-    <!-- <footer>
+    <footer>
       <div class="ct_footer content">
         <div class="ft_address">
           <div class="it_ad log_ft">
@@ -464,11 +492,53 @@
         </div>
         <div class="ft_fanpage">
           <h3>Facebook</h3>
-          <div class="fb-page" data-href="https://www.facebook.com/ShopTocXinh/" data-tabs="timeline" data-height="160" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ShopTocXinh/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ShopTocXinh/">Shop tóc xinh</a></blockquote></div>
+          <div class="fb-page" data-href="https://www.facebook.com/ShopTocXinh/" data-tabs="timeline" data-height="360" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ShopTocXinh/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ShopTocXinh/">Shop tóc xinh</a></blockquote></div>
         </div>
         <div class="clear"></div>
       </div>
-    </footer> -->
+    </footer>
+    <div id="action_mn">
+      <ul>
+        <li>
+          <i class="icon-Home-icon"></i>
+          <ul>
+            <li>
+              <p><span>Địa chỉ 1: </span> 17 Tân Sơn Nhì P. Tân Sơn Nhì Q Tân Phú</p>
+            </li>
+            <li>
+              <p><span>Địa chỉ 2: </span> 1263 Đường 3/2, P. 6, Q.11</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="icon-Phone-icon"></i>
+          <ul>
+            <li>
+              <p><span>0933337990 </span> -<span> 0937388890</span></p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="icon-Mail-icon"></i>
+          <ul>
+            <li>
+              <p>info@shoptocxinh.com</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i class="icon-Facebook-icon"></i>
+          <ul class="icon_social">
+            <li >
+              <i class="icon-Youtube-icon"></i>
+            </li>
+          </ul>
+        </li>
+        <li >
+          <i class="icon-To-top-icon to_toppage"></i>
+        </li>
+      </ul>
+    </div>
   </div>
   <script type="text/javascript" src="../resources/js/common.js"></script>
 </body>
