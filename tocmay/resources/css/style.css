@@ -2798,6 +2798,24 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .cart-detail__customer-infor-address:focus {
   outline-color: #f6b16c;
 }
+#under .cart-detail__confirm-btn-outer {
+  margin-top: 30px;
+  text-align: center;
+}
+#under .cart-detail__confirm-btn {
+  min-width: 180px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px;
+  border-radius: 7px;
+  background: #f6b16c;
+  border: none;
+  cursor: pointer;
+}
+#under .cart-detail__confirm-btn:hover {
+  opacity: 0.8;
+}
 #under .custom-line {
   position: relative;
   width: 80%;
