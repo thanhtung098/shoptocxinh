@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shoptocxinh</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=no" />  
 	<link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css">
@@ -152,61 +152,26 @@
 				</div>
 			</div>
 		</header>
-		<div id="content_page">
-			<div id="cate_pduct" class="content">
-				<div class="it_cate">
-					<div class="img_cate">
-						<img src="resources/images/cate1.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Tóc giả cho trẻ em</a></li>
-							<li><a href="">• Tóc bộ dài</a></li>
-							<li><a href="">• Tóc bộ ngắn</a></li>
-							<li><a href="">• Tóc bộ ngắn người trung niên</a></li>
-							<li><a href="">• Tóc nửa đầu</a></li>
-							<li><a href="">• Cosplay</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc bộ <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
-				<div class="it_cate ">
-					<div class="img_cate">
-						<img src="resources/images/cate2.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Tóc mái</a></li>
-							<li><a href="">• Tóc giả</a></li>
-							<li><a href="">• Tóc mái cho nam giới</a></li>
-							<li><a href="">• Tóc thật nguyên đầu</a></li>
-							<li><a href="">• Tóc hói thật</a></li>
-							<li><a href="">• Bột phủ tóc</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc thật <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
-				<div class="it_cate">
-					<div class="img_cate">
-						<img src="resources/images/cate3.png" alt="">
-					</div>
-					<div class="txt_cate">
-						<h3>TÓC BỘ</h3>
-						<ul>
-							<li><a href="">• Line màu</a></li>
-							<li><a href="">• Tóc Búi</a></li>
-							<li><a href="">• Tóc cột</a></li>
-							<li><a href="">• Tóc kẹp phím</a></li>
-							<li><a href="">• Tóc mái</a></li>
-							<li><a href="">• Cosplay</a></li>
-						</ul>
-						<a href=""><h4>Mua sắm tóc giả <i class="icon-Arrow-detail-icon"></i></h4></a>
-					</div>
-				</div>
+		<div id="content_page" >
+			<div class="breadcrumb content">
+				<ul>
+					<li>
+						<a href="">Trang chủ </a>
+					</li>
+					<li>
+						<a href="">Liên hệ </a>
+					</li>
+				</ul>
 			</div>
-			<div class="clear"></div>
+			<div class="title_pg">
+				<span>Đặt hàng thành công</span>
+			</div>
+			<div class="form_order_complete content">
+				<h3>Cảm ơn quý khách đã đặt hàng thành công.</h3>
+				<p>Shoptocxinh sẽ sớm liên hệ lại với quý khách để hoàn tất xác nhận và tiền hành giáo hàng cho quý khách.</p>
+				<p>Mọi thắc mắc và cần tư vấn thêm vui lòng liên hệ : 0933337990</p>
+				<h4><a href="index.html"><i class="icon-Arrow-left "></i>Về trang chủ</a></h4>
+			</div>
 		</div>
 		<footer>
 			<div class="ct_footer content">
@@ -283,7 +248,7 @@
 					<i class="icon-Facebook-icon"></i>
 					<ul class="icon_social">
 						<li >
-							<i class="icon-Youtube-icon"><a href=""></a></i>
+							<i class="icon-Youtube-icon"></i>
 						</li>
 					</ul>
 				</li>
@@ -297,9 +262,259 @@
 <div id="fb-root"></div>
 <script src="resources/vendor/jquery.min.js"></script>
 <script src="resources/vendor/slick/slick.min.js"></script>
-<script type="text/javascript" src="resources/js/limittext.js"></script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1542004393985/recaptcha__vi.js"></script>
 <script src="resources/js/script.js"></script>
+<script type="text/javascript" src="resources/js/common.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js"></script>
-<script type="text/javascript" src="resources/js/common.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&sensor=false&callback=initialize"></script>
+
+<script>
+	var markers = [];
+function initialize() {
+    var mapOptions = {
+        zoom: 13,
+        center: new google.maps.LatLng(10.759392, 106.651684),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: [
+		    {
+		        "featureType": "all",
+		        "elementType": "labels",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative.locality",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            },
+		            {
+		                "color": "#000"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#DBDBDB"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color" : "#efebe2"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.attraction",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.business",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.government",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.medical",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.park",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#AEC93D"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.place_of_worship",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#000"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.school",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#7CBC73"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.sports_complex",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#000"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#fbfbfb"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "transit",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#F6B26D"
+		            }
+		        ]
+		    }
+		]
+   }
+   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+   var locations = [
+         {
+            lat:10.796321,
+            lng: 106.630302,
+            name:'Địa chỉ 1',
+            address:'17 Tân Sơn Nhì,Phường Tân Sơn Nhì',
+            phone:'0933337990 0937388890',
+        },
+        {
+            lat:10.759392,   
+            lng:106.651684,
+            name:'Địa chỉ 2',
+            address:'1263 Đường 3/2, Phường 6, Quận 11',
+            phone:'0933337990 - 0937388890',   
+        }   
+        ];
+    var marker, i;
+    var infowindow = new google.maps.InfoWindow();
+
+
+    google.maps.event.addListener(map, 'click', function() {
+        infowindow.close();
+    });
+
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+            map: map,
+            icon: locations[i].icon
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                map.setCenter(marker.getPosition());
+                infowindow.setContent(
+                '<div class="maker-info" style="width:300px" ><div class="col-xs-8"><h4>'+ locations[i].name
+                    +'</h4><p><strong>Địa chỉ:</strong>' + locations[i].address
+                    + '</p><p><strong>Điện thoại:</strong> ' + locations[i].phone
+                    + '</p></div><div class="clearfix"></div></div>'
+                );
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+
+        markers.push(marker);
+    }
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+function myClick(id){
+    google.maps.event.trigger(markers[id], 'click');
+}
+</script>
 </html>

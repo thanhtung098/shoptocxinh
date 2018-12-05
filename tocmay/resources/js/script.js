@@ -170,6 +170,25 @@ $(document).ready(function(){
         });
     }
     showMenumb();
+    // alert($(window).width())
+    function checkHederMb(){
+    	if($(window).width() > 640){
+	    	$(window).scroll(function(){
+			    if ($(this).scrollTop() > 100) {
+			        $('header').addClass('header_scroll');
+			    } else {
+			        $('header').removeClass('header_scroll');
+			    }
+			});
+	    }else{
+	    	return false;
+	    }
+    }
+    checkHederMb();
+    $(window).resize(function() {
+    	// alert($(window).width());
+    	checkHederMb();
+    });
     $('.to_toppage').click(function(){
         $('html, body').animate({scrollTop : 0},500);
         return false;
