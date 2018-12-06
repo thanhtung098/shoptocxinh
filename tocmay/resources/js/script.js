@@ -172,21 +172,18 @@ $(document).ready(function(){
     showMenumb();
     // alert($(window).width())
     function checkHederMb(){
-    	if($(window).width() > 640){
-	    	$(window).scroll(function(){
-			    if ($(this).scrollTop() > 100) {
-			        $('header').addClass('header_scroll');
-			    } else {
-			        $('header').removeClass('header_scroll');
-			    }
-			});
-	    }else{
-	    	return false;
-	    }
+    	$(window).scroll(function(){
+		    if ($(this).scrollTop() > 100) {
+		    	if(($(window).width()) > 640){
+		    		$('header').addClass('header_scroll');
+		    	}
+		    } else {
+		        $('header').removeClass('header_scroll');
+		    }
+		});
     }
     checkHederMb();
     $(window).resize(function() {
-    	// alert($(window).width());
     	checkHederMb();
     });
     $('.to_toppage').click(function(){

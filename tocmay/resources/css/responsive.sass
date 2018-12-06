@@ -108,7 +108,7 @@
       .right_hd
         float: unset
         +position($pos:absolute,$t: 0,$r: 0)
-        padding-top: 36px
+        padding-top: 35px
         ul
           li
             &:last-child
@@ -127,7 +127,19 @@
       .video_bn
         +shape($w: 100%,$h: 100%)
         .ct_video
-          +shape($w: 100%)
+          +shape($w: 85%,$h:90%)
+          margin: 0 auto
+          +position($pos: absolute,$l: 0,$r: 0)
+          h3
+            display: none
+          #video_banner
+            +shape($h: 100%)
+    .icon-Arrow-left
+      left: 5px
+      font-size: 45px
+    .icon-Arrow-right
+      right: 5px
+      font-size: 45px
     .slick-list 
       &:after
         display: none
