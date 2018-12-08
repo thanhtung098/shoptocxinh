@@ -925,15 +925,25 @@
   #under .cart-detail__footer-total-price-number {
     font-size: 14px;
   }
-  #under .cart-detail__customer-infor-top {
+  #under .payment__customer-infor-top {
     display: block;
   }
-  #under .cart-detail__customer-infor-small-field {
+  #under .payment__customer-infor-small-field-outer {
     width: 100%;
-    margin-bottom: 15px;
-  }
-  #under .cart-detail__customer-infor-small-field:last-child {
     margin-bottom: 0;
+  }
+  #under .payment__customer-infor-small-field-outer:last-child {
+    margin-bottom: 0;
+  }
+  #under .payment__customer-infor-wrong {
+    font-size: 12px;
+    margin: 5px 0 10px;
+  }
+  #under .payment__customer-infor-bot {
+    margin-top: 5px;
+  }
+  #under .payment__payment-radio-wrap {
+    margin-top: 15px;
   }
   #under .custom-line {
     margin: 30px auto;

@@ -180,6 +180,26 @@ const common = (function(){
     return isMobile;
   }; //end_detectDevice 
 
+  const _formatMoney = function(val){
+    var v = Number(val);
+    if (isNaN(v)) { return val; }
+    var sign = (v < 0) ? '-' : '';
+    var res = Math.abs(v).toString().split('').reverse().join('').replace(/(\d{3}(?!$))/g, '$1,').split('').reverse().join('');
+    return sign + res;
+  } // end_formatMoney
+
+  const _calcAndPrintPriceProduct = function(elCurrent) {
+      const $elCartDetailInfoGroup = $($(elCurrent).parents('.cart-detail__info-group')[0]);    
+      const elCartDetailPriceCol = $elCartDetailInfoGroup.find('.cart-detail__price-col')[0];
+      const elCartDetailFinalPriceCol = $elCartDetailInfoGroup.find('.cart-detail__final-price-col')[0];
+
+      const intPriceValue = elCartDetailPriceCol.dataset.price;
+      const intFinalPriceValue = elCartDetailFinalPriceCol.dataset.finalPrice;          
+      
+      $(elCartDetailPriceCol).find('.cart-detail__price-txt').html(_formatMoney(intPriceValue * parseInt(elCurrent.value)) + ' VNĐ');
+      $(elCartDetailFinalPriceCol).find('.cart-detail__final-price-txt').html(_formatMoney(intFinalPriceValue * parseInt(elCurrent.value)) + ' VNĐ');
+  }
+
   const _showOrHideQuantityBlock = function() {
     const $objElQuantityInputOuter = $('.cart-detail__quantity-input-controls'),
           $objElQuantitySelectOuter = $('.cart-detail__quantity-select-controls');
@@ -214,7 +234,7 @@ const common = (function(){
     $(window).on('resize',function() {
       setIsShow();
     });    
-  };
+  }; // end_showOrHideQuantityBlock
 
   const _validateCartDetailForm = function() {
     const objElQuantityInput = document.getElementsByClassName('-quantity-input');
@@ -223,18 +243,21 @@ const common = (function(){
     const objElQuantityIncreaseBtn = document.getElementsByClassName('-increase-btn');
     const objElQuantityDecreaseBtn = document.getElementsByClassName('-decrease-btn');
 
-    if(!objElQuantityInput || !objElQuantitySelect) {
-      return;
-    }
+    if(!objElQuantityInput || 
+       !objElQuantitySelect) {
+          return;
+      }
+
     var quantityValue, quantityLimit, currentKeyValue, elCurrent, controlsOuter, elQuantityCol;
     var increaseInput,decreaseInput;
+    
     const regexLetter = /^[a-zA-Z]+$/,
           regexSpecialChar = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,
           exceptKey = [13,17,35,36,46];
 
     $(objElQuantityInput).on('keydown',function(ev) {
-      elCurrent = ev.target;
-      controlsOuter = $(elCurrent).parents('.cart-detail__info-group').find('.-quantity-select')[0];      
+      elCurrent = ev.target;            
+      controlsOuter = $(elCurrent).parents('.-quantity-select')[0];      
       quantityLimit = elCurrent.dataset.limitQuantity;
       currentKeyValue = ev.keyCode;                  
 
@@ -242,22 +265,21 @@ const common = (function(){
         return;
       } else {
         elQuantityCol = $(elCurrent).parents('.cart-detail__quanity-col')[0];
-        console.log(elQuantityCol);
         if(currentKeyValue == 8) {                    
           setTimeout(function(){
             if(elCurrent.value != '') {
               elQuantityCol.dataset.curQuantity = parseInt(elCurrent.value);
+              _calcAndPrintPriceProduct(elCurrent);
             }            
           });
           return;
         }
         currentKeyValue = ev.key;      
-        if(regexLetter.test(currentKeyValue) || regexSpecialChar.test(quantityValue)) {
-          console.log("wrong");
+        if(regexLetter.test(currentKeyValue) || regexSpecialChar.test(quantityValue)) {        
           ev.preventDefault();      
           return;
         }
-        console.log("right");
+        
         setTimeout(function() {          
           quantityValue = elCurrent.value;          
           if(parseInt(quantityValue) > parseInt(quantityLimit)) {
@@ -265,6 +287,8 @@ const common = (function(){
           }  
           
           elQuantityCol.dataset.curQuantity = parseInt(elCurrent.value);          
+
+          _calcAndPrintPriceProduct(elCurrent);          
         });
       }      
 
@@ -272,27 +296,101 @@ const common = (function(){
 
     $(objElQuantitySelect).on('change',function(ev) {
       elCurrent = ev.target;      
-      $(elCurrent).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = parseInt(elCurrent.value);
+
+      $(elCurrent).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = parseInt(elCurrent.value);      
+
+      _calcAndPrintPriceProduct(elCurrent);          
     });
 
-    $(objElQuantityIncreaseBtn).on('click',function(ev) {      
+    $(objElQuantityIncreaseBtn).on('click',function(ev) {            
       ev.preventDefault();
-      increaseInput = $(ev.target).prev()[0];
+      elCurrent = ev.target;      
+      increaseInput = $(elCurrent).prev()[0];
       if(parseInt(increaseInput.value) < parseInt(increaseInput.dataset.limitQuantity)) {
         increaseInput.value = parseInt(increaseInput.value) + 1;
         $(increaseInput).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = increaseInput.value;
       }      
+
+      _calcAndPrintPriceProduct(increaseInput); 
     });
 
     $(objElQuantityDecreaseBtn).on('click',function(ev) {            
       ev.preventDefault();
-      decreaseInput = $(ev.target).next()[0];      
+      elCurrent = ev.target;      
+      decreaseInput = $(elCurrent).next()[0];      
       if(parseInt(decreaseInput.value) > 0) {
         decreaseInput.value = parseInt(decreaseInput.value) - 1;
         $(decreaseInput).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = decreaseInput.value;
-      }            
+      }
+
+      _calcAndPrintPriceProduct(decreaseInput);             
     });
-  };
+  }; // end_validateCartDetailForm
+
+  const _validateCustomerInfoForm = function() {    
+    const elPaymentComfirmBtn = document.getElementById('payment__confirm-btn');
+          $elPaymentCustomerNameField = $('#payment__customer-infor-name-field'),
+          $elPaymentCustomerPhoneField = $('#payment__customer-infor-phone-field'),
+          $elPaymentCustomerEmailField = $('#payment__customer-infor-email-field');          
+    
+    const regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+          regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;    
+
+    if(!elPaymentComfirmBtn || 
+       !$elPaymentCustomerNameField ||
+       !$elPaymentCustomerPhoneField ||
+       !$elPaymentCustomerEmailField ) { return; }
+    
+    var elWrongField, isFail = false;
+    elPaymentComfirmBtn.addEventListener('click',function(ev) {            
+      $elWrongField = $elPaymentCustomerNameField.next();
+      
+      if($elPaymentCustomerNameField.val().length <= 1) {
+        $elWrongField.addClass('is-show');
+        isFail = true;
+      } else {
+        $elWrongField.removeClass('is-show');
+      }
+      
+      $elWrongField = $elPaymentCustomerPhoneField.next();
+      if(!regexPhone.test($elPaymentCustomerPhoneField.val())) {
+        $elWrongField.addClass('is-show');
+        isFail = true;
+      } else {
+        $elWrongField.removeClass('is-show');
+      }
+
+      $elWrongField = $elPaymentCustomerEmailField.next();
+      if(!regexEmail.test($elPaymentCustomerEmailField.val())) {
+        $elWrongField.addClass('is-show');
+        isFail = true;
+      } else {
+        $elWrongField.removeClass('is-show');
+      }
+
+      $elRadioChecked = $('input[name=payment]:checked');
+            
+      if(isFail) {            
+        ev.preventDefault();
+        return;        
+      }
+
+      const $strPaymentCustomerNameVal = $elPaymentCustomerNameField.val(),
+            $strPaymentCustomerPhoneVal = $elPaymentCustomerPhoneField.val(),
+            $strPaymentCustomerEmailVal = $elPaymentCustomerEmailField.val(),
+            $strPaymentRadioCheckedVal = $elRadioChecked[0].dataset.payment;
+
+      const objDataCustomerInfo = {
+        name: $strPaymentCustomerNameVal,
+        phone: $strPaymentCustomerPhoneVal,
+        email: $strPaymentCustomerEmailVal,
+        paymentMethod: $strPaymentRadioCheckedVal,
+      };      
+      console.log(objDataCustomerInfo);
+      ev.preventDefault();
+      // do something with your data, post ...
+    });
+  }; // end_validateCustomerInfoForm
 
 	return {
 		init(){
@@ -302,6 +400,7 @@ const common = (function(){
       _generateBlogDetailSlider();
       _generateReviewSlider();
       _validateCartDetailForm();
+      _validateCustomerInfoForm();
       _showOrHideQuantityBlock();
 		}
 	}

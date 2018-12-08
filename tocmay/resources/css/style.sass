@@ -1577,17 +1577,18 @@ footer
       bottom: 0
       right: 0      
   //end -quote-content  
+  
+  .-under-title-left
+    font-size: 22px
+    color: $color_orange_normal
+    margin-bottom: 30px
+    font-weight: 700
+    &.-m-top
+      margin-top: 10px
 
   .cart-detail
     tr,td,th
-      box-sizing: border-box
-    &__title
-      font-size: 22px
-      color: $color_orange_normal
-      margin-bottom: 30px
-      font-weight: 700
-      &.-m-top
-        margin-top: 10px
+      box-sizing: border-box    
 
     &__tbl
       width: 100%
@@ -1667,8 +1668,12 @@ footer
         margin-top: 0
 
     &__product-name
-      font-size: 16px      
-      color: $cl_txt
+      font-size: 16px            
+      a
+        color: $cl_txt
+        text-decoration: none
+        &:hover
+          color: $color_gray_normal
 
     &__product-catelink
       margin-top: 10px
@@ -1855,31 +1860,46 @@ footer
 
     &__footer-total-price-number
       color: $color_orange_normal
+  //end cart-detail
 
+  .payment
     &__customer-infor-top
       display: flex
       justify-content: space-between
+    
+    &__customer-infor-small-field-outer
+      width: 32%
 
     &__customer-infor-small-field
-      width: 32%
+      width: 100%
       padding: 10px 
       border: none
       border-left: 2px solid $color_orange_normal       
-      color: $color_gray_normal
-      background: $color_gray_light      
-      border-box: box-sizing
+      color: $cl_txt
+      background: $color_gray_light            
       outline-width: 2px
       &:focus
         outline-color: $color_orange_normal        
     
+    &__customer-infor-wrong
+      display: inline-block
+      font-size: 14px
+      color: $color_orange_tomato
+      margin-top: 7px
+      opacity: 0
+      &.is-show
+        opacity: 1
+
+    &__customer-infor-bot
+      margin-top: 15px
+
     &__customer-infor-address
       border: none
       padding: 10px
-      width: 100%
-      color: $color_gray_normal
+      width: 100%      
+      color: $cl_txt
       background: $color-gray-light
-      border-left: 2px solid $color_orange_normal
-      margin-top: 20px            
+      border-left: 2px solid $color_orange_normal      
       outline-width: 2px
       &:focus
         outline-color: $color_orange_normal        
@@ -1898,9 +1918,47 @@ footer
       background: $color_orange_normal
       border: none
       cursor: pointer
+      outline: none
       &:hover
         opacity: 0.8
 
+    &__payment-radio-wrap      
+      margin-top: 30px
+
+    &__payment-radio-outer
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
+    
+    &__payment-radio
+      display: none
+      &:checked + label
+        &:before
+          content: ''  
+          display: block
+          +shape(calc(100% - 6px),calc(100% - 6px))
+          border-radius: 50%
+          +adjust_mid(absolute,$margin: auto)
+          background: $color_orange_normal
+
+    &__payment-radio-custom
+      display: inline-block
+      position: relative
+      +shape(25px,25px)
+      border-radius: 50%
+      border: 1px solid $color_orange_normal
+      cursor: pointer
+      vertical-align: middle
+
+    &__payment-radio-txt    
+      display: inline-block
+      font-size: 16px
+      color: $color_orange_normal
+      vertical-align: middle
+      margin-left: 15px
+      +position(relative,$t: -1px)    
+
+  // end payment
   .custom-line
     position: relative
     +shape(80%, 2px)
@@ -1912,8 +1970,7 @@ footer
       +shape(50px, 5px)
       background: $color_orange_normal
       +adjust_mid(absolute)
-
-  //end cart-detail
+  
 
 .logomap
   +shape($w: 30%,$fl: left)
