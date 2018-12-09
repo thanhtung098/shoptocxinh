@@ -1701,6 +1701,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .hd_content.-review-page .breadcrumb {
   width: auto;
   float: left;
+  margin-top: 10px;
 }
 #under .main_content {
   width: 1140px;
@@ -1710,8 +1711,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   list-style-type: none;
   list-style: none;
   width: 1140px;
-  margin: 0 auto;
-  margin-top: 10px;
+  margin: 50px auto 0;
 }
 #under .breadcrumb li {
   position: relative;
@@ -2010,7 +2010,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .content_map {
   background: #F6F6F6;
   padding: 50px 0 0 0;
-  margin: 15px 0 -30px 0;
+  margin: 15px 0 -100px 0;
   position: relative;
 }
 #under .content_map h3 {

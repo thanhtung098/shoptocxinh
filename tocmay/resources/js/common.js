@@ -1,7 +1,7 @@
 var player;
 function onYouTubeIframeAPIReady() {
 	const elVideo = document.getElementById("video_banner");
-	console.log(elVideo);
+	 
 	if(!elVideo){return;}
 
     player = new YT.Player('video_banner', {
@@ -20,9 +20,13 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-$('.btn-pVideo').on('click', function () {
-    player.playVideo();
-});
+const _setClickEventForPVideoBtn = (() => {
+  var elPVideoBtn = $('.btn-pVideo');
+  if(!elPVideoBtn) {return;}
+  $('.btn-pVideo').on('click', function () {
+      player.playVideo();
+  });
+})();
 
 
 // end run video
@@ -642,9 +646,9 @@ const common = (function(){
   }
   
   const _scrollCart = function(){
-    const ctscrollCart = document.getElementsByClassName('ct_lcrt');
-    if(!ctscrollCart) return false;
-    $(ctscrollCart).perfectScrollbar();
+    const $ctscrollCart = $('.ct_lcrt');
+    if(!$ctscrollCart) {return;}
+    $ctscrollCart.perfectScrollbar();
   }
   // google_map
 
