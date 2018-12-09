@@ -126,10 +126,10 @@ header
   padding: 12px 0!important 
   +position($pos: fixed,$l: 0,$r: 0,$t: 0)
   +shape($w: 100%)
-  z-index: 2
+  z-index: 105
   transition: all 300ms
   .mobile-toggle
-    +position($pos: absolute,$l: 15px,$b: 8px)
+    +position($pos: absolute,$l: 15px,$b: 4px)
     +shape($w: 40px,$h: 40px)
     cursor: pointer
     z-index: 99
@@ -254,7 +254,7 @@ header
             .shoping_cart
               padding-top: 44px
               +position(absolute,$r:-20px,$t:14px)
-              +shape($w:420px,$opa: 0)
+              +shape($w:420px)
               +transition(all 300ms ease-in-out)
               z-index: -1
               text-align: left
@@ -345,6 +345,7 @@ header
                 border-left: 15px solid transparent
                 border-right: 15px solid transparent
                 border-bottom: 12px solid #484848
+            
           &:nth-child(2)
             margin-left: 15px
             position: relative
@@ -362,7 +363,6 @@ header
               z-index: 30 
               display: block
             .shoping_cart
-              +shape($opa:1)
               z-index: 30  
               display: block  
             .lang
@@ -378,7 +378,6 @@ header
         +font($cl: #F6B26D,$fz: 10px)
 .header_scroll
   padding: 7px 0!important
-  z-index: 99
   +shape($bk: #fff)
   border-bottom: 2px solid $color-gray-light
   .inner_hd
@@ -477,8 +476,7 @@ header
       height: 5px
       background: #F6B26D
   #introduce
-    padding: 0 15px
-    margin-top: 130px
+    padding: 130px 15px 0 15px
     .it_left
       +shape($w:50%,$fl:left)
       h3
@@ -528,6 +526,7 @@ header
             display: inline-block
             i
               display: inline-block
+              transform: translateY(2px)
         &:hover
           transform: translateY(-10px)
           .img_it
@@ -781,11 +780,11 @@ footer
         +font($fz:20px,$cl: #707070,$fm:UTM-AVOBOLD,$lh:1.5)
         margin-bottom: 28px
       .fb-page
-        +shape($w:100%!important,$h:160px!important)
+        +shape($w:100%!important,$h:200px!important)
         span
-          +shape($w:100%!important,$h:160px!important)
+          +shape($w:100%!important,$h:200px!important)
           iframe
-            +shape($w:100%!important,$h:160px!important)
+            +shape($w:100%!important,$h:200px!important)
 
 #under
   padding-top: 80px
@@ -938,10 +937,19 @@ footer
             padding-left: 0px
       .change_total
         margin-top: 20px
-        input
-          margin-left: 40px
-          +font($tc: center,$fz: 20px)
-          +shape($w: 65px,$h: 38px,$border: solid 1px #2E2E2E,$outline: none,$bdr: 5px)
+        position: relative
+        >span
+          +position($pos: absolute, $t: 3px, $l:0)
+        .cart-detail__quantity-input-controls
+          margin-left: 70px
+          width: 110px
+        .cart-detail__quantity-select-controls
+          margin-left: 80px
+          .-quantity-select
+            padding:  5px
+            +shape($miw: 90px,$bdr: 4px)
+            +font($fz: 18px)
+            text-align-last: center
       .buy_cart
         margin-top: 22px
         button

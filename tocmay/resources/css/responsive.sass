@@ -113,7 +113,11 @@
           li
             &:last-child
               padding-right: 6px
+              .shoping_cart_show
+                display: block!important
+            &:hover
               .shoping_cart
+                display: none
             .icon-Search-icon 
               display: none
             .search
@@ -121,13 +125,26 @@
 
     .mobile-toggle
       display: block
+
   #banner
     +shape($w: 100%,$ov: hidden)
     .item_bn
       .video_bn
         +shape($w: 100%,$h: 100%)
         .ct_video
-          +shape($w: 100%)
+          +shape($w: 85%,$h: 90%)
+          +position($pos: absolute, $l: 0, $r: 0)
+          margin: 0 auto
+          h3
+            display: none
+          #video_banner
+            +shape($h: 100%)
+    .icon-Arrow-left 
+      left: 5px
+      font-size: 40px
+    .icon-Arrow-right
+      right: 5px
+      font-size: 40px
     .slick-list 
       &:after
         display: none
@@ -143,10 +160,16 @@
       padding: 0 10px
       margin-bottom: 20px
       .ct_itpd
+        .hv_txt
+          display: none
         .txt_it 
           padding-top: 15px
+          h3
+            +font($fz: 20px)
           .price_pd
             margin-top: 15px
+            span
+              +font($fz: 20px)
             button
               display: block
               float: unset
@@ -160,26 +183,33 @@
   .mobile-toggle
     display: block
   #action_mn
-    display: none
+    +shape($bdr: 50%)
+    right: 10px
+    top: 75%
+    ul
+      li
+        display: none
+      .to_toppage
+        display: block
+        +shape($w: 60px,$h: 60px)
   #action_moblie
     display: block
     +position($pos: fixed,$b: 0,$l:0,$r:0)
     +font($tc: center)
     a
-      padding: 7px
+      padding: 8px 7px
       display: block
-      +shape($w: 50%,$h: 60px,$border: solid 1px #fff,$bk: #F6B26D,$fl: left)
+      +shape($w: 50%,$border: solid 1px #fff,$bk: #F6B26D,$fl: left)
       +font($fz: 22px,$lh: 40px, $cl: #fff)
       border-top-right-radius: 7px
       border-top-left-radius: 7px
     .call
       +font($fz: 24px)
   footer
-    padding-top: 0
-    padding-bottom: 70px    
+    padding-top: 0 
     margin-top: 50px
     .ct_footer
-      padding: 20px 15px 100px 15px
+      padding: 20px 15px 90px 15px
       position: relative
       .ft_address
         width: 50%
@@ -209,11 +239,19 @@
     .tt_section
       +font($fz: 24px)
     #main_pd
-      margin-top: 75px
+      margin-top: 55px
+      .it_main
+        .ct_itm
+          .txt_it
+            h3
+              +font($fz: 24px)
+            p
+              +font($fz: 18px)
     #introduce
-      margin-top: 50px
+      padding-top: 50px
       .it_left
         +shape($w:100%)
+        h3
       .it_right
         +shape($w:100%)
         margin-top: 15px
@@ -245,6 +283,9 @@
         display: none 
       .txt_cate
         +shape($w: 100%)
+        h3
+          +font($fz: 24px)
+          margin-bottom: 12px
       &:nth-child(2)
         +shape($w: 100%)
         .txt_cate
@@ -264,6 +305,9 @@
             a
               padding: 14px 0
               +font($fz: 12px)
+    .form_order_complete
+      h3
+        +font($fz: 24px)
     .block_prd 
       .tt_block
         padding: 55px 15px 35px 15px
@@ -307,6 +351,12 @@
         margin-top: 20px
         padding-left: 0
         +shape($w: 100%)
+        h3
+          +font($fz: 20px)
+        .code_pd
+          margin: 12px 0 5px 0
+        .price_pd
+          +font($fz: 20px)
       .method_use
         padding: 0
         .tab_point
@@ -535,8 +585,10 @@
       .left_contact
         +shape($w: 100%)
         .item
+          margin-bottom: 25px
           h4
             margin-bottom: 12px
+            +font($fz: 20px)
           p
             margin-bottom: 12px
       .right_contact
@@ -548,10 +600,11 @@
           form
             margin-right: -10px
             margin-left: -10px
+            h4
+              +font($fz: 20px)
             .it_form
               padding: 0 10px
               +shape($w: 100%)
-              input
     .content_map
       padding-top: 20px
       .map
@@ -725,6 +778,17 @@
           display: inline-block
       .ft_page
         display: none
+  #index
+    .tt_section
+      +font($fz: 20px)
+    #main_pd
+      .it_main 
+        .ct_itm
+          .txt_it 
+            h3
+              +font($fz: 20px)
+            p
+              +font($fz: 16px)
   #under
     .main-blog_post      
       .blog-image
@@ -819,6 +883,16 @@
 
     .custom-line
       margin: 30px auto
+    .pd_detail
+      .imfor_detail
+        margin-top: 20px
+        .buy_cart
+          button
+            padding: 7px 12px
+            margin-bottom: 12px
+        .change_total
+          input
+            height: 32px
 
 @media screen and (max-width: 425px)
   header
@@ -840,7 +914,18 @@
       .ft_fanpage       
         .fb-page
           width: 85% !important          
-
+  #index
+    #introduce
+      margin-top: 50px
+      .it_left
+        +shape($w:100%)
+        h3
+      .it_right
+        +shape($w:100%)
+        margin-top: 15px
+        padding: 0
+        #img_intro
+          padding: 0 30px
   #content_page
     padding: 0 5px
   .ct_product
@@ -863,6 +948,7 @@
         .ct_itpd
           .txt_it
             padding: 10px 5px 18px 5px
+            text-align: left
             h3
               +font($fz: 18px)
             .price_pd
@@ -1012,16 +1098,19 @@
     //end review page
 
 @media screen and (max-width: 320px)
-
-  #under
+  .ct_product
     .it_pd
+      padding: 0 5px
+      margin-bottom: 12px
       .ct_itpd
         .txt_it
+          padding: 10px 5px 18px 5px
           h3
-            +font($fz: 14px)
+            +font($fz: 16px)
           .price_pd
             span
-              +font($fz: 13px)
+              +font($fz: 14px)
+  #under
     .main-blog_post      
       .blog-image
         height: 90px
