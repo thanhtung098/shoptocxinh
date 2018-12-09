@@ -50,7 +50,7 @@
     bottom: 0;
   }
   header .inner_hd .mid_hd {
-    width: 450px;
+    width: 100%;
     height: 100vh;
     overflow: scroll;
     background: #fff;
@@ -268,15 +268,27 @@
   #action_mn {
     border-radius: 50%;
     right: 10px;
-    top: 75%;
+    top: 70%;
+    z-index: 101;
   }
   #action_mn ul li {
     display: none;
   }
   #action_mn ul .to_toppage {
+    position: relative;
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+  }
+  #action_mn ul .to_toppage i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   #action_moblie {
@@ -286,6 +298,7 @@
     right: 0;
     bottom: 0;
     text-align: center;
+    z-index: 100;
   }
   #action_moblie a {
     padding: 8px 7px;
@@ -326,6 +339,7 @@
   }
   footer .ct_footer .ft_hours h3 {
     margin-bottom: 15px;
+    text-align: center;
   }
   footer .ct_footer .ft_hours p {
     width: 32%;
@@ -1057,7 +1071,7 @@
   }
 
   #index #introduce {
-    margin-top: 50px;
+    margin-top: 0;
   }
   #index #introduce .it_left {
     width: 100%;

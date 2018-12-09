@@ -269,9 +269,12 @@ const common = (function(){
         if(currentKeyValue == 8) {                    
           setTimeout(function(){
             if(elCurrent.value != '') {
-              elQuantityCol.dataset.curQuantity = parseInt(elCurrent.value);
+              elQuantityCol.dataset.curQuantity = parseInt(elCurrent.value);              
               _calcAndPrintPriceProduct(elCurrent);
-            }            
+            } else {
+              elQuantityCol.dataset.curQuantity = 0;
+              _calcAndPrintPriceProduct(elCurrent);
+            }                       
           });
           return;
         }
@@ -307,6 +310,9 @@ const common = (function(){
       ev.preventDefault();
       elCurrent = ev.target;      
       increaseInput = $(elCurrent).prev()[0];
+      if(increaseInput.value == '') {
+        increaseInput.value = 0;        
+      }
       if(parseInt(increaseInput.value) < parseInt(increaseInput.dataset.limitQuantity)) {
         increaseInput.value = parseInt(increaseInput.value) + 1;
         $(increaseInput).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = increaseInput.value;
@@ -319,6 +325,10 @@ const common = (function(){
       ev.preventDefault();
       elCurrent = ev.target;      
       decreaseInput = $(elCurrent).next()[0];      
+      if(decreaseInput.value == '') {
+        decreaseInput.value = 0;
+        return;
+      }
       if(parseInt(decreaseInput.value) > 0) {
         decreaseInput.value = parseInt(decreaseInput.value) - 1;
         $(decreaseInput).parents('.cart-detail__quanity-col')[0].dataset.curQuantity = decreaseInput.value;

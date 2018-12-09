@@ -31,7 +31,7 @@
         z-index: 20
         +position($pos:absolute,$t: 0,$l: 0,$r: 0,$b: 0)
       .mid_hd
-        +shape($w: 450px,$h: 100vh,$bk: #fff,$ov: scroll)
+        +shape($w: 100%,$h: 100vh,$bk: #fff,$ov: scroll)
         +position($pos:absolute,$t: 81px,$l: -100%)
         +font($tc: left)
         padding: 0 10px
@@ -185,17 +185,22 @@
   #action_mn
     +shape($bdr: 50%)
     right: 10px
-    top: 75%
+    top: 70%
+    z-index: 101
     ul
       li
         display: none
       .to_toppage
+        position: relative
         display: block
-        +shape($w: 60px,$h: 60px)
+        +shape($w: 50px,$h: 50px)
+        i
+          +adjust_mid(absolute)
   #action_moblie
     display: block
     +position($pos: fixed,$b: 0,$l:0,$r:0)
     +font($tc: center)
+    z-index: 100
     a
       padding: 8px 7px
       display: block
@@ -220,7 +225,8 @@
         padding: 0
         +position($pos: absolute,$b: 0)
         h3
-          margin-bottom: 15px          
+          margin-bottom: 15px   
+          text-align: center       
         p
           +shape($w: 32%,$border: none)
           display: inline-block
@@ -916,7 +922,7 @@
           width: 85% !important          
   #index
     #introduce
-      margin-top: 50px
+      margin-top: 0
       .it_left
         +shape($w:100%)
         h3
