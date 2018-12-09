@@ -8,33 +8,363 @@
 
 .sp
   display: none 
-
+.mobile-toggle
+  // display: none
 @media screen and (max-width: 640px)
   .pc
     display: none
 
   .sp
     display: block
+  .content
+    +shape($w: 100%)
+  header
+    +shape($miw: 100%,$bk: #fff,$h: 80px)
+    +position($pos:fixed,$t: 0,$l: 0)
+    z-index: 102
+    +shadow($sd: -1px -1px 5px)
+    .inner_hd
+      +shape($w: 100%)
+      .left_hd
+        float: unset
+        margin: 0 auto
+        z-index: 20
+        +position($pos:absolute,$t: 0,$l: 0,$r: 0,$b: 0)
+      .mid_hd
+        +shape($w: 450px,$h: 100vh,$bk: #fff,$ov: scroll)
+        +position($pos:absolute,$t: 81px,$l: -100%)
+        +font($tc: left)
+        padding: 0 10px
+        transition: 500ms ease-in-out
+        .search_Mb
+          display: block
+          padding-top: 20px
+          margin-bottom: 25px
+          form
+            +shape($w: 80%)
+            margin: 0 auto
+            position: relative
+            input
+              padding: 10px 
+              +shape($w: 100%,$border: none,$outline: none)
+              +font($fz: 16px,$cl:#707070)
+              font-style: italic
+              border-bottom: 1px solid #707070
+            button
+              +font($fz: 20px,$cl: #F6B26D)
+              +shape($bk: none ,$border: none,$outline: none)
+              +position($pos: absolute, $t: 5px,$r:0)
+        nav
+          >ul
+            >li
+              display: block
+              padding: 15px 10px
+              border-bottom: solid 1px #707070
+              position: relative
+              a
+                display: inline-block
+              span
+                display: block
+                padding: 10px
+                +position($pos: absolute, $t: 5px, $r: 0 )
+                content: ''
+                transform: rotateX(0deg)
+              .arrow_mn
+                transform: rotate(90deg)
+              >ul
+                width: 100%
+                position: unset
+                opacity: 1
+                margin-top: 15px
+                box-shadow: none
+                display: none
+                >li
+                  .arrow_mn
+                    transform: rotate(90deg)
+                  &:hover
+                    background: none
+                    a
+                      color: #707070
+                    ul
+                      display: none
+                  >ul
+                    +shape($w: 100%!important,$opa:1)
+                    display: none
+                    position: unset
+                    box-shadow: none
+                    margin-top: 12px
+                    li
+                      border-bottom: dashed 1px #707070
+                  .menu_show
+                    display: block!important
+              &:hover
+                >ul
+                  display: none
+                  width: 100%
+              .menu_show
+                display: block!important
+      .content_menu_show
+        +position($pos:absolute,$t: 81px,$l: 0)
+      .right_hd
+        float: unset
+        +position($pos:absolute,$t: 0,$r: 0)
+        padding-top: 36px
+        ul
+          li
+            &:last-child
+              padding-right: 6px
+              .shoping_cart_show
+                display: block!important
+            &:hover
+              .shoping_cart
+                display: none
+            .icon-Search-icon 
+              display: none
+            .search
+              display: none
 
+    .mobile-toggle
+      display: block
+
+  #banner
+    +shape($w: 100%,$ov: hidden)
+    .item_bn
+      .video_bn
+        +shape($w: 100%,$h: 100%)
+        .ct_video
+          +shape($w: 85%,$h: 90%)
+          +position($pos: absolute, $l: 0, $r: 0)
+          margin: 0 auto
+          h3
+            display: none
+          #video_banner
+            +shape($h: 100%)
+    .icon-Arrow-left 
+      left: 5px
+      font-size: 40px
+    .icon-Arrow-right
+      right: 5px
+      font-size: 40px
+    .slick-list 
+      &:after
+        display: none
+      &:before
+        display: none
+    &:after
+      display: none
+    &:before
+      display: none
+  .ct_product 
+    .it_pd
+      +shape($w: 50%)
+      padding: 0 10px
+      margin-bottom: 20px
+      .ct_itpd
+        .hv_txt
+          display: none
+        .txt_it 
+          padding-top: 15px
+          h3
+            +font($fz: 20px)
+          .price_pd
+            margin-top: 15px
+            span
+              +font($fz: 20px)
+            button
+              display: block
+              float: unset
+              margin: 0 auto
+              margin-top: 15px
   .wrapper
+    +shape($w: 100%)
     min-width: 100%
     overflow: hidden
-
+    padding-top: 81px
+  .mobile-toggle
+    display: block
+  #action_mn
+    +shape($bdr: 50%)
+    right: 10px
+    top: 75%
+    ul
+      li
+        display: none
+      .to_toppage
+        display: block
+        +shape($w: 60px,$h: 60px)
+  #action_moblie
+    display: block
+    +position($pos: fixed,$b: 0,$l:0,$r:0)
+    +font($tc: center)
+    a
+      padding: 8px 7px
+      display: block
+      +shape($w: 50%,$border: solid 1px #fff,$bk: #F6B26D,$fl: left)
+      +font($fz: 22px,$lh: 40px, $cl: #fff)
+      border-top-right-radius: 7px
+      border-top-left-radius: 7px
+    .call
+      +font($fz: 24px)
+  footer
+    padding-top: 0 
+    margin-top: 50px
+    .ct_footer
+      padding: 20px 15px 90px 15px
+      position: relative
+      .ft_address
+        width: 50%
+        .it_ad 
+          padding-left: 40px
+      .ft_hours
+        +shape($w: 100%)
+        padding: 0
+        +position($pos: absolute,$b: 0)
+        h3
+          margin-bottom: 15px          
+        p
+          +shape($w: 32%,$border: none)
+          display: inline-block
+          font-size: 14px
+          text-align: center
+      .ft_fanpage
+        width: 50%
+      .ft_page
+        display: none        
+  #index
+    .block_title
+      nav
+        ul
+          li
+            margin-bottom: 12px
+    .tt_section
+      +font($fz: 24px)
+    #main_pd
+      margin-top: 55px
+      .it_main
+        .ct_itm
+          .txt_it
+            h3
+              +font($fz: 24px)
+            p
+              +font($fz: 18px)
+    #introduce
+      margin-top: 50px
+      .it_left
+        +shape($w:100%)
+        h3
+      .it_right
+        +shape($w:100%)
+        margin-top: 15px
+    #product
+      margin-top: 75px
+      margin-right: -10px
+      margin-left: -10px
+      padding: 25px 5px 25px 5px
+    #article
+      padding: 25px 0 10px 0
+      .ct_article
+        .it_art
+          padding: 0 7px 15px 7px
+          .txt_art
+            padding: 15px
+            h4
+              margin-top: 7px
+            h5
+              margin: 10px 0 15px 0
+            span
+              margin-top: 20px
   #content_page
     +shape($w:100%)
     padding: 0 10px    
+  #cate_pduct 
+    .it_cate 
+      margin-bottom: 20px
+      .img_cate
+        display: none 
+      .txt_cate
+        +shape($w: 100%)
+        h3
+          +font($fz: 24px)
+          margin-bottom: 12px
+      &:nth-child(2)
+        +shape($w: 100%)
+        .txt_cate
+          +shape($w: 100%)
+      &:nth-child(3)
+        +shape($w: 100%)
+        .txt_cate
+          +shape($w: 100%)
 
   #under
+    .title_pg
+      +shape($w:100%,$h: 100px)
+    .tab_pd 
+      .list_tab
+        .slick-list
+          li
+            a
+              padding: 14px 0
+              +font($fz: 12px)
+    .form_order_complete
+      h3
+        +font($fz: 24px)
+    .block_prd 
+      .tt_block
+        padding: 55px 15px 35px 15px
+        h2
+          +font($fz: 24px)
+    .it_pd
+      +shape($w: 50%)
+      padding: 0 10px
+      margin-bottom: 20px
+      .ct_itpd
+        .img_it 
+          .hv_txt
+            display: none
+        .txt_it
+          padding: 15px 12px 18px 12px
+          h3
+            +font($fz: 20px,$lh:1.3)
+          .price_pd
+            margin-top: 10px
+            span
+              display: block
+            button
+              float: unset
+              margin: 0 auto
+              margin-top: 17px
     .hd_content
       padding-bottom: 0
+
+      &.-review-page
+        width: 100%
+
     .under-ttl
       width: 90%
       margin-bottom: 20px
       height: 120px
-
+    .pd_detail
+      .img_detail
+        +shape($w: 100%)
+        padding: 0 15%
+      .imfor_detail
+        margin-top: 20px
+        padding-left: 0
+        +shape($w: 100%)
+        h3
+          +font($fz: 20px)
+        .code_pd
+          margin: 12px 0 5px 0
+        .price_pd
+          +font($fz: 20px)
+      .method_use
+        padding: 0
+        .tab_point
+          li
+            margin-right: 5px
+            +font($fz: 14px)
     .main_content
       width: 100%
-
     .blog_wrapper
       display: flex
       justify-content: space-between
@@ -43,9 +373,7 @@
     .main-blog_post  
       width: 48% 
       margin-bottom: 0      
-      -webkit-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-      -moz-box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
-      box-shadow: 0px 1px 10px -1px rgba(0, 0, 0, 0.16)
+      +postShadow
       padding-bottom: 10px
       .blog-image
         position: relative
@@ -107,9 +435,192 @@
 
     .post-btn
       margin-top: 20px
+    
+    .blog-detail
+      &__content
+        padding: 0 7px
+        margin-bottom: 30px
 
+      &__title
+        margin-top: 10px
+
+      &__main-image
+        margin-bottom: 20px
+
+      &__sub-images
+        margin-bottom: 20px        
+        img
+          width: 48%
+
+      &__list
+        padding: 0
+
+      &__list-item
+        margin: 12px
+
+        &__title
+          margin-top: 10px
+
+        &__btn-outer
+          text-align: center
+
+      &__slider
+        margin-top: 15px
+    //end blog detail
+    
+    .review-content
+      padding: 10px 5% 0 0
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(339px,369px)
+
+      &__list-outer   
+        width: 100%
+      
+      &__list-item
+        margin: 0 30px
+
+      &__img
+        padding: 5px
+
+      &:hover
+        .review-slider__arrow-left,.review-slider__arrow-right      
+          display: none !important        
+
+    .review-feedback
+      margin-top: 90px
+
+      &__customer-name
+        font-size: 20px
+        line-height: 26px
+
+    .-quote-content
+      padding: 5px 30px
+
+      &:before, &:after
+        +shape(20px, 16px)
+    //end review page
+
+    .cart-detail
+      &__title
+        font-size: 20px
+        margin-bottom: 20px
+      
+      &__image-outer        
+        max-height: 230px
+        
+      &__product-name
+        max-width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+
+      &__image-col
+        width: 35%
+        vertical-align: top
+        .cart-detail__remove-cart-item
+          display: block
+
+      &__product-part-ttl
+        display: block
+      
+      &__title-wrap
+        display: none
+
+      &__title-item
+        font-size: 16px      
+
+      &__product-catelink
+        margin-top: 7px
+        a
+          padding: 2px 10px
+
+      &__product-code
+        margin-top: 7px
+
+      &__info-col,      
+      &__colour-col, 
+      &__quanity-col,      
+        display: block
+        width: 100%
+        text-align: left
+        padding-left: 30px !important
+      
+      &__price-col,
+      &__final-price-col
+        display: inline-block
+        width: 50%
+        text-align: left
+        padding-left: 30px !important
+
+      &__info-col
+        padding-top: 0 !important
+        padding-bottom: 0 !important
+
+      &__quantity-input-controls,
+      &__quantity-select-controls        
+        text-align: left        
+
+      &__remove-cart-item
+        display: none   
+
+      &__footer-wrap
+        display: flex
+        margin-top: 15px
+        padding-top: 15px
+        align-items: baseline
+
+      &__footer-left
+        width: 40%
+
+      &__footer-center
+        width: 25%
+
+      &__footer-right
+        width: 35%
+
+    .contact
+
+      .left_contact
+        +shape($w: 100%)
+        .item
+          margin-bottom: 25px
+          h4
+            margin-bottom: 12px
+            +font($fz: 20px)
+          p
+            margin-bottom: 12px
+      .right_contact
+        +shape($w: 100%)
+        .form
+          margin-right: 0
+          h4
+            padding-left: 0
+          form
+            margin-right: -10px
+            margin-left: -10px
+            h4
+              +font($fz: 20px)
+            .it_form
+              padding: 0 10px
+              +shape($w: 100%)
+    .content_map
+      padding-top: 20px
+      .map
+        +shape($w:100%,$h: 350px)
+      .location_brach
+        padding: 10px
+    .form_order_complete
+      +shape($w: 100%)
+      padding: 15px
+      margin-top: 40px
+      margin-bottom: 70px
+      h3
+        margin-bottom: 20px
+      p
+        margin-bottom: 20px
 @media screen and (max-width: 580px)
-
   #under
     .main-blog_post      
       .blog-image
@@ -131,12 +642,153 @@
     .under-ttl
       height: 110px
       font-size: 22px
+    .pd_detail
+      .imfor_detail
+        margin-top: 20px
+        .buy_cart
+          button
+            padding: 7px 12px
+        .change_total
+          input
+            height: 32px
 
-@media screen and (max-width: 500px)
+    .blog-detail
+      &__title
+        margin-top: 10px
+        font-size: 20px
+
+      &__main-image
+        margin-bottom: 10px
+
+      &__sub-images
+        margin-bottom: 10px        
+        img
+          width: 49%
+
+      &__article
+        margin-bottom: 10px
+
+      &__list-item
+        &__btn
+          padding: 5px 20px
+    //end blog detail
+
+    .review-content      
+      &__title
+        font-size: 22px
+        line-height: 26px
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(339px,369px)      
+      
+      &__list-item
+        margin: 0 20px      
+    //end review page
+        
+@media screen and (max-width: 500px)  
+  header 
+    .inner_hd
+      .right_hd 
+        ul 
+          li:last-child 
+            .shoping_cart 
+              .l_prdcart 
+                .pd_crt 
+                  .ct_lcrt 
+                    .it_cart 
+                      .txt_itc
+                        p
+                          font-size: 16px
+
+                        h3
+                          font-size: 16px
+                          line-height: 21px
+  #under  
+    
+    .review-content      
+      &__title
+        font-size: 20px
+        line-height: 24px
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(279px,309px)
+
+    .review-feedback
+      margin-top: 80px
+
+      &__customer-name
+        font-size: 18px
+        line-height: 22px
+
+    .-quote-content
+      padding: 0 30px
+      margin-top: 10px
+    //end review page
 
 
 @media screen and (max-width: 480px)
+  header
+    .inner_hd
+      .mid_hd
+        +shape($w: 100%)
+  footer
+    .ct_footer
+      padding-bottom: 20px
+      position: relative
+      .ft_address
+        width: 100%
+        .it_ad 
+          padding-left: 0
+          text-align: center
+      .ft_hours
+        +shape($w: 100%)
+        padding: 0
+        +position($pos: unset)
+        h3
+          margin-bottom: 15px
+        p
+          +shape($w: 33%,$border: none)
+          float: left
+      
+      .ft_address
+        .it_ad 
+          i
+            display: none
+        .ft_adr 
+          p
+            font-size: 14px
 
+      .ft_hours h3
+        font-size: 16px
+
+      .ft_hours p
+        font-size: 12px
+        text-align: center
+
+      .ft_fanpage
+        text-align: center
+        padding: 0 
+        width: 100%        
+        .fb-page
+          width: 75% !important
+          display: inline-block
+      .ft_page
+        display: none
+  #index
+    .tt_section
+      +font($fz: 20px)
+    #main_pd
+      .it_main 
+        .ct_itm
+          .txt_it 
+            h3
+              +font($fz: 20px)
+            p
+              +font($fz: 16px)
   #under
     .main-blog_post      
       .blog-image
@@ -149,12 +801,150 @@
       .blog-image
         height: 120px
     //end sub-blog_post
+    
+    .hd_content
+      padding-top: 0
+
+    .blog-detail
+
+      &__list-item
+        margin: 10px
+          
+        &__btn
+          padding: 5px 20px
+
+        &__title
+          font-size: 18px
+          line-height: 22px
+
+        &__article
+          display: none
+
+      &__slider
+        margin-top: 15px
+    //end blog detail
+
+    .review-slider
+      &__list-outer   
+        &:before
+          +shape(249px,279px)
+    //end review page
+
+    .cart-detail
+      &__title
+        font-size: 18px
+        text-align: center
+        
+      &__product-name
+        font-size: 14px
+
+      &__product-catelink
+        a
+          font-size: 14px
+
+      &__product-code
+        font-size: 14px
+      
+      &__info-col,      
+      &__colour-col, 
+      &__quanity-col,   
+        padding-left: 15px !important
+      
+      &__price-col,
+      &__final-price-col
+        padding-left: 15px !important   
+        font-size: 14px
+
+      &__footer-total-price
+        font-size: 14px
+
+      &__footer-total-price-number
+        font-size: 14px
+      
+      &__customer-infor-top
+        display: block
+
+      &__customer-infor-small-field
+        width: 100%
+        margin-bottom: 15px
+        &:last-child
+          margin-bottom: 0       
+    
+      &__customer-infor-address
+
+    .custom-line
+      margin: 30px auto
+    .pd_detail
+      .imfor_detail
+        margin-top: 20px
+        .buy_cart
+          button
+            padding: 7px 12px
+            margin-bottom: 12px
+        .change_total
+          input
+            height: 32px
 
 @media screen and (max-width: 425px)
-
+  header
+    .inner_hd
+      .right_hd
+        ul
+          li:last-child
+            .shoping_cart
+              +shape($w: 100vw)
+              right: -10px
+              .l_prdcart
+                .bt_cart
+                  .ct_tt
+                    +font($fz : 14px)
+                    .btn_cart
+                      padding: 12px 2px
+  footer
+    .ct_footer
+      .ft_fanpage       
+        .fb-page
+          width: 85% !important          
+  #index
+    #introduce
+      margin-top: 50px
+      .it_left
+        +shape($w:100%)
+        h3
+      .it_right
+        +shape($w:100%)
+        margin-top: 15px
+        padding: 0
+        #img_intro
+          padding: 0 30px
   #content_page
     padding: 0 5px
+  .ct_product
+    .it_pd
+      padding: 0 5px
+      margin-bottom: 12px
+      .ct_itpd
+        .txt_it
+          padding: 10px 5px 18px 5px
+          h3
+            +font($fz: 18px)
+          .price_pd
+            span
+              +font($fz: 17px)
   #under
+    .ct_product
+      .it_pd
+        padding: 0 5px
+        margin-bottom: 12px
+        .ct_itpd
+          .txt_it
+            padding: 10px 5px 18px 5px
+            text-align: left
+            h3
+              +font($fz: 18px)
+            .price_pd
+              span
+                +font($fz: 17px)
     .under-ttl
       height: 90px
       font-size: 20px
@@ -189,25 +979,128 @@
       margin-top: 10px
     //end sub-blog_post
 
+    .blog-detail
+
+      &__list-item
+        margin: 5px
+
+        &__title
+          font-size: 16px
+          line-height: 20px
+
+        &__btn
+          font-size: 14px
+          padding: 3px 15px
+    //end blog detail
+
+    .review-content
+      display: none
+
+    .review-slider
+      margin-top: 70px
+      &__list-outer   
+        &:before
+          +shape(259px,289px)
+
+      &__list-item
+        margin: 0 10px
+
+    .review-feedback      
+      &__customer-name
+        font-size: 16px
+        line-height: 20px
+    //end review page
+
+    .cart-detail      
+      &__image-col
+        width: 40%
+
+      &__price-col,
+      &__final-price-col
+        display: block
+        width: 100%
+        padding-left: 15px !important
+
+      &__info-wrap td
+        padding: 20px 0
+
+      &__footer-center,      
+      &__footer-right
+        width: 50%
+      
+      &__footer-center
+        text-align: center
+
+      &__footer-right
+        padding: 10px 0
+        background: $color-gray-light
+      
+      &__footer-left
+        display: none
+
 @media screen and (max-width: 375px)
-  
+  footer
+    .ct_footer
+      .ft_fanpage        
+        .fb-page
+          width: 100% !important  
+
+      .ft_hours p
+        width: 50%
+        &:last-child
+          width: 100%
   #under
+    .block_prd 
+      .tt_block
+        h2
+          +font($fz: 20px)
     .main-blog_post      
       .blog-image
         height: 110px
+        img
+          +shape(auto,100%)
     // end main-blog_post
 
     .sub-blog_post
       .blog-image
         height: 110px
+        img
+          +shape(auto,100%)
     //end sub-blog_post
 
     .blog-post-time
       &:before
         font-size: 14px
 
-@media screen and (max-width: 320px)
+    .blog-detail
+      &__sub-images
+        margin-bottom: 5px
+    //end blog detail  
 
+    .review-slider
+      margin-top: 80px
+
+      &__list-outer
+        &:before
+          +shape(239px,269px)
+
+      &__img              
+        padding: 3px
+    //end review page
+
+@media screen and (max-width: 320px)
+  .ct_product
+    .it_pd
+      padding: 0 5px
+      margin-bottom: 12px
+      .ct_itpd
+        .txt_it
+          padding: 10px 5px 18px 5px
+          h3
+            +font($fz: 16px)
+          .price_pd
+            span
+              +font($fz: 14px)
   #under
     .main-blog_post      
       .blog-image
@@ -218,3 +1111,17 @@
       .blog-image
         height: 90px
     //end sub-blog_post
+
+    .blog-detail
+
+      &__list-item
+        margin: 5px
+
+        &__btn-outer
+          display: none 
+    //end blog detail
+
+    .cart-detail
+      &__remove-cart-btn 
+        .-close-icon          
+          margin-right: 2px

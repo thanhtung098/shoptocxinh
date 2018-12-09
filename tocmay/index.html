@@ -3,14 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Shoptocxinh</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=no" />  
 	<link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="resources/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/css/perfect-scrollbar.css">
   	<link rel="stylesheet" href="resources/css/style.css">
+  	<link rel="stylesheet" href="resources/css/responsive.css">
 </head>
 <body>
 	<div class="wrapper" id="index">
 		<header>
+			<div class="mobile-toggle">
+				<div class="button_toggle">
+					<span class="line"></span>
+					<span class="line line2"></span>
+					<span class="line"></span>
+				</div>
+			</div>
 			<div class="inner_hd">
 				<div class="left_hd">
 					<h1 class="logo">
@@ -20,13 +29,19 @@
 					</h1>
 				</div>
 				<div class="mid_hd">
+					<div class="search_Mb">
+						<form action="">
+							<input type="text" placeholder="Tìm kiếm Sản phẩm">
+							<button class="icon-Search-icon "></button>
+						</form>
+					</div>
 					<nav>
 						<ul>
 							<li><a href="">TRANG CHỦ</a></li>
 							<li><a href="">GIỚI THIỆU</a></li>
-							<li><a href="">SẢN PHẨM</a>
+							<li class="active"><a href="">SẢN PHẨM</a><span class="icon-Arrow-detail-icon "></span>
 								<ul>
-									<li><a href="">Tóc bộ</a>
+									<li><a href="">Tóc bộ</a><span class="icon-Arrow-detail-icon "></span>
 										<ul>
 											<li><a href="">Tóc cột</a></li>
 											<li><a href="">Tóc cột</a></li>
@@ -34,6 +49,7 @@
 										</ul>
 									</li>
 									<li><a href="">Tóc giả</a>
+										<span class="icon-Arrow-detail-icon "></span>
 										<ul>
 											<li><a href="">Tóc cột</a></li>
 											<li><a href="">Tóc cột</a></li>
@@ -41,6 +57,7 @@
 										</ul>
 									</li>
 									<li><a href="">Tóc thật</a>
+										<span class="icon-Arrow-detail-icon "></span>
 										<ul>
 											<li><a href="">Tóc cột</a></li>
 											<li><a href="">Tóc cột</a></li>
@@ -67,57 +84,69 @@
 							</div>
 						</li>
 						<li>
-							<i class="icon-Card-icon-style-2"><span>3</span></i>
+							<span><img src="resources/images/covn.png" alt=""></span>
+							<ul class="lang">
+								<li>
+									<span><img src="resources/images/comy.png" alt=""></span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<i class="icon-Card-icon-style-2 " id="showCart"><span>3</span></i>
 							<div class="shoping_cart">
 								<h3><span>Giỏ hàng</span> <span>3 sản phẩm</span></h3>
 								<div class="l_prdcart">
 									<div class="pd_crt">
-										<div class="it_cart">
-											<div class="img_itc">
-												<img src="resources/images/Group392.png"" alt="">
+										<div class="ct_lcrt">
+											<div class="it_cart">
+												<div class="img_itc">
+													<img src="resources/images/Group392.png"" alt="">
+												</div>
+												<div class="txt_itc">
+													<h3>Tóc soăn dài trung niên</h3>
+													<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+													<p>380.000 Đ</p>
+												</div>
 											</div>
-											<div class="txt_itc">
-												<h3>Tóc soăn dài trung niên</h3>
-												<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-												<p>380.000 Đ</p>
+											<div class="it_cart">
+												<div class="img_itc">
+													<img src="resources/images/Group392.png"" alt="">
+												</div>
+												<div class="txt_itc">
+													<h3>Tóc soăn dài trung niên</h3>
+													<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+													<p>380.000 Đ</p>
+												</div>
 											</div>
-										</div>
-										<div class="it_cart">
-											<div class="img_itc">
-												<img src="resources/images/Group392.png"" alt="">
-											</div>
-											<div class="txt_itc">
-												<h3>Tóc soăn dài trung niên</h3>
-												<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-												<p>380.000 Đ</p>
-											</div>
-										</div>
-										<div class="it_cart">
-											<div class="img_itc">
-												<img src="resources/images/Group392.png"" alt="">
-											</div>
-											<div class="txt_itc">
-												<h3>Tóc soăn dài trung niên</h3>
-												<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
-												<p>380.000 Đ</p>
+											<div class="it_cart">
+												<div class="img_itc">
+													<img src="resources/images/Group392.png"" alt="">
+												</div>
+												<div class="txt_itc">
+													<h3>Tóc soăn dài trung niên</h3>
+													<h4>Tóc giả <span>|</span> Tóc kẹp phím </h4>
+													<p>380.000 Đ</p>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="total_cart clear">
-										<span class="txt_tt">TỔNG TIỀN</span>
-										<span class="price_tt">1.400.000 Đ</span>
+										<div class="ct_tt">
+											<span class="txt_tt">TỔNG TIỀN</span>
+											<span class="price_tt">1.400.000 Đ</span>
+										</div>
 									</div>
 									<div class="bt_cart">
-										<a href=""><span class="btn_cart">	<i class="icon-Card-icon-style-2"></i>
-										GIỎ HÀNG</span></a>
-										<a href=""><span class="btn_cart">
-										<i class="icon-Purchase-icon"></i>THANH TOÁN</span></a>
-										
+										<div class="ct_tt">
+											<a href=""><span class="btn_cart">	<i class="icon-Card-icon-style-2"></i>
+											GIỎ HÀNG</span></a>
+											<a href=""><span class="btn_cart">
+											<i class="icon-Purchase-icon"></i>THANH TOÁN</span></a>
+										<div class="ct_tt">
 									</div>
 								</div>
 							</div>
 						</li>
-						
 					</ul>
 				</div>
 			</div>
@@ -142,7 +171,7 @@
 			</div>
 		</div>
 		<div id="content_page">
-			<div id="introduce" class="content">
+			<div id="introduce" class="content slide_general">
 				<div class="it_left">
 					<h3>Giới thiệu</h3>
 					<h4 class="tt_section">Về Shop tóc xinh</h4>
@@ -172,7 +201,7 @@
 						<div class="img_it">
 							<img src="resources/images/tocbo.png" alt="">
 						</div>
-						<div class="txt_it">
+						<div class="txt_it" data-maxlength="100">
 							<h3>TÓC BỘ</h3>
 							<p>
 								Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque  
@@ -183,7 +212,7 @@
 				</div>
 				<div class="it_main">
 					<div class="ct_itm">
-						<div class="txt_it">
+						<div class="txt_it" data-maxlength="100">
 							<h3>TÓC BỘ</h3>
 							<p>
 								Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis 
@@ -200,7 +229,7 @@
 						<div class="img_it">
 							<img src="resources/images/tocthat.png" alt="">
 						</div>
-						<div class="txt_it">
+						<div class="txt_it" data-maxlength="100">
 							<h3>TÓC BỘ</h3>
 							<p>
 								Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis 
@@ -250,7 +279,7 @@
 							</div>
 							<div class="txt_it">
 								<a href=""><h3>Tóc xoăn dài trung niên</h3></a>
-								<h4>Tóc Giả <span>|</span> Tóc kẹp phím</h4>
+								<h4><a href="">Tóc Giả</a> <span>|</span><a href="">Tóc kẹp phím</a> </h4>
 								<div class="price_pd">
 									<span>380.000 Đ</span>
 									<button>Mua ngay</button>
@@ -379,7 +408,7 @@
 					<h3>Cập nhật tin tức</h3>
 					<h4 class="tt_section">Bài viết mới nhất</h4>
 				</div>
-				<div class="ct_article content">
+				<div class="ct_article content" id="listarticle">
 					<div class="it_art">
 						<div class="ct_itart">
 							<div class="img_art">
@@ -434,7 +463,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="clear"></div>
 				</div>
 			</div>
 		</div>
@@ -475,17 +503,67 @@
 				</div>
 				<div class="ft_fanpage">
 					<h3>Facebook</h3>
-					<div class="fb-page" data-href="https://www.facebook.com/ShopTocXinh/" data-tabs="timeline" data-height="160" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ShopTocXinh/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ShopTocXinh/">Shop tóc xinh</a></blockquote></div>
+					<div class="fb-page" data-href="https://www.facebook.com/ShopTocXinh/" data-tabs="timeline" data-height="200" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/ShopTocXinh/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ShopTocXinh/">Shop tóc xinh</a></blockquote></div>
 				</div>
 				<div class="clear"></div>
 			</div>
 		</footer>
+		<div id="action_mn">
+			<ul>
+				<li>
+					<i class="icon-Home-icon"></i>
+					<ul>
+						<li>
+							<p><span>Địa chỉ 1: </span> 17 Tân Sơn Nhì P. Tân Sơn Nhì Q Tân Phú</p>
+						</li>
+						<li>
+							<p><span>Địa chỉ 2: </span> 1263 Đường 3/2, P. 6, Q.11</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<i class="icon-Phone-icon"></i>
+					<ul>
+						<li>
+							<p><span>0933337990 </span> -<span> 0937388890</span></p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<i class="icon-Mail-icon"></i>
+					<ul>
+						<li>
+							<p>info@shoptocxinh.com</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<i class="icon-Facebook-icon"></i>
+					<ul class="icon_social">
+						<li >
+							<i class="icon-Youtube-icon"></i>
+						</li>
+					</ul>
+				</li>
+				<li class="to_toppage">
+					<i class="icon-To-top-icon"></i>
+				</li>
+			</ul>
+		</div>
+		<div id="action_moblie">
+			<a href="tel:+0933337990" class="call"><i class="icon-Phone-icon"></i></a>
+			<a href="sms:+0933337990" class="send">SMS</a>
+		</div>
 	</div>
 </body>
 <div id="fb-root"></div>
 <script src="resources/vendor/jquery.min.js"></script>
 <script src="resources/vendor/slick/slick.min.js"></script>
+<script type="text/javascript" src="resources/js/limittext.js"></script>
 <script src="resources/js/script.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/perfect-scrollbar.jquery.js"></script>
 <script type="text/javascript" src="resources/js/common.js"></script>
 </html>

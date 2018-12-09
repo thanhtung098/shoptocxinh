@@ -1,0 +1,32 @@
+﻿//- cái fanpage fb chỉnh lại height (all page), cái này nếu nó chỉ show banner thì trên facebook fanpage service
+nó cho phép chỉnh chỉ show banner đó
+
+- padding-bottom của footer là 70px ở mobile, do phần contact fixed quá cao (60px) cái này m không cần set height
+chỉ phần cho nó padding: 10px là đc, sau đó m dùng js để set padding cho footer với sự kiện resize dựa vào height của
+contact fixed. qua pc thì bỏ removeStyle đi là đc
+
+//- đờ mờ! tại sao lại tách thêm file script.js nữa, cái này m tự thêm vào mấy file khác nha! tự fix nếu có lội luôn nha
+có file common đó không xài, tạo thêm file script làm gì không biết.//
+
+//- mũi tên totop cho thêm vào mobile luôn nha, với mũi tên totop chỉ click vào tag i thì nó chạy, còn click vào tag li
+bọc ngoài thì nó không chạy --> sai nha//
+
+//- sao vào mobile thì mất cái search rồi!!!
+//- trang under cả pc lẫn mobile không có 2 ngôn ngữ kìa
+
+//- vào mobile từ 480 trở xuống cho font-size nhỏ lại, chỗ nào thấy to quá thì nhỏ lại, 
+giao động từ 12px - 20px không đc để to quá nha (t chỉnh giúp vài chỗ thôi)//
+
+- lồng class trong css quá nhiều, lên đến tận 6 7 cấp ... (cái này khỏi chỉnh, tốn time lắm)
+
+vd : header .inner_hd .right_hd ul li:last-child .shoping_cart .l_prdcart .pd_crt .ct_lcrt .it_cart .txt_itc p ( 12 cấp )
+
+//- giỏ hàng hover vào show ra ở mobile không tắt được ...,  show ra rồi show luôn, không tắt được, ... dùng js xử lý
+giống như xử lý hide/show của menu//
+
+//- mũi tên banner đè lên header khi scroll (mobile)//
+
+//- icon header bên tay phải bị lệch lên top khi header scroll,
+cho hiệu ứng scroll thay đổi size hình logo trên header set cho tất cả các under page//
+
+
