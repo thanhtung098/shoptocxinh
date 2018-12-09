@@ -242,8 +242,6 @@ const common = (function(){
 
     const objElQuantityIncreaseBtn = document.getElementsByClassName('-increase-btn');
     const objElQuantityDecreaseBtn = document.getElementsByClassName('-decrease-btn');
-    
-    const elOrderBtn = document.getElementById('cart-detail__order-btn');
 
     if(!objElQuantityInput || 
        !objElQuantitySelect) {
@@ -327,6 +325,13 @@ const common = (function(){
 
       _calcAndPrintPriceProduct(decreaseInput);             
     });
+    
+  }; // end_validateCartDetailForm
+
+  const _setClickEventForOrderBtn = function() {
+    const elOrderBtn = document.getElementById('cart-detail__order-btn');
+
+    if(!elOrderBtn) {return;}
 
     elOrderBtn.addEventListener('click',function(ev) {
       ev.preventDefault();
@@ -341,7 +346,7 @@ const common = (function(){
       console.log(objCartProducts);
       ev.preventDefault();
     });
-  }; // end_validateCartDetailForm
+  }
 
   const _validateCustomerInfoForm = function() {    
     const elPaymentComfirmBtn = document.getElementById('payment__confirm-btn');
@@ -416,10 +421,11 @@ const common = (function(){
       _generateBlogDetailSlider();
       _generateReviewSlider();
       _validateCartDetailForm();
+      _setClickEventForOrderBtn();
       _validateCustomerInfoForm();
       _showOrHideQuantityBlock();
 		}
-	}
+	};
 })();
 
 common.init();
