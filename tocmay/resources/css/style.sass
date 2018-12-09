@@ -1532,6 +1532,12 @@ footer
     z-index: 1
     position: relative
     background: rgba(#fff, 0.7)
+    &__list
+      +unlist
+
+    &__item-block
+      +unlist
+
     &__customer-info      
       text-align: center      
 
@@ -1860,6 +1866,24 @@ footer
 
     &__footer-total-price-number
       color: $color_orange_normal
+
+    &__order-btn-outer
+      margin-top: 40px
+      text-align: center
+
+    &__order-btn
+      display: inline-block
+      background: $color_orange_normal
+      color: #fff
+      padding: 7px 10px
+      min-width: 120px
+      border: none
+      border-radius: 7px
+      cursor: pointer
+      outline: none
+      &:hover
+        opacity: 0.8
+
   //end cart-detail
 
   .payment

@@ -242,6 +242,8 @@ const common = (function(){
 
     const objElQuantityIncreaseBtn = document.getElementsByClassName('-increase-btn');
     const objElQuantityDecreaseBtn = document.getElementsByClassName('-decrease-btn');
+    
+    const elOrderBtn = document.getElementById('cart-detail__order-btn');
 
     if(!objElQuantityInput || 
        !objElQuantitySelect) {
@@ -324,6 +326,20 @@ const common = (function(){
       }
 
       _calcAndPrintPriceProduct(decreaseInput);             
+    });
+
+    elOrderBtn.addEventListener('click',function(ev) {
+      ev.preventDefault();
+      const $objElQuantityCol = $('.cart-detail__quanity-col'),
+            $objElProductTd = $('.cart-detail__info-group');
+      var objCartProducts = {}; // tạo object json cho thông tin order
+        
+      $objElQuantityCol.each(function(id,item) {
+        objCartProducts[$objElProductTd[id].dataset.productId] = {};
+        objCartProducts[$objElProductTd[id].dataset.productId] = {quanity: item.dataset.curQuantity};
+      });
+      console.log(objCartProducts);
+      ev.preventDefault();
     });
   }; // end_validateCartDetailForm
 

@@ -2408,6 +2408,14 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   position: relative;
   background: rgba(255, 255, 255, 0.7);
 }
+#under .review-feedback__list {
+  list-style-type: none;
+  list-style: none;
+}
+#under .review-feedback__item-block {
+  list-style-type: none;
+  list-style: none;
+}
 #under .review-feedback__customer-info {
   text-align: center;
 }
@@ -2773,6 +2781,24 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 }
 #under .cart-detail__footer-total-price-number {
   color: #f6b16c;
+}
+#under .cart-detail__order-btn-outer {
+  margin-top: 40px;
+  text-align: center;
+}
+#under .cart-detail__order-btn {
+  display: inline-block;
+  background: #f6b16c;
+  color: #fff;
+  padding: 7px 10px;
+  min-width: 120px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+}
+#under .cart-detail__order-btn:hover {
+  opacity: 0.8;
 }
 #under .payment__customer-infor-top {
   display: flex;
