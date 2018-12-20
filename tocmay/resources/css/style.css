@@ -315,6 +315,7 @@ header .inner_hd .mid_hd nav > ul li {
 header .inner_hd .mid_hd nav > ul li a {
   color: #707070;
   display: block;
+  padding-bottom: 5px;
 }
 header .inner_hd .mid_hd nav > ul li span {
   display: none;
@@ -340,9 +341,12 @@ header .inner_hd .mid_hd nav > ul li > ul {
 }
 header .inner_hd .mid_hd nav > ul li > ul > li {
   text-align: left;
-  padding: 15px 10px;
   display: block;
   border-bottom: solid 1px #F6B26D;
+}
+header .inner_hd .mid_hd nav > ul li > ul > li a {
+  display: block;
+  padding: 15px 10px;
 }
 header .inner_hd .mid_hd nav > ul li > ul > li ul {
   width: 110%;
@@ -435,6 +439,14 @@ header .inner_hd .right_hd ul li .search form input {
   outline: none;
   background: #f6f6f6;
   padding: 0 12px;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+header .inner_hd .right_hd ul li .search form input:focus {
+  background: #fff;
 }
 header .inner_hd .right_hd ul li .search form button {
   position: absolute;
@@ -463,7 +475,7 @@ header .inner_hd .right_hd ul li:last-child .shoping_cart {
   transition: all 300ms ease-in-out;
   z-index: -1;
   text-align: left;
-  display: none;
+  display: block;
 }
 header .inner_hd .right_hd ul li:last-child .shoping_cart > h3 {
   background: #484848;
@@ -632,7 +644,7 @@ header .inner_hd .right_hd ul li:hover .search {
 }
 header .inner_hd .right_hd ul li:hover .shoping_cart {
   z-index: 30;
-  display: block;
+  visibility: visible;
 }
 header .inner_hd .right_hd ul li:hover .lang {
   display: block;
@@ -1076,6 +1088,10 @@ header .inner_hd .right_hd ul li:hover .lang {
   color: #fff;
 }
 
+.action_mn-right-cnt {
+  justify-content: flex-end;
+}
+
 #action_mn {
   position: fixed;
   right: 0;
@@ -1096,9 +1112,15 @@ header .inner_hd .right_hd ul li:hover .lang {
   padding: 19px 16px;
   position: relative;
 }
+#action_mn > ul > li:hover {
+  background: #f6b16c;
+  color: #fff;
+}
+#action_mn > ul > li:hover:before {
+  display: none;
+}
 #action_mn > ul > li i {
   font-size: 22px;
-  transition: 500ms ease-in-out;
 }
 #action_mn > ul > li .icon-Mail-icon {
   font-size: 16px;
@@ -1140,7 +1162,14 @@ header .inner_hd .right_hd ul li:hover .lang {
 #action_mn > ul > li ul > li {
   font-size: 16px;
   text-align: left;
-  margin-bottom: 12px;
+  color: #707070;
+  margin-bottom: 10px;
+}
+#action_mn > ul > li ul > li:last-child {
+  margin-bottom: 0;
+}
+#action_mn > ul > li ul > li p {
+  line-height: 20px;
 }
 #action_mn > ul > li ul > li p span {
   font-family: "UTM-AVOBOLD";
@@ -1165,7 +1194,10 @@ header .inner_hd .right_hd ul li:hover .lang {
   transform: scale(1.3);
 }
 #action_mn > ul > li:hover ul {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 100%;
 }
 
 #action_moblie {
@@ -2237,7 +2269,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .review-slider {
   width: 100%;
   position: relative;
-  margin: 20px auto 0;
+  margin: 50px auto 0;
 }
 @media screen and (min-width: 1920px) {
   #under .review-slider {
@@ -2385,6 +2417,10 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   cursor: pointer;
   opacity: 0;
 }
+#under .review-slider__arrow-left:hover, #under .review-slider__arrow-right:hover {
+  background: #f6b16c;
+  color: #fff;
+}
 #under .review-slider__arrow-left:before, #under .review-slider__arrow-right:before {
   font-size: 40px;
   position: absolute;
@@ -2418,10 +2454,27 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
 #under .review-feedback__list {
   list-style-type: none;
   list-style: none;
+  position: relative;
 }
 #under .review-feedback__item-block {
   list-style-type: none;
   list-style: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+#under .review-feedback__item-block.is-show {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
 }
 #under .review-feedback__customer-info {
   text-align: center;
@@ -2768,6 +2821,7 @@ footer .ct_footer .ft_fanpage .fb-page span iframe {
   border: none;
   border-radius: 7px;
   cursor: pointer;
+  outline: none;
 }
 #under .cart-detail__footer-update-btn:hover {
   opacity: 0.8;

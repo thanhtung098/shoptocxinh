@@ -55,54 +55,74 @@
               +shape($bk: none ,$border: none,$outline: none)
               +position($pos: absolute, $t: 5px,$r:0)
         nav
-          >ul
+          >ul            
             >li
-              display: block
-              padding: 15px 10px
+              display: flex
+              flex-wrap: wrap
+              padding: 0 10px
               border-bottom: solid 1px #707070
               position: relative
               a
                 display: inline-block
+                padding: 15px 0
+                width: 80%
               span
-                display: block
-                padding: 10px
-                +position($pos: absolute, $t: 5px, $r: 0 )
+                display: inline-flex
+                align-items: center
+                justify-content: flex-end
+                width: 20%
+                padding: 10px 0            
                 content: ''
-                transform: rotateX(0deg)
+                text-align: right                
+                &:before
+                  display: inline-block
+                  transform: rotate(0deg)
+                  +transition(transform 0.3s ease)
               .arrow_mn
-                transform: rotate(90deg)
+                &:before
+                  transform: rotate(90deg)
               >ul
                 width: 100%
                 position: unset
                 opacity: 1
                 margin-top: 15px
                 box-shadow: none
-                display: none
-                >li
-                  .arrow_mn
-                    transform: rotate(90deg)
-                  &:hover
-                    background: none
+                display: none !important
+                >li   
+                  display: none                  
+                  flex-wrap: wrap
+                  background: none !important               
+                  &:hover                    
                     a
-                      color: #707070
-                    ul
-                      display: none
+                      color: $cl_txt
                   >ul
                     +shape($w: 100%!important,$opa:1)
-                    display: none
+                    display: none !important
                     position: unset
                     box-shadow: none
                     margin-top: 12px
                     li
                       border-bottom: dashed 1px #707070
                   .menu_show
-                    display: block!important
-              &:hover
-                >ul
-                  display: none
-                  width: 100%
+                    display: block!important              
+                    >ul
+                      display: none
+                      width: 100%
+                      li
+                        display: flex
+                        flex-wrap: wrap
+                        
               .menu_show
                 display: block!important
+                z-index: 0
+                li
+                  display: flex  
+                  background: none
+                  a
+                    color: $color_orange_normal !important
+      
+      
+
       .content_menu_show
         +position($pos:absolute,$t: 81px,$l: 0)
       .right_hd
@@ -113,6 +133,16 @@
           li
             &:last-child
               padding-right: 6px
+              .shoping_cart
+                .l_prdcart
+                  .total_cart
+                    .ct_tt
+                      .txt_tt
+                        font-size: 14px
+                        padding: 0 10px
+                      .ct_tt
+                        font-size: 14px
+                        padding: 0 10px
               .shoping_cart_show
                 display: block!important
             &:hover
@@ -121,7 +151,7 @@
             .icon-Search-icon 
               display: none
             .search
-              display: none
+              display: none !important
 
     .mobile-toggle
       display: block
